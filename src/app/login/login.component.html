@@ -1,0 +1,60 @@
+
+<div nz-row nzJustify="center" nzAlign="middle" class="login">
+  <nz-card style="width:350px; " nzTitle="Autentificación" [nzExtra]="extraTemplate" nzJustify="center" nzAlign="middle" >
+    <form nz-form  autocomplete="off" class="login-form" [formGroup]="forma" (ngSubmit)="singIn()">
+            
+      <!-- Email -->  
+      <nz-form-item>
+        <nz-form-control nzErrorTip="El campo no puede ser nulo"  [nzValidateStatus]="error.email" nzHasFeedback>
+          <nz-input-group nzPrefixIcon="user">
+            <input type="text" nz-input  placeholder="Username" formControlName="email" 
+            (focusout)="getEmailValid()"
+            (focus)="error.email=''"/>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <!-- Password -->
+      <nz-form-item> 
+        <nz-form-control nzErrorTip="La contraseña no puede ser nula" [nzValidateStatus]='error.password' nzHasFeedback>
+          <nz-input-group nzPrefixIcon="lock">
+            <input type="password" nz-input  placeholder="Password" formControlName="password" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      
+      <div nz-row class="login-form-margin">
+
+        <!-- Remember-->  
+        <div nz-col [nzSpan]="12">
+          <label nz-checkbox  name="remember" formControlName="remember">
+            <span>Recordar</span>
+          </label>
+        </div> 
+
+        <!--Forgor password-->
+        <div nz-col [nzSpan]="12">
+          <a class="login-form-forgot" >Recordar password</a>
+        </div>
+
+      </div>
+      
+      <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" (click)="singIn()">Entrar</button>
+
+      <div nz-row>
+        <small class="text-right">Design RGS</small>
+      </div>
+    </form>
+  </nz-card>
+
+
+
+  <ng-template #extraTemplate>
+    <a>
+      <i nz-icon nzType="plus" nzTheme="outline" title="Crear usuario" ></i>
+    </a>
+  </ng-template>
+
+
+
+</div>

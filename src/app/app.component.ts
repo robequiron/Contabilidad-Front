@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NzMenuItemDirective } from 'ng-zorro-antd/menu/menu-item.directive';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ngzorro';
+  
+  
+  public title = 'ngzorro';
+
+  public isCollapsed = false;
+
+  constructor(){}
+
+  public v(event:NzMenuItemDirective) {
+    console.log(event)
+  }
+
+
+
+
+
+
+
 }

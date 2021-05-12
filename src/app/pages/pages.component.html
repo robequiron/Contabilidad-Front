@@ -1,0 +1,54 @@
+<nz-layout style="height: 100%;">
+
+    <nz-sider nzCollapsible
+    [nzWidth]="200" nzTheme="dark"
+     [(nzCollapsed)]="isCollapsed" nzBreakpoint="sm"  [nzCollapsedWidth]="0" [nzTrigger]="null">
+      <div class="logo"></div>
+      <ul nz-menu nzTheme="dark" nzMode="inline">
+        <li nz-submenu nzTitle="User" nzIcon="user" (click)="v($event)" [nzOpen]=false>
+          <ul>
+            <li nz-menu-item [nzDanger]=true >Tom</li>
+            <li nz-menu-item>Bill</li>
+            <li nz-menu-item>Alex</li>
+          </ul>
+        </li>
+        <li nz-submenu nzTitle="Team" nzIcon="team" >
+          <ul>
+            <li nz-menu-item >Team 1</li>
+            <li nz-menu-item>Team 2</li>
+          </ul>
+        </li>
+        <li nz-menu-item>
+          <i nz-icon nzType="file"></i>
+          <span>File</span>
+        </li>
+      </ul>
+    </nz-sider>
+  
+  
+  
+    <nz-layout>
+      <nz-header>
+        <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" (click)="isCollapsed = !isCollapsed"></i>
+        <nz-avatar [nzShape]="'square'" [nzSize]="32" [nzIcon]="'user'"></nz-avatar>
+      </nz-header>
+      <nz-content>
+
+        <nz-breadcrumb>
+          <nz-breadcrumb-item>User</nz-breadcrumb-item>
+          <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+        </nz-breadcrumb>
+
+
+        <div class="inner-content">
+          Bill is a cat.
+        </div>
+
+
+      </nz-content>
+      <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+    </nz-layout>
+  
+  
+  
+  </nz-layout>

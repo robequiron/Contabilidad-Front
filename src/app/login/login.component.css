@@ -1,0 +1,53 @@
+.colForm {
+    background-color: rgba(224, 224, 224, 0.527); 
+    padding: 10px;
+}
+.login-form {
+max-width: 300px;
+}
+
+.login-form-margin {
+margin-bottom: 16px;
+}
+
+.login-form-forgot {
+float: right;
+}
+
+.login-form-button {
+width: 100%;
+}
+
+  .login {
+    height: 100%;
+    background-image: url('../../assets/img/lock_full_bg.jpg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    
+  }
+
+
+  @media (max-width: 576px) {
+    .login {
+        background-size:  auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .login {
+        background-size:   auto;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .login {
+        background-size:  100% auto;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .login {
+        background-size:  100% auto;
+    }
+  }
