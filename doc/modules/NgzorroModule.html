@@ -77,6 +77,30 @@ import { NzMenuModule } from &#x27;ng-zorro-antd/menu&#x27;;
 import { NzLayoutModule } from &#x27;ng-zorro-antd/layout&#x27;;
 import { NzBreadCrumbModule } from &#x27;ng-zorro-antd/breadcrumb&#x27;;
 import { NzAvatarModule } from &#x27;ng-zorro-antd/avatar&#x27;;
+import { NzIconModule } from &#x27;ng-zorro-antd/icon&#x27;;
+import { NzFormModule } from &#x27;ng-zorro-antd/form&#x27;;
+import { NzInputModule } from &#x27;ng-zorro-antd/input&#x27;;
+import { NzButtonModule } from &#x27;ng-zorro-antd/button&#x27;;
+import { NzCheckboxModule } from &#x27;ng-zorro-antd/checkbox&#x27;;
+import { NzGridModule } from &#x27;ng-zorro-antd/grid&#x27;;
+import { NzCardModule } from &#x27;ng-zorro-antd/card&#x27;;
+import { NzDropDownModule } from &#x27;ng-zorro-antd/dropdown&#x27;;
+import { NzBadgeModule } from &#x27;ng-zorro-antd/badge&#x27;;
+import { IconDefinition } from &#x27;@ant-design/icons-angular&#x27;;
+import { NzAlertModule } from &#x27;ng-zorro-antd/alert&#x27;;
+
+
+
+
+// Import what you need. RECOMMENDED. ✔️
+import { AccountBookFill, AlertFill, AlertOutline,
+  MenuFoldOutline, UserOutline,TeamOutline } from &#x27;@ant-design/icons-angular/icons&#x27;;
+
+const icons: IconDefinition[] &#x3D; [ 
+  AccountBookFill, AlertOutline, AlertFill, 
+  MenuFoldOutline, UserOutline, TeamOutline ];
+
+
 
 
 @NgModule({
@@ -86,14 +110,36 @@ import { NzAvatarModule } from &#x27;ng-zorro-antd/avatar&#x27;;
     NzMenuModule,
     NzLayoutModule,
     NzBreadCrumbModule,
-    NzAvatarModule
+    NzAvatarModule,
+    NzFormModule,
+    NzInputModule,
+    NzButtonModule,
+    NzCheckboxModule,
+    NzGridModule,
+    NzCardModule,
+    NzDropDownModule,
+    NzBadgeModule,
+    NzAlertModule,
+    NzIconModule.forRoot(icons),
+    
+    
     
   ],
   exports: [
     NzMenuModule,
     NzLayoutModule,
     NzBreadCrumbModule,
-    NzAvatarModule
+    NzAvatarModule,
+    NzIconModule,
+    NzFormModule,
+    NzInputModule,
+    NzButtonModule,
+    NzCheckboxModule,
+    NzGridModule,
+    NzCardModule,
+    NzDropDownModule,
+    NzBadgeModule,
+    NzAlertModule
   ]
 })
 export class NgzorroModule { }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { APP_ROUTES } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,6 +13,9 @@ import es from '@angular/common/locales/es';
 import { NgzorroModule } from './ngzorro/ngzorro.module';
 import { LoginComponent } from './login/login.component';
 import { PagesComponent } from './pages/pages.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { SiderComponent } from './shared/sider/sider.component';
+import { PAGES_ROUTES } from './pages/pages.routing';
 
 
 registerLocaleData(es);
@@ -22,11 +25,15 @@ registerLocaleData(es);
     AppComponent,
     LoginComponent,
     PagesComponent,
+    FooterComponent,
+    SiderComponent,
    
   ],
   imports: [
+    PAGES_ROUTES,
+    APP_ROUTES,
     BrowserModule,
-    AppRoutingModule,
+    
     FormsModule,
     HttpClientModule,
     NgzorroModule,

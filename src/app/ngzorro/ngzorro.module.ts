@@ -11,6 +11,23 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { IconDefinition } from '@ant-design/icons-angular';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+
+
+
+
+// Import what you need. RECOMMENDED. ✔️
+import { AccountBookFill, AlertFill, AlertOutline,
+  MenuFoldOutline, UserOutline,TeamOutline } from '@ant-design/icons-angular/icons';
+
+const icons: IconDefinition[] = [ 
+  AccountBookFill, AlertOutline, AlertFill, 
+  MenuFoldOutline, UserOutline, TeamOutline ];
+
+
 
 
 @NgModule({
@@ -21,13 +38,16 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     NzLayoutModule,
     NzBreadCrumbModule,
     NzAvatarModule,
-    NzIconModule,
     NzFormModule,
     NzInputModule,
     NzButtonModule,
     NzCheckboxModule,
     NzGridModule,
-    NzCardModule
+    NzCardModule,
+    NzDropDownModule,
+    NzBadgeModule,
+    NzAlertModule,
+    NzIconModule.forRoot(icons),
     
     
     
@@ -43,7 +63,10 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     NzButtonModule,
     NzCheckboxModule,
     NzGridModule,
-    NzCardModule
+    NzCardModule,
+    NzDropDownModule,
+    NzBadgeModule,
+    NzAlertModule
   ]
 })
 export class NgzorroModule { }

@@ -1,4 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgzorroModule } from '../ngzorro/ngzorro.module';
+import { FooterComponent } from '../shared/footer/footer.component';
+import { SiderComponent } from '../shared/sider/sider.component';
 
 import { PagesComponent } from './pages.component';
 
@@ -8,7 +12,8 @@ describe('PagesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PagesComponent ]
+      declarations: [ PagesComponent, FooterComponent, SiderComponent ],
+      imports: [NgzorroModule,BrowserAnimationsModule]
     })
     .compileComponents();
   });

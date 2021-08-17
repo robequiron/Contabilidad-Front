@@ -36,7 +36,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>AppComponent</li>
+  <li>SiderComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,11 +62,17 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/app.component.ts</code>
+    <code>src/app/shared/sider/sider.component.ts</code>
 </p>
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
 
 
 <section>
@@ -86,19 +92,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-root</code></td>
+                <td class="col-md-9"><code>app-sider</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./app.component.css</code></td>
+                <td class="col-md-9"><code>./sider.component.css</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./app.component.html</code></td>
+                <td class="col-md-9"><code>./sider.component.html</code></td>
             </tr>
 
 
@@ -126,11 +132,11 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#isCollapsed">isCollapsed</a>
+                                <a href="#_sidebar">_sidebar</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#title">title</a>
+                                <a href="#isCollapsed">isCollapsed</a>
                             </li>
                         </ul>
                     </td>
@@ -144,6 +150,9 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#v">v</a>
@@ -166,15 +175,45 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(_sidebar: <a href="../injectables/SideService.html">SideService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/app.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/sider/sider.component.ts:13</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_sidebar</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SideService.html" target="_self" >SideService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -188,6 +227,45 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/shared/sider/sider.component.ts:17</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -212,8 +290,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/app.component.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/shared/sider/sider.component.ts:20</a></div>
                 </td>
             </tr>
 
@@ -270,6 +348,34 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="_sidebar"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            _sidebar</b>
+                            <a href="#_sidebar"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../injectables/SideService.html" target="_self" >SideService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/sider/sider.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="isCollapsed"></a>
                         <span class="name">
                             <b>
@@ -281,45 +387,12 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
+                            <i>Default value : </i><code>true</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/app.component.ts:14</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="title"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            title</b>
-                            <a href="#title"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>&#x27;ngzorro&#x27;</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/app.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/sider/sider.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -332,47 +405,80 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { NzMenuItemDirective } from &#x27;ng-zorro-antd/menu/menu-item.directive&#x27;;
+import { SideService } from &#x27;src/app/services/side.service&#x27;;
+
 
 @Component({
-  selector: &#x27;app-root&#x27;,
-  templateUrl: &#x27;./app.component.html&#x27;,
-  styleUrls: [&#x27;./app.component.css&#x27;]
+  selector: &#x27;app-sider&#x27;,
+  templateUrl: &#x27;./sider.component.html&#x27;,
+  styleUrls: [&#x27;./sider.component.css&#x27;]
 })
-export class AppComponent {
-  
-  
-  public title &#x3D; &#x27;ngzorro&#x27;;
+export class SiderComponent implements OnInit {
 
-  public isCollapsed &#x3D; false;
+  public isCollapsed &#x3D; true;
 
-  constructor(){}
+  constructor(public _sidebar:SideService) { }
+
+  ngOnInit(): void {
+  }
 
   public v(event:NzMenuItemDirective) {
     console.log(event)
   }
-
-
-
-
-
-
 
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">
-&lt;router-outlet&gt;&lt;/router-outlet&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;logo&quot;&gt;Harena Fuerteventura&lt;/div&gt;
+&lt;ul nz-menu [nzTheme]&#x3D;&quot;_sidebar.theme&quot; [nzInlineIndent]&#x3D;&quot;_sidebar.inlineIndent&quot; nzMode&#x3D;&quot;inline&quot; &gt;
+  &lt;ng-container *ngFor&#x3D;&quot;let side of _sidebar.menuSidebar&quot;&gt;
+    &lt;li nz-submenu nzTitle&#x3D;&quot;{{side.title}}&quot; nzIcon&#x3D;&quot;{{side.icon}}&quot; 
+      [nzDisabled]&#x3D;side.disabled [nzOpen]&#x3D;side.open *ngIf&#x3D;&quot;!side.path&quot;&gt;
+        &lt;ul&gt;
+          &lt;ng-container *ngFor&#x3D;&quot;let item of side.items&quot;&gt;
+            &lt;li nz-menu-item routerLink&#x3D;[item.path] *ngIf&#x3D;&quot;!item.itemsSubmenu&quot; [nzDisabled]&#x3D;item.disabled &gt; {{item.title}} &lt;/li&gt;
+            &lt;li nz-submenu nzTitle&#x3D;&quot;{{item.title}}&quot; *ngIf&#x3D;&quot;item.itemsSubmenu&quot;&gt;
+              &lt;ul&gt;
+                &lt;ng-container *ngFor&#x3D;&quot;let i of item.itemsSubmenu&quot;&gt;
+                  &lt;li nz-menu-item&gt;{{i.title}}&lt;/li&gt;
+                &lt;/ng-container&gt;
+              &lt;/ul&gt;
+            &lt;/li&gt;
+          &lt;/ng-container&gt;
+          
+        &lt;/ul&gt;
+    &lt;/li&gt;
+
+    &lt;li nz-menu-item *ngIf&#x3D;&quot;side.path&quot; &gt; 
+      &lt;i nz-icon nzType&#x3D;&quot;file&quot;&gt;&lt;/i&gt;
+      &lt;span&gt;{{side.title}}&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ng-container&gt;
+  
+
+
+  
+  
+  
+&lt;/ul&gt;
+
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./app.component.css</code>
+                    <code>./sider.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">  
+  .logo {
+    height: 32px;
+    margin: 16px;
+    color: white;
+  }</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -400,10 +506,10 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><router-outlet></router-outlet></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="logo">Harena Fuerteventura</div><ul nz-menu [nzTheme]="_sidebar.theme" [nzInlineIndent]="_sidebar.inlineIndent" nzMode="inline" >  <ng-container *ngFor="let side of _sidebar.menuSidebar">    <li nz-submenu nzTitle="{{side.title}}" nzIcon="{{side.icon}}"       [nzDisabled]=side.disabled [nzOpen]=side.open *ngIf="!side.path">        <ul>          <ng-container *ngFor="let item of side.items">            <li nz-menu-item routerLink=[item.path] *ngIf="!item.itemsSubmenu" [nzDisabled]=item.disabled > {{item.title}} </li>            <li nz-submenu nzTitle="{{item.title}}" *ngIf="item.itemsSubmenu">              <ul>                <ng-container *ngFor="let i of item.itemsSubmenu">                  <li nz-menu-item>{{i.title}}</li>                </ng-container>              </ul>            </li>          </ng-container>                  </ul>    </li>    <li nz-menu-item *ngIf="side.path" >       <i nz-icon nzType="file"></i>      <span>{{side.title}}</span>    </li>  </ng-container>        </ul></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'SiderComponent', 'selector': 'app-sider'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'AppComponent'};
+    var ACTUAL_COMPONENT = {'name': 'SiderComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -438,7 +544,7 @@ export class AppComponent {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'SiderComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

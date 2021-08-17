@@ -36,7 +36,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>AppComponent</li>
+  <li>FooterComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -50,9 +50,6 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -62,9 +59,16 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/app.component.ts</code>
+    <code>src/app/shared/footer/footer.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component footer</p>
+
+    </p>
 
 
 
@@ -86,19 +90,15 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-root</code></td>
+                <td class="col-md-9"><code>app-footer</code></td>
             </tr>
 
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./app.component.css</code></td>
-            </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./app.component.html</code></td>
+                <td class="col-md-9"><code>./footer.component.html</code></td>
             </tr>
 
 
@@ -126,27 +126,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#isCollapsed">isCollapsed</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#title">title</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#v">v</a>
+                                <a href="#textFooter">textFooter</a>
                             </li>
                         </ul>
                     </td>
@@ -156,111 +136,17 @@
 
 
 
+
         </tbody>
     </table>
 </section>
 
-    <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor()</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/app.component.ts:14</a></div>
-                            </td>
-                        </tr>
-
-            </tbody>
-        </table>
-</section>
 
 
 
 
 
-    <section>
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="v"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            v
-                        </b>
-                        <a href="#v"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>v(event: NzMenuItemDirective)</code>
-                </td>
-            </tr>
 
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/app.component.ts:18</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>event</td>
-                                    <td>
-                                            <code>NzMenuItemDirective</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
     <section>
     
         <h3 id="inputs">
@@ -270,39 +156,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="isCollapsed"></a>
+                        <a name="textFooter"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            isCollapsed</b>
-                            <a href="#isCollapsed"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/app.component.ts:14</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="title"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            title</b>
-                            <a href="#title"><span class="icon ion-ios-link"></span></a>
+                            textFooter</b>
+                            <a href="#textFooter"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -314,15 +173,21 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>&#x27;ngzorro&#x27;</code>
+                            <i>Default value : </i><code>&quot;Ant Design ©2020. Desarrollo por Roberto Guerra&quot;</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/app.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/footer/footer.component.ts:12</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Texto para el pie de la página</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -332,48 +197,27 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { NzMenuItemDirective } from &#x27;ng-zorro-antd/menu/menu-item.directive&#x27;;
-
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+/**
+ * Component footer
+ */
 @Component({
-  selector: &#x27;app-root&#x27;,
-  templateUrl: &#x27;./app.component.html&#x27;,
-  styleUrls: [&#x27;./app.component.css&#x27;]
+  selector: &#x27;app-footer&#x27;,
+  templateUrl: &#x27;./footer.component.html&#x27;,
 })
-export class AppComponent {
-  
-  
-  public title &#x3D; &#x27;ngzorro&#x27;;
+export class FooterComponent  {
 
-  public isCollapsed &#x3D; false;
-
-  constructor(){}
-
-  public v(event:NzMenuItemDirective) {
-    console.log(event)
-  }
-
-
-
-
-
-
+  /** Texto para el pie de la página*/
+  public textFooter:string &#x3D; &quot;Ant Design ©2020. Desarrollo por Roberto Guerra&quot;;
 
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">
-&lt;router-outlet&gt;&lt;/router-outlet&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;nz-footer&gt;{{textFooter}}&lt;/nz-footer&gt;</code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./app.component.css</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
-    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -400,10 +244,10 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><router-outlet></router-outlet></div>'
+        var COMPONENT_TEMPLATE = '<div><nz-footer>{{textFooter}}</nz-footer></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'SiderComponent', 'selector': 'app-sider'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'AppComponent'};
+    var ACTUAL_COMPONENT = {'name': 'FooterComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -438,7 +282,7 @@ export class AppComponent {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'FooterComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -1,0 +1,41 @@
+<div class="logo">Harena Fuerteventura</div>
+
+<ul nz-menu [nzTheme]="_sidebar.theme" [nzInlineIndent]="_sidebar.inlineIndent" nzMode="inline" >
+  <ng-container *ngFor="let side of _sidebar.menuSidebar">
+    <ng-container *ngIf="_user.indexRol(this._user.usuario.rol)>=this._user.indexRol(side.rol)">
+    
+    <li nz-submenu nzTitle="{{side.title}}" 
+      [nzDisabled]=side.disabled [nzOpen]=side.open *ngIf="!side.path">
+        <ul>
+          <ng-container *ngFor="let item of side.items">
+            <ng-container *ngIf="_user.indexRol(this._user.usuario.rol)>=this._user.indexRol(item.rol)">
+              <li nz-menu-item [routerLink]="item.path" *ngIf="!item.itemsSubmenu" [nzDisabled]=item.disabled > {{item.title}} </li>
+              <li nz-submenu nzTitle="{{item.title}}" *ngIf="item.itemsSubmenu">
+                <ul>
+                  <ng-container *ngFor="let i of item.itemsSubmenu">
+                    <li nz-menu-item [routerLink]="i.path">{{i.title}}</li>
+                  </ng-container>
+                </ul>
+              </li>
+            </ng-container>
+          </ng-container>
+          
+        </ul>
+    </li>
+
+    <li nz-menu-item *ngIf="side.path" > 
+      <i nz-icon nzType="file"></i>
+      <span>{{side.title}}</span>
+    </li>
+    </ng-container>
+
+
+  </ng-container>
+  
+
+
+  
+  
+  
+</ul>
+

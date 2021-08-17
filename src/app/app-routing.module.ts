@@ -5,13 +5,9 @@ import { PagesComponent } from './pages/pages.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent},
-  {path:'pages', component:PagesComponent},
-
-  {path: '**', pathMatch:'full', redirectTo:'login'}
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+/**
+ * Export AppRoutes
+ */
+ export const APP_ROUTES = RouterModule.forRoot(routes, {useHash:true});

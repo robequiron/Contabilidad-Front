@@ -5,7 +5,7 @@
             
       <!-- Email -->  
       <nz-form-item>
-        <nz-form-control nzErrorTip="El campo no puede ser nulo"  [nzValidateStatus]="error.email" nzHasFeedback>
+        <nz-form-control [nzErrorTip]="error.emailText"  [nzValidateStatus]="error.email" nzHasFeedback>
           <nz-input-group nzPrefixIcon="user">
             <input type="text" nz-input  placeholder="Username" formControlName="email" 
             (focusout)="getEmailValid()"
@@ -16,14 +16,18 @@
 
       <!-- Password -->
       <nz-form-item> 
-        <nz-form-control nzErrorTip="La contraseña no puede ser nula" [nzValidateStatus]='error.password' nzHasFeedback>
+        <nz-form-control [nzErrorTip]="error.passwordText"  [nzValidateStatus]='error.password' nzHasFeedback>
           <nz-input-group nzPrefixIcon="lock">
             <input type="password" nz-input  placeholder="Password" formControlName="password" />
           </nz-input-group>
         </nz-form-control>
       </nz-form-item>
-      
+     
       <div nz-row class="login-form-margin">
+        <!-- Error usuer o password-->
+        <div nz-col [nzSpan]="24" style="margin-bottom: 5px;">
+          <nz-alert nzType="error" nzMessage="Usuario y/o contraseña incorrecta" nzShowIcon *ngIf="error.login"></nz-alert>
+        </div>
 
         <!-- Remember-->  
         <div nz-col [nzSpan]="12">
