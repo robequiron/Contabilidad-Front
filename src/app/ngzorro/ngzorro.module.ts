@@ -15,17 +15,20 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+
 
 
 
 
 // Import what you need. RECOMMENDED. ✔️
 import { AccountBookFill, AlertFill, AlertOutline,
-  MenuFoldOutline, UserOutline,TeamOutline } from '@ant-design/icons-angular/icons';
+  MenuFoldOutline, UserOutline,TeamOutline, SearchOutline, PlusOutline } from '@ant-design/icons-angular/icons';
 
 const icons: IconDefinition[] = [ 
   AccountBookFill, AlertOutline, AlertFill, 
-  MenuFoldOutline, UserOutline, TeamOutline ];
+  MenuFoldOutline, UserOutline, TeamOutline, SearchOutline, PlusOutline ];
 
 
 
@@ -47,6 +50,9 @@ const icons: IconDefinition[] = [
     NzDropDownModule,
     NzBadgeModule,
     NzAlertModule,
+    NzTableModule,
+    NzPopconfirmModule,
+    
     NzIconModule.forRoot(icons),
     
     
@@ -66,7 +72,9 @@ const icons: IconDefinition[] = [
     NzCardModule,
     NzDropDownModule,
     NzBadgeModule,
-    NzAlertModule
+    NzAlertModule,
+    NzTableModule,
+    NzPopconfirmModule
   ]
 })
 export class NgzorroModule { }

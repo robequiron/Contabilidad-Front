@@ -2,6 +2,8 @@ import { Routes, RouterModule, Router } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { PagesComponent } from './pages.component';
 import { LoginGuard } from '../services/login.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UsersComponent } from './users/users.component';
 
 
 
@@ -12,7 +14,7 @@ const pagesRoutes: Routes = [
     //canActivate:[LoginGuardGuard],
     children: [
      // {path:'config', component:ConfigComponent, data:{titulo:"Configuración"}},
-      //{path:'users', component:UsersComponent, data:{titulo:"Usuarios"}},
+      {path:'users', component:UsersComponent, data:{menu:"Configuración",titulo:"Usuarios"}},
       //{path:'user', component:UserComponent, data:{titulo:"Usuario"}},
       //{path:'user/:id', component:UserComponent, data:{titulo:"Edición usuario"}},
       //{path:'grupos', component:GruposComponent, data:{titulo:"Grupos contables"}},
@@ -23,8 +25,8 @@ const pagesRoutes: Routes = [
       //{path:'subcuenta/:id', component:SubcuentaComponent, data:{titulo:"Edición subcuenta contable"}},
       //{path:'cuentas', component:CuentasComponent, data:{titulo:"Cuentas contables"}},
       //{path:'cuenta/:id', component:CuentaComponent, data:{titulo:"Edición cuenta contable"}},
-      {path: 'pages', component:PagesComponent, data:{titulo:"Escritorio"}},
-      { path:'', redirectTo:'/pages', pathMatch:'full'},
+      {path: 'dashboard', component:DashboardComponent},
+      { path:'', redirectTo:'/dashboard', pathMatch:'full'},
     ] 
   },
 ];

@@ -112,7 +112,7 @@ export class LoginComponent implements OnInit {
     )
    this._login.login(user,this.forma.value.remember).subscribe(
      ()=>{
-      this.router.navigate(['/pages']) 
+      this.router.navigate(['/dashboard']) 
      },
      (e)=>{
         if (e.status===400) {

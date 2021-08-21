@@ -16,6 +16,9 @@ import { PagesComponent } from './pages/pages.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SiderComponent } from './shared/sider/sider.component';
 import { PAGES_ROUTES } from './pages/pages.routing';
+import { BreadcrumbComponent } from './shared/breadcrumb/breadcrumb.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { UsersComponent } from './pages/users/users.component';
 
 
 registerLocaleData(es);
@@ -27,6 +30,9 @@ registerLocaleData(es);
     PagesComponent,
     FooterComponent,
     SiderComponent,
+    BreadcrumbComponent,
+    DashboardComponent,
+    UsersComponent,
    
   ],
   imports: [

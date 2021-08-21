@@ -33,7 +33,7 @@ export class SideService {
     {title:"Configuración",icon:"user",open:false, disabled:false, rol:"ADMIN_ROLE",
       items:[
         {title:'Empresa',path:'pages' , disabled:false, rol:"USER_ROLE",},
-        {title:'Impuestos',path:'login' , disabled:false, rol:"USER_ROLE",}
+        {title:'Usuarios',path:'users' , disabled:false, rol:"USER_ROLE",}
       ]
     },
     {title:"Contabilidad",icon:"team",open:false, disabled:false, rol:"USER_ROLE",

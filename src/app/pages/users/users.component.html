@@ -1,0 +1,108 @@
+<div nz-row style="background-color: white;">
+    <div nz-col [nzSpan]="12" style="padding-left: 10px; padding-top: 10px;">
+        <button nz-button nzType="primary">
+            <i nz-icon nzType="plus" nzTheme="outline"></i>
+            <u>I</u>nsertar
+        </button>
+    </div>
+   
+    
+    <div nz-col [nzSpan]="12" style="padding-right: 10px; padding-top: 10px; text-align: right;">
+        <button nz-button nz-dropdown [nzDropdownMenu]="menu4">
+            Opciones
+            <i nz-icon nzType="down"></i>
+          </button>
+        <nz-dropdown-menu #menu4="nzDropdownMenu">
+            <ul nz-menu>
+              <li nz-menu-item (click)="listUsers()">
+                <i nz-icon nzType="printer" nzTheme="fill"></i>
+                Imprimir listado
+              </li>
+            </ul>
+        </nz-dropdown-menu>
+    </div>
+
+    
+    
+    
+    <div nz-col [nzSpan]="24" style="background-color: white; padding: 10px;">
+    
+        <nz-table
+            nzShowSizeChanger
+            [nzBordered]=true
+            [nzTitle]="false ? 'Usuarios' : null"
+            [nzData]="users"
+            [nzFrontPagination]="false"
+            [nzLoading]="loading"
+            [nzTotal]="total"
+            [nzPageSize]="pageSize"
+            [nzPageIndex]="pageIndex"
+            [nzFooter]="true ? textFooter : null"
+            (nzQueryParams)="onQueryParamsChange($event)"
+            >
+            <thead>
+                <tr>
+                <th nzColumnKey="name" [nzSortFn]="true" nzCustomFilter>Nombre
+                    <!-- DropMenu Search name-->
+                        <nz-dropdown-menu #SearchName="nzDropdownMenu">
+                            <div class="ant-table-filter-dropdown " style="padding:10px">
+                                <div class="search-box" >
+                                <input type="text" nz-input placeholder="Nombre del usuario" [(ngModel)]="nameSearch" #iNameSearch (keydown.enter)="search()"/>
+                                <button nz-button nzSize="small" nzType="primary" class="search-button" style="margin-top: 10px; margin-right: 2px;">Buscar</button>
+                                <button nz-button nzSize="small" style="margin-top: 10px;">Limpiar</button>
+                                </div>
+                            </div>
+                        </nz-dropdown-menu>
+                    <!-- ----------------------- -->
+                    <nz-filter-trigger [(nzVisible)]="vSearchName" [nzActive]="nameSearch.length > 0" [nzDropdownMenu]="SearchName" title="Alt+b">
+                        <i nz-icon nzType="search" ></i>
+                    </nz-filter-trigger>
+                </th>
+
+                <th nzColumnKey="rol" [nzFilters]="filterRol" [nzFilterFn]="true">Rol</th>
+
+                <th nzColumnKey="email" [nzSortFn]="true" nzCustomFilter>Email
+
+                    <!-- DropMenu Search name-->
+                    <nz-dropdown-menu #SearchEmail="nzDropdownMenu">
+                        <div class="ant-table-filter-dropdown " style="padding:10px">
+                            <div class="search-box" >
+                            <input type="text" nz-input placeholder="Email del usuario" [(ngModel)]="emailSearch" #iEmailSearch (keydown.enter)="search()"/>
+                            <button nz-button nzSize="small" nzType="primary" class="search-button" style="margin-top: 10px; margin-right: 2px;">Buscar</button>
+                            <button nz-button nzSize="small" style="margin-top: 10px;">Limpiar</button>
+                            </div>
+                        </div>
+                    </nz-dropdown-menu>
+                    <!-- ----------------------- -->
+                    <nz-filter-trigger [(nzVisible)]="vSearchEmail" [nzActive]="emailSearch.length > 0" [nzDropdownMenu]="SearchEmail" title="Alt+b">
+                        <i nz-icon nzType="search" ></i>
+                    </nz-filter-trigger>                
+                </th>
+
+                <th>Acciones</th>
+                </tr>
+            </thead>
+
+
+            <!-- Body -->
+            <tbody>
+                <tr *ngFor="let data of users">
+                <td>{{ data.name }}</td>
+                <td>{{ data.rol }}</td>
+                <td>{{ data.email }}</td>
+                <td>
+                    <a style="margin-right: 10px;">Editar</a>
+                    <a nz-popconfirm nzPopconfirmTitle="¿Seguro de eliminar el registro?" (nzOnConfirm)="deleteRow(data.id)">Eliminar</a>
+                </td>
+                </tr>
+            </tbody>
+            <!-- End body -->
+
+        </nz-table>
+
+    </div>
+</div>
+
+
+
+
