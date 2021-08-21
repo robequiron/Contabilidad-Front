@@ -44,7 +44,7 @@ const doc:any = new jsPDF();
   doc.setFontSize(11)
   doc.setTextColor(100)
   doc.text(textCabecera, 14, 28)
-
+    
   doc.autoTable({
     head: head,
     body: data,
