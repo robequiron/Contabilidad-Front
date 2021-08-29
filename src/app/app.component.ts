@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NzMenuItemDirective } from 'ng-zorro-antd/menu/menu-item.directive';
+import { AppService } from './services/app.service';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,25 @@ import { NzMenuItemDirective } from 'ng-zorro-antd/menu/menu-item.directive';
 export class AppComponent {
   
   
-  public title = 'ngzorro';
+  public title = 'Harena Fuerteventura';
 
   public isCollapsed = false;
 
-  constructor(){}
+  constructor(private _app:AppService){
+    this.loadTypeNif();
+  }
+
+
+  private loadTypeNif() {
+    this._app.loadTypeNif().subscribe(
+      (resp:any)=>{
+        console.log(resp);
+      }
+    )
+  }
+
 
   public v(event:NzMenuItemDirective) {
-    console.log(event)
   }
 
 

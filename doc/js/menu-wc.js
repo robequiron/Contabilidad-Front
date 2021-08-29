@@ -52,41 +52,48 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </a>
                         <ul class="links collapse " ${ isNormalMode ? 'id="modules-links"' : 'id="xs-modules-links"' }>
                             <li class="link">
-                                <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
+                                <a href="modules/AppModule.html" data-type="entity-link" >AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-e2d62b6113b762e239a757818d1d44ce"' : 'data-target="#xs-components-links-module-AppModule-e2d62b6113b762e239a757818d1d44ce"' }>
+                                            'data-target="#components-links-module-AppModule-9bab21bcbc3c789b78d88f1d955f7c83"' : 'data-target="#xs-components-links-module-AppModule-9bab21bcbc3c789b78d88f1d955f7c83"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-e2d62b6113b762e239a757818d1d44ce"' :
-                                            'id="xs-components-links-module-AppModule-e2d62b6113b762e239a757818d1d44ce"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-9bab21bcbc3c789b78d88f1d955f7c83"' :
+                                            'id="xs-components-links-module-AppModule-9bab21bcbc3c789b78d88f1d955f7c83"' }>
                                             <li class="link">
-                                                <a href="components/AppComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
+                                                <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AppComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/FooterComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">FooterComponent</a>
+                                                <a href="components/BreadcrumbComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >BreadcrumbComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/LoginComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">LoginComponent</a>
+                                                <a href="components/DashboardComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DashboardComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/PagesComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">PagesComponent</a>
+                                                <a href="components/FooterComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >FooterComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/SiderComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">SiderComponent</a>
+                                                <a href="components/LoginComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >LoginComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/PagesComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >PagesComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/SiderComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >SiderComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/UserComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >UserComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/UsersComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >UsersComponent</a>
                                             </li>
                                         </ul>
                                     </li>
                             </li>
                             <li class="link">
-                                <a href="modules/NgzorroModule.html" data-type="entity-link">NgzorroModule</a>
+                                <a href="modules/NgzorroModule.html" data-type="entity-link" >NgzorroModule</a>
                             </li>
                 </ul>
                 </li>
@@ -99,7 +106,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
-                                <a href="classes/Usuario.html" data-type="entity-link">Usuario</a>
+                                <a href="classes/Usuario.html" data-type="entity-link" >Usuario</a>
                             </li>
                         </ul>
                     </li>
@@ -112,10 +119,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </div>
                             <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
                                 <li class="link">
-                                    <a href="injectables/LoginService.html" data-type="entity-link">LoginService</a>
+                                    <a href="injectables/LoginService.html" data-type="entity-link" >LoginService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/SideService.html" data-type="entity-link">SideService</a>
+                                    <a href="injectables/SideService.html" data-type="entity-link" >SideService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/UserslistService.html" data-type="entity-link" >UserslistService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/UsersService.html" data-type="entity-link" >UsersService</a>
                                 </li>
                             </ul>
                         </li>
@@ -128,7 +141,20 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="guards-links"' : 'id="xs-guards-links"' }>
                             <li class="link">
-                                <a href="guards/LoginGuard.html" data-type="entity-link">LoginGuard</a>
+                                <a href="guards/LoginGuard.html" data-type="entity-link" >LoginGuard</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#interfaces-links"' :
+                            'data-target="#xs-interfaces-links"' }>
+                            <span class="icon ion-md-information-circle-outline"></span>
+                            <span>Interfaces</span>
+                            <span class="icon ion-ios-arrow-down"></span>
+                        </div>
+                        <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
+                            <li class="link">
+                                <a href="interfaces/ErrorValidate.html" data-type="entity-link" >ErrorValidate</a>
                             </li>
                         </ul>
                     </li>

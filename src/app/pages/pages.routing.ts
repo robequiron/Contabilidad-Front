@@ -4,6 +4,8 @@ import { PagesComponent } from './pages.component';
 import { LoginGuard } from '../services/login.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
+import { UserComponent } from './users/user.component';
+import { ConfigComponent } from './config/config.component';
 
 
 
@@ -14,9 +16,13 @@ const pagesRoutes: Routes = [
     //canActivate:[LoginGuardGuard],
     children: [
      // {path:'config', component:ConfigComponent, data:{titulo:"Configuración"}},
-      {path:'users', component:UsersComponent, data:{menu:"Configuración",titulo:"Usuarios"}},
-      //{path:'user', component:UserComponent, data:{titulo:"Usuario"}},
-      //{path:'user/:id', component:UserComponent, data:{titulo:"Edición usuario"}},
+      // Usuarios
+      {path:'users', component:UsersComponent, data:{menu:"Configuración",titulo:"Consulta usuarios"}},
+      {path:'user', component:UserComponent, data:{menu:"Configuración",titulo:"Nuevo usuario"}},
+      {path:'user/:id', component:UserComponent, data:{menu:"Configuración",titulo:"Editar usuario"}},
+      {path:'config', component:ConfigComponent, data:{menu:"Configuración", titulo:"General"}},
+
+      
       //{path:'grupos', component:GruposComponent, data:{titulo:"Grupos contables"}},
       //{path:'grupo/:id', component:GrupoComponent, data:{titulo:"Edición grupo contable"}},
       //{path:'subgrupos', component:SubgruposComponent, data:{titulo:"Subgrupos contables"}},

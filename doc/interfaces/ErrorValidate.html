@@ -1,0 +1,387 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ngzorro documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/readthedocs.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ngzorro documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li
+  >
+  ErrorValidate</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/services/users.service.ts</code>
+        </p>
+
+
+
+
+
+
+            <section>
+    <h3 id="inputs">Indexable</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <code>[s: string]:        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/services/users.service.ts:14</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient, HttpParams } from &#x27;@angular/common/http&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
+import { AsyncValidator, FormControl, FormGroup, ValidationErrors } from &#x27;@angular/forms&#x27;;
+import { rejects } from &#x27;assert&#x27;;
+import { NzTableQueryParams } from &#x27;ng-zorro-antd/table&#x27;;
+import { of } from &#x27;rxjs&#x27;;
+import { ajax } from &#x27;rxjs/ajax&#x27;;
+import { Observable } from &#x27;rxjs/internal/Observable&#x27;;
+import { catchError, map } from &#x27;rxjs/operators&#x27;;
+import { environment } from &#x27;src/environments/environment.prod&#x27;;
+import { Usuario } from &#x27;../models/usuario.model&#x27;;
+
+
+interface ErrorValidate {
+  [s:string] : boolean
+}
+
+
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class UsersService {
+
+  /**
+   * Usuario
+   */
+  public user:Usuario &#x3D; new Usuario(null, null, null);
+
+  /**
+   * Token user
+   */
+  public token:string;
+  
+
+  constructor(private http: HttpClient) { 
+    this.token &#x3D; localStorage.getItem(&#x27;token&#x27;);
+  }
+  
+
+   /**
+   * Get users
+   * 
+   * Obtener usuarios
+   * 
+   * @param name Name user 
+   * @param email Email user
+   * @example
+   * getUsers(test,test@test.com)
+   */
+    public getUsers(pageIndex:number, pageSize: number, sortField:string, sortOrder:string , name:string, email:string,filters: Array&lt;{ key: string; value: string[] }&gt;) {
+
+      let params &#x3D; new HttpParams()
+      .append(&#x27;page&#x27;, &#x60;${pageIndex}&#x60;)
+      .append(&#x27;pageSize&#x27;, &#x60;${pageSize}&#x60;)
+      .append(&#x27;sortField&#x27;, &#x60;${sortField}&#x60;)
+      .append(&#x27;sortOrder&#x27;, &#x60;${sortOrder}&#x60;)
+      .append(&#x27;name&#x27;, &#x60;${name}&#x60;)
+      .append(&#x27;email&#x27;, &#x60;${email}&#x60;);
+      
+        filters.forEach(filter &#x3D;&gt; {
+          filter.value.forEach(value &#x3D;&gt; {
+            params &#x3D; params.append(filter.key, value);
+          });
+        });
+      
+
+
+      let token &#x3D; localStorage.getItem(&#x27;token&#x27;);
+      let url &#x3D; environment.URL_SERVICIOS + &#x60;/users?token&#x3D;${token}&#x60;;
+      return this.http.get(url, {params});
+    }
+
+
+    /**
+     * Get user
+     * 
+     * Obtenemos el usuario por el identificador
+     * 
+     * @param _id Identify user
+     * @returns Observable object user
+     */
+    public getUser(_id:string):Observable&lt;Usuario&gt; {
+      
+      let url &#x3D; environment.URL_SERVICIOS + &#x60;/users/${_id}?token&#x3D;${this.token}&#x60;;
+
+      return this.http.get(url).pipe(
+        map&lt;any, Usuario&gt;(
+          (resp:any)&#x3D;&gt;{
+            return resp.usuario as Usuario;
+          }
+        )
+      );
+    }
+
+   /**
+   * Get userss
+   * 
+   * Obtener usuarios
+   * 
+   * @param name Name user 
+   * @param email Email user
+   * @example
+   * getUsers(test,test@test.com)
+   */
+  public getUsersList(sortField:string, sortOrder:string , name:string, email:string,filters: Array&lt;{ key: string; value: string[] }&gt;) {
+
+    let params &#x3D; new HttpParams()
+    .append(&#x27;sortField&#x27;, &#x60;${sortField}&#x60;)
+    .append(&#x27;sortOrder&#x27;, &#x60;${sortOrder}&#x60;)
+    .append(&#x27;name&#x27;, &#x60;${name}&#x60;)
+    .append(&#x27;email&#x27;, &#x60;${email}&#x60;);
+    
+      filters.forEach(filter &#x3D;&gt; {
+        filter.value.forEach(value &#x3D;&gt; {
+          params &#x3D; params.append(filter.key, value);
+        });
+      });
+    
+
+    let token &#x3D; localStorage.getItem(&#x27;token&#x27;);
+    let url &#x3D; environment.URL_SERVICIOS + &#x60;/users/list?token&#x3D;${token}&#x60;;
+    return this.http.get(url, {params});
+  }
+
+  /**
+   * Check email
+   * 
+   * Comprobamos que el email no este duplicado
+   * 
+   * @param formUsuario 
+   * @returns 
+   */
+  public checkEmail(formUsuario:FormGroup){
+
+    let email:string &#x3D; formUsuario.controls[&#x27;email&#x27;].value;
+    let _id :string &#x3D; formUsuario.controls[&#x27;_id&#x27;].value
+    
+  
+    let params &#x3D; new HttpParams()
+    .append(&#x27;email&#x27;, &#x60;${email}&#x60;)
+    .append(&#x27;_id&#x27;,&#x60;${_id}&#x60;)
+    let token &#x3D; localStorage.getItem(&#x27;token&#x27;);
+    let url &#x3D; environment.URL_SERVICIOS + &#x60;/users/duplicateEmail?token&#x3D;${token}&#x60;;
+
+
+    return this.http.get(url, {params}).pipe(
+      map(
+        (resp:any)&#x3D;&gt;{return resp.existe}
+      )
+    )
+  }
+
+  
+  /**
+   * Función para validar el email con la validación asincrona desde el formulario Reactive
+   * 
+   * @param control Input email
+   * @returns Promesa
+   */
+  public  duplicateEmail(control:FormControl):Promise&lt;any&gt; | Observable&lt;any&gt; {
+    
+    if (!control.value) {
+      return Promise.resolve(null)
+    } 
+    let token &#x3D; localStorage.getItem(&#x27;token&#x27;);
+    let url &#x3D; environment.URL_SERVICIOS + &#x60;/users/duplicateEmail?token&#x3D;${token}&amp;email&#x3D;${control.value}&#x60;;
+    
+    return new Promise( (resolve,reject)&#x3D;&gt;{
+     
+        const obs$ &#x3D; ajax.getJSON(url).subscribe(
+          (data:any)&#x3D;&gt;{
+            if(data.existe) {
+              resolve({existe:true})
+            } else {
+              resolve(null)
+            }
+          } 
+        );
+
+       
+
+    })
+  
+    
+    
+  }
+
+
+  /**
+   * Creamos el usuario
+   * 
+   * @param user Usuario
+   * @returns Observable con el usuario creado
+   */
+  public save(user:Usuario, _id:String):Observable&lt;Usuario&gt;{
+    
+    //Convertimos a minuscula para que estén todos en minusculas
+    user.email &#x3D; user.email.toLocaleLowerCase();
+    //Convertirmo a mayusculas los nombres
+    user.name &#x3D; user.name.toUpperCase();
+    user._id &#x3D; _id;
+    
+    if (user._id) {
+      let url &#x3D; environment.URL_SERVICIOS + &#x60;/users/${user._id}?token&#x3D;${this.token}&#x60;;
+      console.log(url)
+      return this.http.put(url,user).pipe(
+        map&lt;any, Usuario&gt;(
+          (resp:any)&#x3D;&gt;{
+            return resp.usuario as Usuario
+          }
+        )
+      );
+    } else  {
+      let url &#x3D; environment.URL_SERVICIOS + &#x60;/users?token&#x3D;${this.token}&#x60;;
+      console.log(url)
+      return this.http.post(url,user).pipe(
+        map&lt;any,Usuario&gt;( 
+          (resp:any)&#x3D;&gt;{return resp.usuario as Usuario}
+        )
+      )
+    }
+    
+  }
+
+
+}
+
+
+</code></pre>
+    </div>
+</div>
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'ErrorValidate.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       
+       <script type="module" src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

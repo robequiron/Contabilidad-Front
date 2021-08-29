@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
         <link rel="stylesheet" href="../styles/readthedocs.css">
     </head>
     <body>
@@ -39,7 +40,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>LoginService</li>
+  <li >LoginService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -60,11 +61,12 @@
             <code>src/app/services/login.service.ts</code>
         </p>
 
+
             <p class="comment">
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Services login </p>
+                <p>Services login</p>
 
             </p>
 
@@ -84,11 +86,15 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#token">token</a>
+                                <a href="#ROLES" >ROLES</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#usuario">usuario</a>
+                                <a href="#token" >token</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#usuario" >usuario</a>
                             </li>
                         </ul>
                     </td>
@@ -104,27 +110,31 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#checkToken">checkToken</a>
+                                <a href="#checkToken" >checkToken</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getEmail">getEmail</a>
+                                <a href="#getEmail" >getEmail</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getLocalStorage">getLocalStorage</a>
+                                <a href="#getLocalStorage" >getLocalStorage</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getRemember">getRemember</a>
+                                <a href="#getRemember" >getRemember</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#isLogin">isLogin</a>
+                                <a href="#indexRol" >indexRol</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#login">login</a>
+                                <a href="#isLogin" >isLogin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#login" >login</a>
                             </li>
                         </ul>
                     </td>
@@ -149,7 +159,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/services/login.service.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/services/login.service.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -205,10 +215,8 @@
                 <td class="col-md-4">
                     <a name="checkToken"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            checkToken
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>checkToken</b></span>
                         <a href="#checkToken"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -223,15 +231,15 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="79"
-                            class="link-to-prism">src/app/services/login.service.ts:79</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">src/app/services/login.service.ts:84</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Comprobamos la veracidad del token  </p>
+                    <div class="io-description"><p>Comprobamos la veracidad del token</p>
 </div>
 
                     <div>
@@ -254,10 +262,8 @@
                 <td class="col-md-4">
                     <a name="getEmail"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            getEmail
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>getEmail</b></span>
                         <a href="#getEmail"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -272,8 +278,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="120"
-                            class="link-to-prism">src/app/services/login.service.ts:120</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="125"
+                            class="link-to-prism">src/app/services/login.service.ts:125</a></div>
                 </td>
             </tr>
 
@@ -303,10 +309,8 @@
                 <td class="col-md-4">
                     <a name="getLocalStorage"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            getLocalStorage
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>getLocalStorage</b></span>
                         <a href="#getLocalStorage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -321,8 +325,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="97"
-                            class="link-to-prism">src/app/services/login.service.ts:97</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="102"
+                            class="link-to-prism">src/app/services/login.service.ts:102</a></div>
                 </td>
             </tr>
 
@@ -346,10 +350,8 @@
                 <td class="col-md-4">
                     <a name="getRemember"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            getRemember
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>getRemember</b></span>
                         <a href="#getRemember"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -364,8 +366,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="108"
-                            class="link-to-prism">src/app/services/login.service.ts:108</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="113"
+                            class="link-to-prism">src/app/services/login.service.ts:113</a></div>
                 </td>
             </tr>
 
@@ -393,12 +395,88 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="indexRol"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>indexRol</b></span>
+                        <a href="#indexRol"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>indexRol(rol: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="135"
+                            class="link-to-prism">src/app/services/login.service.ts:135</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retorna el indice del rol de usuario</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>rol</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Rol del usuario</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Indice del rol</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="isLogin"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            isLogin
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>isLogin</b></span>
                         <a href="#isLogin"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -413,8 +491,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="71"
-                            class="link-to-prism">src/app/services/login.service.ts:71</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/services/login.service.ts:76</a></div>
                 </td>
             </tr>
 
@@ -444,10 +522,8 @@
                 <td class="col-md-4">
                     <a name="login"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            login
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>login</b></span>
                         <a href="#login"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -455,15 +531,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>login(usuario: <a href="../classes/Usuario.html">Usuario</a>, recordar: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                    <code>login(usuario: <a href="../classes/Usuario.html" target="_self">Usuario</a>, recordar: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/services/login.service.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/services/login.service.ts:48</a></div>
                 </td>
             </tr>
 
@@ -537,77 +613,113 @@
 </section>
             <section>
     
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ROLES"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>ROLES</b></span>
+                        <a href="#ROLES"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="token"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            token</b>
-                            <a href="#token"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>    <code>String[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;USER_ROLE&#x27;,&#x27;ADMIN_ROLE&#x27;,&#x27;SUPER_ROLE&#x27;]</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/services/login.service.ts:28</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/services/login.service.ts:23</a></div>
-                            </td>
-                        </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Token</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Roles</p>
 </div>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="token"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>token</b></span>
+                        <a href="#token"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="usuario"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            usuario</b>
-                            <a href="#usuario"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="../classes/Usuario.html" target="_self" >Usuario</a></code>
-
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/services/login.service.ts:23</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/login.service.ts:18</a></div>
-                            </td>
-                        </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Token</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuario"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>usuario</b></span>
+                        <a href="#usuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Instanciamos un usuario</p>
-</div>
+                        <i>Type : </i>        <code><a href="../classes/Usuario.html" target="_self" >Usuario</a></code>
+
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/login.service.ts:18</a></div>
+                        </td>
+                    </tr>
 
-            </tbody>
-        </table>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Instanciamos un usuario</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
 </section>
 
     </div>
@@ -637,6 +749,11 @@ export class LoginService {
    * Token
    */
   public token:string;
+
+  /**
+    * Roles
+    */
+   public  ROLES:String[] &#x3D;[&#x27;USER_ROLE&#x27;,&#x27;ADMIN_ROLE&#x27;,&#x27;SUPER_ROLE&#x27;];
 
   /**
    * Construtor
@@ -737,6 +854,15 @@ export class LoginService {
     return localStorage.getItem(&#x27;email&#x27;) || &#x27;&#x27;;
   }
 
+  /**
+   * Retorna el indice del rol de usuario
+   * 
+   * @param rol Rol del usuario
+   * @returns Indice del rol
+   */
+  public indexRol(rol:String):number {
+    return this.ROLES.indexOf(rol)
+  }
 
 
 
@@ -781,9 +907,9 @@ export class LoginService {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
+       
+       <script type="module" src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

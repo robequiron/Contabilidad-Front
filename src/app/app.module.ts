@@ -19,6 +19,8 @@ import { PAGES_ROUTES } from './pages/pages.routing';
 import { BreadcrumbComponent } from './shared/breadcrumb/breadcrumb.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { UsersComponent } from './pages/users/users.component';
+import { UserComponent } from './pages/users/user.component';
+import { ConfigComponent } from './pages/config/config.component';
 
 
 registerLocaleData(es);
@@ -33,6 +35,8 @@ registerLocaleData(es);
     BreadcrumbComponent,
     DashboardComponent,
     UsersComponent,
+    UserComponent,
+    ConfigComponent,
    
   ],
   imports: [

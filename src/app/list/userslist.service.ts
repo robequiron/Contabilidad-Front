@@ -20,7 +20,7 @@ export class UserslistService {
    * @param head Títulos cabecera tabla [['Columna1', 'Columna2', 'Columna3', 'Columna4']]
    * @returns  
    */
-  public getes(title:string,textCabecera:string,head:[string[]],data:any) {
+  public getListadoUsuarios(title:string,textCabecera:string,textoPie:string,head:[string[]],data:any) {
     //Posición en Y de la tabla
     let tableY:number = 50;
     
@@ -55,9 +55,9 @@ const doc:any = new jsPDF();
     }
   })
   //Final del listado
-  doc.text("Usuario", 14, doc.lastAutoTable.finalY + 5)
-
-doc.save('Cierre de caja.pdf')
+  doc.text(textoPie, 14, doc.lastAutoTable.finalY + 5)
+  //Titulo de descarga del fichero
+  doc.save('Cierre de caja.pdf')
 
 
 

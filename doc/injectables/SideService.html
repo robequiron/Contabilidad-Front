@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
         <link rel="stylesheet" href="../styles/readthedocs.css">
     </head>
     <body>
@@ -39,7 +40,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>SideService</li>
+  <li >SideService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -59,6 +60,7 @@
         <p class="comment">
             <code>src/app/services/side.service.ts</code>
         </p>
+
 
             <p class="comment">
                 <h3>Description</h3>
@@ -84,19 +86,19 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#inlineIndent">inlineIndent</a>
+                                <a href="#inlineIndent" >inlineIndent</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#menuSidebar">menuSidebar</a>
+                                <a href="#menuSidebar" >menuSidebar</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#theme">theme</a>
+                                <a href="#theme" >theme</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#width">width</a>
+                                <a href="#width" >width</a>
                             </li>
                         </ul>
                     </td>
@@ -133,175 +135,171 @@
 
             <section>
     
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="inlineIndent"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            inlineIndent</b>
-                            <a href="#inlineIndent"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/services/side.service.ts:26</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Sangrar px del elemento del menú en línea en cada nivel. Valor por defecto 24</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="menuSidebar"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            menuSidebar</b>
-                            <a href="#menuSidebar"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inlineIndent"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>inlineIndent</b></span>
+                        <a href="#inlineIndent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code>[]</code>
-
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/services/side.service.ts:26</a></div>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>[
-    {title:&quot;Configuración&quot;,icon:&quot;user&quot;,open:false, disabled:false, rol:&quot;USER_ROL&quot;,
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Sangrar px del elemento del menú en línea en cada nivel. Valor por defecto 24</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuSidebar"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>menuSidebar</b></span>
+                        <a href="#menuSidebar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {title:&quot;Configuración&quot;,icon:&quot;user&quot;,open:false, disabled:false, rol:&quot;ADMIN_ROLE&quot;,
       items:[
-        {title:&#x27;Empresa&#x27;,path:&#x27;/pages&#x27; , disabled:false, rol:&quot;USER_ROL&quot;,},
-        {title:&#x27;Impuestos&#x27;,path:&#x27;login&#x27; , disabled:false, rol:&quot;USER_ROL&quot;,}
+        {title:&#x27;Empresa&#x27;,path:&#x27;pages&#x27; , disabled:false, rol:&quot;USER_ROLE&quot;,},
+        {title:&#x27;Usuarios&#x27;,path:&#x27;users&#x27; , disabled:false, rol:&quot;USER_ROLE&quot;,}
       ]
     },
-    {title:&quot;Contabilidad&quot;,icon:&quot;team&quot;,open:false, disabled:false, rol:&quot;USER_ROL&quot;,
+    {title:&quot;Contabilidad&quot;,icon:&quot;team&quot;,open:false, disabled:false, rol:&quot;USER_ROLE&quot;,
     items:[
-      {title:&#x27;Bill&#x27;,path:&#x27;/pages&#x27; , disabled:false, rol:&quot;USER_ROL&quot;,},
-      {title:&#x27;Tony&#x27;,path:&#x27;login&#x27; , disabled:false, rol:&quot;USER_ROL&quot;,},
-      {title:&#x27;Submenu&#x27;, rol:&quot;USER_ROL&quot;,
+      {title:&#x27;Bill&#x27;,path:&#x27;/pages&#x27; , disabled:false, rol:&quot;USER_ROLE&quot;,},
+      {title:&#x27;Tony&#x27;,path:&#x27;login&#x27; , disabled:false, rol:&quot;USER_ROLE&quot;,},
+      {title:&#x27;Submenu&#x27;, rol:&quot;USER_ROLE&quot;,
         itemsSubmenu: [
           {title:&#x27;Bill&#x27;,path:&#x27;/pages&#x27;},
           {title:&#x27;Tony&#x27;,path:&#x27;login&#x27;}
         ]}
     ]
     },
-    {title:&quot;File&quot;,icon:&quot;file&quot;,path:&quot;login&quot;, rol:&quot;USER_ROL&quot;,}
+    {title:&quot;File&quot;,icon:&quot;file&quot;,path:&quot;login&quot;, rol:&quot;USER_ROLE&quot;,}
   ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/services/side.service.ts:32</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/services/side.service.ts:32</a></div>
-                            </td>
-                        </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Menu sidebar
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Menu sidebar
 rol : SUPER_ROLE, ADMIN_ROLE, USER_ROLE</p>
 </div>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="theme"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>theme</b></span>
+                        <a href="#theme"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="theme"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            theme</b>
-                            <a href="#theme"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;dark&#x27;</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/services/side.service.ts:16</a></div>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>&#x27;dark&#x27;</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/services/side.service.ts:16</a></div>
-                            </td>
-                        </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Color del menu 
-Valor light | dark </p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Color del menu
+Valor light | dark</p>
 </div>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="width"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>width</b></span>
+                        <a href="#width"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="width"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            width</b>
-                            <a href="#width"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>200</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/services/side.service.ts:21</a></div>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>200</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/services/side.service.ts:21</a></div>
-                            </td>
-                        </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Ancho del menu Mínimo 200 máximo 300</p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Ancho del menu Mínimo 200 máximo 300</p>
 </div>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 </section>
 
     </div>
@@ -340,29 +338,29 @@ export class SideService {
    * rol : SUPER_ROLE, ADMIN_ROLE, USER_ROLE
    */
   public menuSidebar &#x3D; [
-    {title:&quot;Configuración&quot;,icon:&quot;user&quot;,open:false, disabled:false, rol:&quot;USER_ROL&quot;,
+    {title:&quot;Configuración&quot;,icon:&quot;user&quot;,open:false, disabled:false, rol:&quot;ADMIN_ROLE&quot;,
       items:[
-        {title:&#x27;Empresa&#x27;,path:&#x27;/pages&#x27; , disabled:false, rol:&quot;USER_ROL&quot;,},
-        {title:&#x27;Impuestos&#x27;,path:&#x27;login&#x27; , disabled:false, rol:&quot;USER_ROL&quot;,}
+        {title:&#x27;Empresa&#x27;,path:&#x27;pages&#x27; , disabled:false, rol:&quot;USER_ROLE&quot;,},
+        {title:&#x27;Usuarios&#x27;,path:&#x27;users&#x27; , disabled:false, rol:&quot;USER_ROLE&quot;,}
       ]
     },
-    {title:&quot;Contabilidad&quot;,icon:&quot;team&quot;,open:false, disabled:false, rol:&quot;USER_ROL&quot;,
+    {title:&quot;Contabilidad&quot;,icon:&quot;team&quot;,open:false, disabled:false, rol:&quot;USER_ROLE&quot;,
     items:[
-      {title:&#x27;Bill&#x27;,path:&#x27;/pages&#x27; , disabled:false, rol:&quot;USER_ROL&quot;,},
-      {title:&#x27;Tony&#x27;,path:&#x27;login&#x27; , disabled:false, rol:&quot;USER_ROL&quot;,},
-      {title:&#x27;Submenu&#x27;, rol:&quot;USER_ROL&quot;,
+      {title:&#x27;Bill&#x27;,path:&#x27;/pages&#x27; , disabled:false, rol:&quot;USER_ROLE&quot;,},
+      {title:&#x27;Tony&#x27;,path:&#x27;login&#x27; , disabled:false, rol:&quot;USER_ROLE&quot;,},
+      {title:&#x27;Submenu&#x27;, rol:&quot;USER_ROLE&quot;,
         itemsSubmenu: [
           {title:&#x27;Bill&#x27;,path:&#x27;/pages&#x27;},
           {title:&#x27;Tony&#x27;,path:&#x27;login&#x27;}
         ]}
     ]
     },
-    {title:&quot;File&quot;,icon:&quot;file&quot;,path:&quot;login&quot;, rol:&quot;USER_ROL&quot;,}
+    {title:&quot;File&quot;,icon:&quot;file&quot;,path:&quot;login&quot;, rol:&quot;USER_ROLE&quot;,}
   ]
   constructor() { }
 
   
-
+  
 
 
 }
@@ -405,9 +403,9 @@ export class SideService {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
+       
+       <script type="module" src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

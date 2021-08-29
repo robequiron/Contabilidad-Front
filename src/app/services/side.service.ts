@@ -32,7 +32,7 @@ export class SideService {
   public menuSidebar = [
     {title:"Configuración",icon:"user",open:false, disabled:false, rol:"ADMIN_ROLE",
       items:[
-        {title:'Empresa',path:'pages' , disabled:false, rol:"USER_ROLE",},
+        {title:'General',path:'config' , disabled:false, rol:"ADMIN_ROLE",},
         {title:'Usuarios',path:'users' , disabled:false, rol:"USER_ROLE",}
       ]
     },

@@ -10,7 +10,9 @@
   color: #1890ff;
 }
 
-
+.layout {
+  min-height: 100vh;
+}
 
 nz-header {
   background: #fff;

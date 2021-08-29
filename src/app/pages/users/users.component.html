@@ -1,6 +1,6 @@
-<div nz-row style="background-color: white;">
+<div nz-row  style="background-color: white;">
     <div nz-col [nzSpan]="12" style="padding-left: 10px; padding-top: 10px;">
-        <button nz-button nzType="primary">
+        <button nz-button nzType="primary" (click)="add();">
             <i nz-icon nzType="plus" nzTheme="outline"></i>
             <u>I</u>nsertar
         </button>
@@ -91,7 +91,7 @@
                 <td>{{ data.rol }}</td>
                 <td>{{ data.email }}</td>
                 <td>
-                    <a style="margin-right: 10px;">Editar</a>
+                    <a style="margin-right: 10px;" (click)="edit(data._id)">Editar</a>
                     <a nz-popconfirm nzPopconfirmTitle="¿Seguro de eliminar el registro?" (nzOnConfirm)="deleteRow(data.id)">Eliminar</a>
                 </td>
                 </tr>

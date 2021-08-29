@@ -17,9 +17,11 @@ import { IconDefinition } from '@ant-design/icons-angular';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
-
-
-
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 
 
 // Import what you need. RECOMMENDED. ✔️
@@ -52,7 +54,11 @@ const icons: IconDefinition[] = [
     NzAlertModule,
     NzTableModule,
     NzPopconfirmModule,
-    
+    NzNotificationModule,
+    NzSpaceModule,
+    NzTabsModule,
+    NzSelectModule, 
+    NzSkeletonModule,
     NzIconModule.forRoot(icons),
     
     
@@ -74,7 +80,12 @@ const icons: IconDefinition[] = [
     NzBadgeModule,
     NzAlertModule,
     NzTableModule,
-    NzPopconfirmModule
+    NzPopconfirmModule,
+    NzSpaceModule,
+    NzTabsModule,
+    NzNotificationModule,
+    NzSelectModule,
+    NzSkeletonModule 
   ]
 })
 export class NgzorroModule { }
