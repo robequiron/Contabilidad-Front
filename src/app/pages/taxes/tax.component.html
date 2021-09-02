@@ -1,0 +1,58 @@
+
+<div nz-row style="background-color: white; height: auto;">
+    <nz-tabset style="width: 100%; padding: 15px;"
+            nzSize="small" 
+            nzType="line" 
+            nzHideAll="false"  
+            nzSelectedIndex="0"
+            nzTabPosition="top"
+            >
+        <nz-tab nzTitle="Datos" >
+          <form nz-form style="padding: 15px;" [formGroup]="formTax" (ngSubmit)="save()">
+                <!-- Identificador del usuario -->
+                <nz-form-item>
+                    <nz-form-label [nzSm]="3" [nzXs]="24"  nzFor="_id">Id</nz-form-label>
+                    <nz-form-control [nzSm]="8" [nzXs]="24" nzErrorTip="El identificador no es válido!">
+                        <input nz-input  id="_id"  formControlName="_id"/>
+                    </nz-form-control>
+                </nz-form-item>
+                 <!-- Email-->
+                 <nz-form-item>
+                    <nz-form-label [nzSm]="3" [nzXs]="24" nzRequired nzFor="email">Código</nz-form-label>
+                    <nz-form-control [nzSm]="8" [nzXs]="24" [nzErrorTip]="errorCode">
+                      <input nz-input  id="code" #codeInput formControlName="code" (keyup.enter)="getCode()" (focusout)="getCodeValid()" type="number" placeholder="Código del impuesto" step="1" max="9" min="1"/>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <!-- Nombre del usuario-->
+                <nz-form-item>
+                  <nz-form-label [nzSm]="3" [nzXs]="24" nzRequired nzFor="name">Nombre</nz-form-label>
+                  <nz-form-control [nzSm]="8" [nzXs]="24" [nzErrorTip]="errorName">
+                    <input nz-input  id="name" formControlName="name" #nameInput type="text" (focusout)="getNameValid()" placeholder="Nombre del impuesto"/>
+                  </nz-form-control>
+                </nz-form-item>
+                
+                <nz-form-item nz-row>
+                  <nz-form-control [nzSpan]="12" style="text-align: center;">
+                    <button nz-button  nzType="primary" style="margin-right: 5px;" [disabled]="!formTax.valid">{{tax._id ? "Modificar" : "Grabar"}}</button>
+                    <button nz-button  nzType="default" (click)="exit()">Salir</button>
+                  </nz-form-control>
+                </nz-form-item>
+          </form>
+        </nz-tab>
+        <nz-tab nzTitle="Tipos">
+            <app-percentages [percentages]="tax.percentage" ></app-percentages>
+        </nz-tab>
+    </nz-tabset>
+</div>
+
+
+
+<pre>
+    Estado del formulario {{formTax.valid}}
+
+    Estado : {{formTax.status}}
+    <br>
+    Input: {{formTax.value| json }}
+
+</pre>

@@ -19,7 +19,7 @@ export class TypeNif {
     public name:string;
 
     /**
-     * Si el tipo de documento de valida.
+     * Si el tipo de documento es de validación
      */
     public valida:boolean;
 

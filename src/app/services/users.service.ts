@@ -29,6 +29,7 @@ export class UsersService {
   private token:string;
   
   /**
+   * Constructor
    * 
    * @param http Servicio de angular para las peticiones HTTP.
    */
@@ -187,7 +188,7 @@ export class UsersService {
 
 
   /**
-   * Creamos el usuario
+   * Creamos o modificamos el usuario 
    * 
    * @param user Usuario
    * @returns Observable con el usuario creado
@@ -202,7 +203,6 @@ export class UsersService {
     
     if (user._id) {
       let url = environment.URL_SERVICIOS + `/users/${user._id}?token=${this.token}`;
-      console.log(url)
       return this.http.put(url,user).pipe(
         map<any, Usuario>(
           (resp:any)=>{
@@ -212,7 +212,6 @@ export class UsersService {
       );
     } else  {
       let url = environment.URL_SERVICIOS + `/users?token=${this.token}`;
-      console.log(url)
       return this.http.post(url,user).pipe(
         map<any,Usuario>( 
           (resp:any)=>{return resp.usuario as Usuario}

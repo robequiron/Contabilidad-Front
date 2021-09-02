@@ -40,7 +40,7 @@
                 </nz-form-item>
                 <!-- Rol -->
                 <nz-form-item>
-                  <nz-form-label [nzSm]="3" [nzXs]="24" nzRequired nzFor="email">Rol de usuario</nz-form-label>
+                  <nz-form-label [nzSm]="3" [nzXs]="24" nzRequired nzFor="rol">Rol de usuario</nz-form-label>
                   <nz-form-control [nzSm]="8" [nzXs]="24" nzErrorTip="El rol de usuario es obligatorio">
                     <nz-select formControlName="rol" id=rol>
                       <nz-option *ngFor="let rol of _login.ROLES" [nzValue]="rol" [nzLabel]="rol"></nz-option>

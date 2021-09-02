@@ -14,7 +14,7 @@
           </button>
         <nz-dropdown-menu #menu4="nzDropdownMenu">
             <ul nz-menu>
-              <li nz-menu-item (click)="listUsers()">
+              <li nz-menu-item (click)="listTaxes()">
                 <i nz-icon nzType="printer" nzTheme="fill"></i>
                 Imprimir listado
               </li>
@@ -31,7 +31,7 @@
             nzShowSizeChanger
             [nzBordered]=true
             [nzTitle]="false ? 'Usuarios' : null"
-            [nzData]="users"
+            [nzData]="taxes"
             [nzFrontPagination]="false"
             [nzLoading]="loading"
             [nzTotal]="total"
@@ -43,6 +43,8 @@
             >
             <thead>
                 <tr>
+                <th nzColumnKey="rol" nzWidth="15%">Código</th>
+
                 <th nzColumnKey="name" [nzSortFn]="true" nzCustomFilter>Nombre
                     <!-- DropMenu Search name-->
                         <nz-dropdown-menu #SearchName="nzDropdownMenu">
@@ -59,38 +61,17 @@
                         <i nz-icon nzType="search" ></i>
                     </nz-filter-trigger>
                 </th>
-
-                <th nzColumnKey="rol" [nzFilters]="filterRol" [nzFilterFn]="true">Rol</th>
-
-                <th nzColumnKey="email" [nzSortFn]="true" nzCustomFilter>Email
-
-                    <!-- DropMenu Search name-->
-                    <nz-dropdown-menu #SearchEmail="nzDropdownMenu">
-                        <div class="ant-table-filter-dropdown " style="padding:10px">
-                            <div class="search-box" >
-                            <input type="text" nz-input placeholder="Email del usuario" [(ngModel)]="emailSearch" #iEmailSearch (keydown.enter)="search()"/>
-                            <button nz-button nzSize="small" nzType="primary" class="search-button" style="margin-top: 10px; margin-right: 2px;">Buscar</button>
-                            <button nz-button nzSize="small" style="margin-top: 10px;">Limpiar</button>
-                            </div>
-                        </div>
-                    </nz-dropdown-menu>
-                    <!-- ----------------------- -->
-                    <nz-filter-trigger [(nzVisible)]="vSearchEmail" [nzActive]="emailSearch.length > 0" [nzDropdownMenu]="SearchEmail" title="Alt+b">
-                        <i nz-icon nzType="search" ></i>
-                    </nz-filter-trigger>                
-                </th>
-
-                <th>Acciones</th>
+                <th >Acciones</th>
                 </tr>
             </thead>
 
 
             <!-- Body -->
             <tbody>
-                <tr *ngFor="let data of users">
+                <tr *ngFor="let data of taxes">
+                <td>{{ data.code }}</td>
                 <td>{{ data.name }}</td>
-                <td>{{ data.rol }}</td>
-                <td>{{ data.email }}</td>
+                
                 <td>
                     <a style="margin-right: 10px;" (click)="edit(data._id)">Editar</a>
                     <nz-divider nzType="vertical"></nz-divider>
@@ -104,6 +85,7 @@
 
     </div>
 </div>
+
 
 
 

@@ -6,6 +6,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user.component';
 import { ConfigComponent } from './config/config.component';
+import { TaxesComponent } from './taxes/taxes.component';
+import { TaxComponent } from './taxes/tax.component';
 
 
 
@@ -17,11 +19,11 @@ const pagesRoutes: Routes = [
     children: [
      // {path:'config', component:ConfigComponent, data:{titulo:"Configuración"}},
       // Usuarios
-      {path:'users', component:UsersComponent, data:{menu:"Configuración",titulo:"Consulta usuarios"}},
-      {path:'user', component:UserComponent, data:{menu:"Configuración",titulo:"Nuevo usuario"}},
-      {path:'user/:id', component:UserComponent, data:{menu:"Configuración",titulo:"Editar usuario"}},
       {path:'config', component:ConfigComponent, data:{menu:"Configuración", titulo:"General"}},
-
+      {path:'tax/:id', component:TaxComponent, data:{menu:"Configuración", submenu:"Parametros", titulo:"Impuesto"}},
+      {path:'taxes', component:TaxesComponent, data:{menu:"Configuración",submenu:"Parametros", titulo:"Consulta impuestos"}},
+      {path:'user/:id', component:UserComponent, data:{menu:"Configuración",titulo:"Editar usuario"}},
+      {path:'users', component:UsersComponent, data:{menu:"Configuración",titulo:"Consulta usuarios"}},
       
       //{path:'grupos', component:GruposComponent, data:{titulo:"Grupos contables"}},
       //{path:'grupo/:id', component:GrupoComponent, data:{titulo:"Edición grupo contable"}},

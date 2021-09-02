@@ -15,5 +15,10 @@ export class Config {
      */
     public nif:string
 
+    /**
+     * Tipo de nif
+     */
+    public codeNif:number;
+
     constructor(){}
 }

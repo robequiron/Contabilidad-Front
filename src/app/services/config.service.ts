@@ -35,7 +35,7 @@ export class ConfigService {
    */
   public getConfig():Observable<Config> {
 
-    let url = environment.URL_SERVICIOS + `/config?token${this.token}`;
+    let url = environment.URL_SERVICIOS + `/config?token=${this.token}`;
     return this.http.get(url).pipe(
       map<any, Config>(
         (resp:any)=>{
@@ -43,6 +43,20 @@ export class ConfigService {
         }
       )
     );
+
+
+  }
+
+  /**
+   * 
+   * @param config Config
+   * @param _id 
+   * @returns 
+   */
+  public save(config:Config, _id:string):Observable<any> {
+
+    let url = environment.URL_SERVICIOS + `/config/${_id}?token=${this.token}`;
+    return this.http.put(url,config).pipe();
 
 
   }

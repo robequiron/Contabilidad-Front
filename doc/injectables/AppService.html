@@ -29,17 +29,18 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content component">
+               <div class="content injectable">
                    <div class="content-data">
 
 
 
 
+
+
+
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li
-  >
-  AppComponent</li>
+  <li>Injectables</li>
+  <li >AppService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -49,74 +50,29 @@
         <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
-        </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/app.component.ts</code>
-</p>
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/services/app.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Servicios app</p>
+
+            </p>
 
 
 
-
-
-
-<section>
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
-        <tbody>
-
-
-
-
-
-
-
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-root</code></td>
-            </tr>
-
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./app.component.css</code></td>
-            </tr>
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./app.component.html</code></td>
-            </tr>
-
-
-
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
-
-    <section>
+            <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -129,12 +85,12 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#isCollapsed" >isCollapsed</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#token" >token</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#title" >title</a>
+                                <a href="#TYPENIF" >TYPENIF</a>
                             </li>
                         </ul>
                     </td>
@@ -150,7 +106,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#v" >v</a>
+                                <a href="#loadTypeNif" >loadTypeNif</a>
                             </li>
                         </ul>
                     </td>
@@ -164,30 +120,63 @@
     </table>
 </section>
 
-    <section>
+            <section>
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/app.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/services/app.service.ts:24</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Servicio de angular para las peticiones HTTP</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
 
-
-
-
-
-    <section>
+            <section>
     
     <h3 id="methods">
         Methods
@@ -196,74 +185,51 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="v"></a>
+                    <a name="loadTypeNif"></a>
                     <span class="name">
                         <span class="modifier">Public</span>
-                        <span ><b>v</b></span>
-                        <a href="#v"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>loadTypeNif</b></span>
+                        <a href="#loadTypeNif"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>v(event: NzMenuItemDirective)</code>
+                    <code>loadTypeNif()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/app.component.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/services/app.service.ts:41</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Obtenemos los tipos de números de identificación fiscal</p>
+</div>
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>event</td>
-                                    <td>
-                                            <code>NzMenuItemDirective</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/TypeNif.html" target="_self" >Observable&lt;TypeNif[]&gt;</a></code>
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Obsevable typeNif[]</p>
+
                     </div>
                 </td>
             </tr>
         </tbody>
     </table>
 </section>
-    <section>
+            <section>
     
     <h3 id="inputs">
         Properties
@@ -272,37 +238,11 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="isCollapsed"></a>
+                    <a name="token"></a>
                     <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>isCollapsed</b></span>
-                        <a href="#isCollapsed"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>false</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/app.component.ts:14</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="title"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>title</b></span>
-                        <a href="#title"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Private</span>
+                        <span ><b>token</b></span>
+                        <a href="#token"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -312,96 +252,120 @@
 
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/services/app.service.ts:24</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Token</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TYPENIF"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>TYPENIF</b></span>
+                        <a href="#TYPENIF"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;Harena Fuerteventura&#x27;</code>
+                        <i>Type : </i>        <code><a href="../classes/TypeNif.html" target="_self" >TypeNif[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/app.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/app.service.ts:19</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Tipos de Nif</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
 </section>
 
-</div>
+    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { NzMenuItemDirective } from &#x27;ng-zorro-antd/menu/menu-item.directive&#x27;;
-
-@Component({
-  selector: &#x27;app-root&#x27;,
-  templateUrl: &#x27;./app.component.html&#x27;,
-  styleUrls: [&#x27;./app.component.css&#x27;]
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Type } from &#x27;@angular/compiler&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { map } from &#x27;rxjs/internal/operators/map&#x27;;
+import { environment } from &#x27;src/environments/environment.prod&#x27;;
+import { TypeNif } from &#x27;../models/typenif.model&#x27;;
+/**
+ * Servicios app
+ */
+@Injectable({
+  providedIn: &#x27;root&#x27;
 })
+export class AppService {
 
-export class AppComponent {
-  
-  public title &#x3D; &#x27;Harena Fuerteventura&#x27;;
+  /**
+   * Tipos de Nif
+   */
+  public TYPENIF:TypeNif[]&#x3D;[];
 
-  public isCollapsed &#x3D; false;
+  /**
+   * Token
+   */
+  private token:string;
 
-  constructor(){}
+  /**
+   * Constructor
+   * 
+   * @param http Servicio de angular para las peticiones HTTP
+   */
 
-  public v(event:NzMenuItemDirective) {}
+  constructor(private http:HttpClient) {
+    this.token &#x3D; localStorage.getItem(&#x27;token&#x27;);
+   }
 
-
+  /**
+   * Obtenemos los tipos de números de identificación fiscal
+   * 
+   * @returns Obsevable typeNif[]
+   */
+  public loadTypeNif():Observable&lt;TypeNif[]&gt; {
+    let url &#x3D; environment.URL_SERVICIOS + &#x60;/typenif?token&#x3D;${this.token}&#x60;;
+    return this.http.get(url).pipe(
+      map&lt;any, TypeNif[]&gt;(
+        (resp:any)&#x3D;&gt;{
+          return resp.typeNif as TypeNif[];
+        }
+      )
+    )
+  }
 }
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">
-&lt;router-outlet&gt;&lt;/router-outlet&gt;</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./app.component.css</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
-        </div>
-    </div>
-
-    
 </div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><router-outlet></router-outlet></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'SiderComponent', 'selector': 'app-sider'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UsersComponent', 'selector': 'app-users'}];
-    var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'AppComponent'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
 
 
 
@@ -430,8 +394,8 @@ export class AppComponent {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppComponent.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

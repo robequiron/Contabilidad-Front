@@ -11,7 +11,7 @@
           <form nz-form style="padding: 15px;" [formGroup]="formGeneral" (ngSubmit)="save()">
                 <!-- Identificador del usuario -->
                 <nz-form-item>
-                    <nz-form-label [nzSm]="3" [nzXs]="24"  nzFor="_id">Id</nz-form-label>
+                    <nz-form-label [nzSm]="4" [nzXs]="24"  nzFor="_id">Id</nz-form-label>
                     <nz-form-control [nzSm]="8" [nzXs]="24" nzErrorTip="El identificador no es válido!">
                         <input nz-input  id="_id" disabled formControlName="_id"/>
                     </nz-form-control>
@@ -19,9 +19,25 @@
                 </nz-form-item>
                 <!-- Nombre del usuario-->
                 <nz-form-item>
-                  <nz-form-label [nzSm]="3" [nzXs]="24" nzRequired nzFor="name">Nombre</nz-form-label>
+                  <nz-form-label [nzSm]="4" [nzXs]="24" nzRequired nzFor="typeNif">Nombre de la empresa</nz-form-label>
                   <nz-form-control [nzSm]="12" [nzXs]="24" nzErrorTip="El nombre no es válido!">
                     <input nz-input  id="name" formControlName="name" #nameInput type="text" placeholder="Nombre de la empresa principal"/>
+                  </nz-form-control>
+                  
+                </nz-form-item>
+
+                <!-- Nif -->
+                <nz-form-item>
+                  <nz-form-label [nzSm]="4" [nzXs]="24" nzRequired nzFor="email">NIF/CIF/Passporte</nz-form-label>
+                  <nz-form-control [nzSm]="5" [nzXs]="24" nzErrorTip="El rol de usuario es obligatorio">
+                    <nz-select formControlName="codeNif" id=codeNif (ngModelChange)="checknif()">
+                      <ng-container *ngFor="let code of _appServices.TYPENIF">
+                        <nz-option *ngIf="code.valida"  [nzValue]="code.code" [nzLabel]="code.name" ></nz-option>
+                      </ng-container>
+                    </nz-select>    
+                  </nz-form-control>
+                  <nz-form-control [nzSm]="7" [nzXs]="24" nzErrorTip="El Nif/Cif no es válido!" style="padding-left: 10px;">
+                    <input nz-input  id="nif" formControlName="nif"  type="text" placeholder="Número de identificación fiscal" (focusout)="checknif()"/>
                   </nz-form-control>
                 </nz-form-item>
                 

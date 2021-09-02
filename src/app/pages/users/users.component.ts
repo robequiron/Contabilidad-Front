@@ -81,7 +81,7 @@ export class UsersComponent implements OnInit, OnDestroy {
   public pageSize:number = 10;
   
   /**
-   * Número de página
+   * Número de página actual
    */
   public pageIndex:number = 1;
   /**

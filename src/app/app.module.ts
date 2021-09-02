@@ -21,6 +21,9 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { UsersComponent } from './pages/users/users.component';
 import { UserComponent } from './pages/users/user.component';
 import { ConfigComponent } from './pages/config/config.component';
+import { TaxesComponent } from './pages/taxes/taxes.component';
+import { TaxComponent } from './pages/taxes/tax.component';
+import { PercentagesComponent } from './pages/taxes/percentages.component';
 
 
 registerLocaleData(es);
@@ -37,6 +40,9 @@ registerLocaleData(es);
     UsersComponent,
     UserComponent,
     ConfigComponent,
+    TaxesComponent,
+    TaxComponent,
+    PercentagesComponent,
    
   ],
   imports: [
