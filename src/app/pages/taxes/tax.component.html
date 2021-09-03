@@ -1,10 +1,10 @@
-
+<nz-spin nzTip="Cargando datos del formulario..." [nzSpinning]="loadForm">  
 <div nz-row style="background-color: white; height: auto;">
     <nz-tabset style="width: 100%; padding: 15px;"
             nzSize="small" 
             nzType="line" 
             nzHideAll="false"  
-            nzSelectedIndex="0"
+            nzSelectedIndex="1"
             nzTabPosition="top"
             >
         <nz-tab nzTitle="Datos" >
@@ -41,10 +41,11 @@
           </form>
         </nz-tab>
         <nz-tab nzTitle="Tipos">
-            <app-percentages [percentages]="tax.percentage" ></app-percentages>
+            <app-percentages [tax]="tax" *ngIf="!loadForm"></app-percentages>
         </nz-tab>
     </nz-tabset>
 </div>
+</nz-spin>
 
 
 

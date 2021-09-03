@@ -24,7 +24,7 @@ export class Taxes {
     /**
      * Array con los distintos porcentajes del impuesto
      */
-    percentage:Percentage[];
+    percentages:Percentage[];
     
     /**
      * Constructor

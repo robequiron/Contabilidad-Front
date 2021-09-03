@@ -1,13 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Percentage } from 'src/app/models/percentage.model';
+import { Taxes } from 'src/app/models/taxes.model';
 
 
-interface ItemData {
-  id: string;
-  name: string;
-  age: number;
-  address: string;
-}
 
 @Component({
   selector: 'app-percentages',
@@ -16,55 +11,76 @@ interface ItemData {
 })
 export class PercentagesComponent implements OnInit {
 
-  @Input() percentages:Percentage;
+  @Input() tax:Taxes;
 
 
+  editCache: { [key: number]: { edit: boolean; data: Percentage } } = {};
+  listOfData: Percentage[] = [];
+  
+  
+  constructor() {}
 
-  editCache: { [key: string]: { edit: boolean; data: ItemData } } = {};
-  listOfData: ItemData[] = [];
-
-  startEdit(id: string): void {
-    this.editCache[id].edit = true;
-  }
-
-  cancelEdit(id: string): void {
-    const index = this.listOfData.findIndex(item => item.id === id);
-    this.editCache[id] = {
-      data: { ...this.listOfData[index] },
-      edit: false
-    };
-  }
-
-  saveEdit(id: string): void {
-    const index = this.listOfData.findIndex(item => item.id === id);
-    Object.assign(this.listOfData[index], this.editCache[id].data);
-    this.editCache[id].edit = false;
-  }
-
-  updateEditCache(): void {
-    this.listOfData.forEach(item => {
-      this.editCache[item.id] = {
-        edit: false,
-        data: { ...item }
-      };
-    });
-  }
-
+  /**
+   * Constructor
+   */
   ngOnInit(): void {
-    console.log(this.percentages)
+    console.log(this.tax)
 
 
-    const data = [];
-    for (let i = 0; i < 100; i++) {
+    const data = this.tax.percentages;
+    /*for (let i = 0; i < 1; i++) {
       data.push({
         id: `${i}`,
         name: `Edrward ${i}`,
         age: 32,
         address: `London Park no. ${i}`
       });
-    }
+    }*/
     this.listOfData = data;
     this.updateEditCache();
   }
+
+  public add(){
+    
+  }
+
+
+
+  startEdit(id: string): void {
+   
+    this.editCache[id].edit = true;
+  }
+   
+  cancelEdit(id: number): void {
+    const index = this.listOfData.findIndex(item => item.percentage=== id);
+    this.editCache[id] = {
+      data: { ...this.listOfData[index] },
+      edit: false
+    };
+  }
+
+  onChange(result: Date): void {
+    console.log('onChange: ', result);
+  }
+
+  saveEdit(id: number): void {
+    
+    const index = this.listOfData.findIndex(item => item.percentage === id);
+    Object.assign(this.listOfData[index], this.editCache[id].data);
+    this.editCache[id].edit = false;
+  }
+
+  updateEditCache(): void {
+    
+    this.listOfData.forEach(item => {
+      this.editCache[item.percentage] = {
+        edit: false,
+        data: { ...item }
+      };
+    }); 
+
+    console.log(this.editCache)
+  }
+
 
 }

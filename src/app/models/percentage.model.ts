@@ -17,7 +17,7 @@ export class Percentage {
     /**
      * Fecha de se inicia la aplicación del impuesto
      */
-    dateInt:Date;
+    dateInit:Date;
 
     /**
      * Fecha que finaliza la aplicación del impuesto

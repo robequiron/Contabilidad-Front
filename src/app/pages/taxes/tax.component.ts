@@ -37,6 +37,13 @@ export class TaxComponent implements OnInit {
   public errorName:string="";
 
   /**
+   * Estado de carga del formulario
+   */
+  public loadForm:boolean = true;
+
+  valor2="wdwd"
+
+  /**
    * Decorador obtención propiedades de la directiva nameInput
    */
   @ViewChild('nameInput', {static:false}) nameInput: ElementRef;
@@ -57,6 +64,10 @@ export class TaxComponent implements OnInit {
         (resp)=>{
           if(resp.id!='nuevo') {
              this.load(resp.id);
+          } else {
+            setTimeout(() => {
+              this.loadForm = false;
+            }, 800);
           }
         }
       )
@@ -153,6 +164,7 @@ export class TaxComponent implements OnInit {
           name: this.tax.name,
         })
         this.formTax.controls['code'].disable();
+        this.loadForm = false;
       }
     )
   }
@@ -179,9 +191,9 @@ export class TaxComponent implements OnInit {
     this._taxesServices.save(this.tax,this.tax._id).subscribe(
       (tax:Taxes)=>{
         if(tax._id && this.tax._id) {
-          this._notification.info('Crear', 'Impuesto creado correctamente');
-        } else {
           this._notification.info('Modificar', 'Impuesto modificado correctmante');
+        } else {
+          this._notification.info('Crear', 'Impuesto creado correctamente');
         }
         this.formTax.controls['_id'].setValue(tax._id);
         this.formTax.controls['code'].disable();
