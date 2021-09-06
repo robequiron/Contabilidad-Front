@@ -21,6 +21,11 @@ export class TaxesService {
   public token:string;
 
   /**
+   * Object tax
+   */
+  public tax:Taxes = new Taxes();
+
+  /**
    * 
    * @param http Servicio de angular para las peticiones HTTP
    */
@@ -71,6 +76,7 @@ export class TaxesService {
     return this.http.get(url)
     .pipe(
       map<any, Taxes>((resp:any)=>{
+          this.tax = resp.tax;
           return resp.tax as Taxes
       })
     );
@@ -105,6 +111,7 @@ export class TaxesService {
       return this.http.put(url,tax).pipe(
         map<any, Taxes>(
           (resp:any)=>{
+            this.tax = resp.tax;
             return resp.tax as Taxes;
           }
         )
@@ -114,6 +121,7 @@ export class TaxesService {
       return this.http.post(url,tax).pipe(
         map<any,Taxes>(
           (resp:any)=>{
+            this.tax = resp.tax;
             return resp.tax as Taxes;
           }
         )

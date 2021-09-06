@@ -4,7 +4,7 @@
             nzSize="small" 
             nzType="line" 
             nzHideAll="false"  
-            nzSelectedIndex="1"
+            nzSelectedIndex="0"
             nzTabPosition="top"
             >
         <nz-tab nzTitle="Datos" >
@@ -16,7 +16,7 @@
                         <input nz-input  id="_id"  formControlName="_id"/>
                     </nz-form-control>
                 </nz-form-item>
-                 <!-- Email-->
+                 <!-- Codigo -->
                  <nz-form-item>
                     <nz-form-label [nzSm]="3" [nzXs]="24" nzRequired nzFor="email">Código</nz-form-label>
                     <nz-form-control [nzSm]="8" [nzXs]="24" [nzErrorTip]="errorCode">
@@ -41,7 +41,7 @@
           </form>
         </nz-tab>
         <nz-tab nzTitle="Tipos">
-            <app-percentages [tax]="tax" *ngIf="!loadForm"></app-percentages>
+            <app-percentages  *ngIf="!loadForm"></app-percentages>
         </nz-tab>
     </nz-tabset>
 </div>

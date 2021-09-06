@@ -63,6 +63,7 @@ export class TaxComponent implements OnInit {
       this.activeRouter.params.subscribe(
         (resp)=>{
           if(resp.id!='nuevo') {
+             this._taxesServices.tax = new Taxes();
              this.load(resp.id);
           } else {
             setTimeout(() => {
@@ -173,6 +174,7 @@ export class TaxComponent implements OnInit {
    * Creamos el formulario 
    */
   public create():void{
+    
     this.formTax = this.fb.group({
       _id:[''],
       code: ['', [Validators.required, Validators.max(9), Validators.pattern("^[0-9]")]],
@@ -191,12 +193,15 @@ export class TaxComponent implements OnInit {
     this._taxesServices.save(this.tax,this.tax._id).subscribe(
       (tax:Taxes)=>{
         if(tax._id && this.tax._id) {
-          this._notification.info('Modificar', 'Impuesto modificado correctmante');
+          this._notification.info('Modificar', 'Impuesto modificado correctamante');
         } else {
           this._notification.info('Crear', 'Impuesto creado correctamente');
         }
         this.formTax.controls['_id'].setValue(tax._id);
         this.formTax.controls['code'].disable();
+      },
+      ()=>{
+        this._notification.error('Error', 'Existe un error al actualizar los tipos impositivos');
       }
     )
 
@@ -206,12 +211,15 @@ export class TaxComponent implements OnInit {
    * Obtenemos el último código disponible y si el código introducido ya existe carga los datos del impuesto
    */
   public getCode() {
+   
+
     let controlCode = this.formTax.get('code');
     this.errorCode="";
     controlCode.setErrors(null);
+
     
     //Obtenemos el último código disponible
-    if(controlCode.value==='') {
+    if(!controlCode.value) {
       this._taxesServices.getLastCode().subscribe(
         (resp:number)=>{
           controlCode.setValue(resp + 1);

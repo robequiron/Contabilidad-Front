@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import {  NZ_I18N } from 'ng-zorro-antd/i18n';
 import { es_ES } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import es from '@angular/common/locales/es';
@@ -24,7 +24,6 @@ import { ConfigComponent } from './pages/config/config.component';
 import { TaxesComponent } from './pages/taxes/taxes.component';
 import { TaxComponent } from './pages/taxes/tax.component';
 import { PercentagesComponent } from './pages/taxes/percentages.component';
-
 
 registerLocaleData(es);
 
@@ -59,4 +58,8 @@ registerLocaleData(es);
   providers: [{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+ 
+
+}

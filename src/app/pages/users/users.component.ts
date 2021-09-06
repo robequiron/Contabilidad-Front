@@ -124,8 +124,7 @@ export class UsersComponent implements OnInit, OnDestroy {
 
 
   /**
-   * Ciclo de vida del componenete Lifecycle hooks
-   * @ignore
+   * Directiva ciclo de vida del component - Primera ejecución (Lifecycle hooks)
    */
   ngOnInit(): void {
     this.filter.push({key:"rol", value: ["USER_ROLE"]})
