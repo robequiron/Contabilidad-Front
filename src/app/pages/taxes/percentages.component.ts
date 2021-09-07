@@ -19,10 +19,9 @@ export class PercentagesComponent implements OnInit {
   /**
    * Decorador de propiedades. Datos recibidos del padres. Objecto tax
    */
-  //@Input() tax:Taxes;
+  @Input() tax:Taxes;
 
 
-  public tax:Taxes;
 
   /**
    * Decorador obtención de las propiedades de la directiva inputName
@@ -71,11 +70,9 @@ export class PercentagesComponent implements OnInit {
    * Directiva ciclo de vida del component - Primera ejecución (Lifecycle hooks)
    */
   ngOnInit(): void {
-    this.tax = this._taxesServices.tax;
-    if (this.tax._id) {
+    console.log(this.tax._id)
       this.load();
       this.updateEditCache();
-    }
   }
 
   /**

@@ -4,7 +4,7 @@
             nzSize="small" 
             nzType="line" 
             nzHideAll="false"  
-            nzSelectedIndex="0"
+            [(nzSelectedIndex)]="SelectedIndex"
             nzTabPosition="top"
             >
         <nz-tab nzTitle="Datos" >
@@ -41,7 +41,7 @@
           </form>
         </nz-tab>
         <nz-tab nzTitle="Tipos">
-            <app-percentages  *ngIf="!loadForm"></app-percentages>
+            <app-percentages [tax]="tax" *ngIf="!loadPercentage"></app-percentages>
         </nz-tab>
     </nz-tabset>
 </div>

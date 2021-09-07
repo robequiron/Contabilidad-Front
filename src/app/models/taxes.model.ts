@@ -29,7 +29,9 @@ export class Taxes {
     /**
      * Constructor
      */
-    constructor(){}
+    constructor(){ 
+        this.percentages = [];
+       }
 
 
 }

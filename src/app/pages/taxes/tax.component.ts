@@ -41,7 +41,15 @@ export class TaxComponent implements OnInit {
    */
   public loadForm:boolean = true;
 
-  valor2="wdwd"
+  /**
+   * Carga de los tipos de porcentajes
+   */
+  public loadPercentage:boolean= true;
+
+  /**
+   * Pestaña seleccionada
+   */
+  public SelectedIndex = 0;
 
   /**
    * Decorador obtención propiedades de la directiva nameInput
@@ -63,11 +71,11 @@ export class TaxComponent implements OnInit {
       this.activeRouter.params.subscribe(
         (resp)=>{
           if(resp.id!='nuevo') {
-             this._taxesServices.tax = new Taxes();
              this.load(resp.id);
           } else {
             setTimeout(() => {
               this.loadForm = false;
+              this.loadPercentage = false;
             }, 800);
           }
         }
@@ -82,17 +90,24 @@ export class TaxComponent implements OnInit {
     setTimeout(()=>{
       this.tax._id ? this.nameInput.nativeElement.focus() : this.codeInput.nativeElement.focus(); 
     },800)
+    
+    
   }
 
   @HostListener( 'window:keydown', ['$event']) onKeyDown(e:KeyboardEvent) {
     if (e.code==="Escape") {
+      this.SelectedIndex = 0;
+      this.loadPercentage = true;
       if (this.tax._id) {
         this.tax = new Taxes();
+        this.tax.percentages = [];
         this.create();
         setTimeout(() => {
           this.codeInput.nativeElement.focus();
+          this.loadPercentage = false;
         }, 800);
       } else {
+        this.loadPercentage = false;
         if (this.formTax.controls['name'].value) {
           this._modal.confirm({
             nzTitle:'<b>No ha guardado los datos. ¿Desea salir sin guardar?',
@@ -135,7 +150,7 @@ export class TaxComponent implements OnInit {
         return;
       }
     }
-
+    this.getCode();
   }
 
   public getNameValid():void {
@@ -166,6 +181,7 @@ export class TaxComponent implements OnInit {
         })
         this.formTax.controls['code'].disable();
         this.loadForm = false;
+        this.loadPercentage = false;
       }
     )
   }
@@ -185,20 +201,25 @@ export class TaxComponent implements OnInit {
     this.formTax.getRawValue();
   }
 
-  public save(){
+  /**
+   * Creamos o modificamos el impuesto
+   */
+  public save():void {
     this.tax._id = this.formTax.controls['_id'].value;
     this.tax.code = this.formTax.controls['code'].value;
     this.tax.name = this.formTax.controls['name'].value;
-
+    this.loadPercentage = true;
     this._taxesServices.save(this.tax,this.tax._id).subscribe(
       (tax:Taxes)=>{
         if(tax._id && this.tax._id) {
           this._notification.info('Modificar', 'Impuesto modificado correctamante');
         } else {
           this._notification.info('Crear', 'Impuesto creado correctamente');
+          this.tax._id = tax._id;
         }
         this.formTax.controls['_id'].setValue(tax._id);
         this.formTax.controls['code'].disable();
+        this.loadPercentage = false;
       },
       ()=>{
         this._notification.error('Error', 'Existe un error al actualizar los tipos impositivos');
@@ -210,14 +231,12 @@ export class TaxComponent implements OnInit {
   /**
    * Obtenemos el último código disponible y si el código introducido ya existe carga los datos del impuesto
    */
-  public getCode() {
+  public getCode():void {
    
-
     let controlCode = this.formTax.get('code');
     this.errorCode="";
     controlCode.setErrors(null);
 
-    
     //Obtenemos el último código disponible
     if(!controlCode.value) {
       this._taxesServices.getLastCode().subscribe(
@@ -226,6 +245,7 @@ export class TaxComponent implements OnInit {
         }
       )
     } else {
+      this.loadPercentage = true;
       //Si el código ya existe cargamos los datos directamente
       this._taxesServices.getTaxes(1,10,'code','ascend',null,[{key:'code',value:[controlCode.value]}]).subscribe(
         (resp:any)=>{
@@ -238,6 +258,7 @@ export class TaxComponent implements OnInit {
             })
             controlCode.disable();
             this.nameInput.nativeElement.focus();
+            this.loadPercentage = false;
           } 
         }
       );
