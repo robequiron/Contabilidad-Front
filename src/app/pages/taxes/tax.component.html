@@ -41,7 +41,7 @@
           </form>
         </nz-tab>
         <nz-tab nzTitle="Tipos">
-            <app-percentages [tax]="tax" *ngIf="!loadPercentage"></app-percentages>
+            <app-percentages [tax]="tax" [tabSelect]="SelectedIndex" *ngIf="!loadPercentage"></app-percentages>
         </nz-tab>
     </nz-tabset>
 </div>

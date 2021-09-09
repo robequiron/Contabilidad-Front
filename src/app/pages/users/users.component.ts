@@ -161,29 +161,30 @@ export class UsersComponent implements OnInit, OnDestroy {
         this.iNameSearch.nativeElement.focus();
       }, 300);
     }
+    //Si pulsamo la tecka alt + i  insertamos un nuevo registros
     if(e.altKey && e.code==="KeyI") {
       setTimeout(() => {
         this.add(); 
       }, 300);
     }
 
-    if (e.altKey && e.code==="ArrowRight") {
+    if (e.shiftKey && e.code==="ArrowRight") {
       if (this.total>0) {
         this.pageIndex = this._tablesgrid.movePages(1,this.pageIndex,this.total,this.pageSize);
       }
     }
-    if (e.altKey && e.code==="ArrowLeft") {
+    if (e.shiftKey && e.code==="ArrowLeft") {
       if (this.total>0){
         this.pageIndex = this._tablesgrid.movePages(-1,this.pageIndex,this.total,this.pageSize);
       }
     }
-    if(e.altKey && e.code==="ArrowUp") {
+    if(e.shiftKey && e.code==="ArrowUp") {
       if (this.total>0) {
         this.pageIndex=1;
       }
     }
 
-    if (e.altKey && e.code==="ArrowDown") {
+    if (e.shiftKey && e.code==="ArrowDown") {
       if (this.total>0) {
         this.pageIndex = this._tablesgrid.moveFinish(this.total,this.pageSize);
       }

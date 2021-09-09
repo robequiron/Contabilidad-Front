@@ -95,7 +95,7 @@ export class TaxComponent implements OnInit {
   }
 
   @HostListener( 'window:keydown', ['$event']) onKeyDown(e:KeyboardEvent) {
-    if (e.code==="Escape") {
+    if (e.code==="Escape" && this.SelectedIndex===0) {
       this.SelectedIndex = 0;
       this.loadPercentage = true;
       if (this.tax._id) {

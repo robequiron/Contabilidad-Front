@@ -1,6 +1,7 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NzDatePickerComponent } from 'ng-zorro-antd/date-picker';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { Percentage } from 'src/app/models/percentage.model';
 import { Taxes } from 'src/app/models/taxes.model';
@@ -21,7 +22,10 @@ export class PercentagesComponent implements OnInit {
    */
   @Input() tax:Taxes;
 
-
+  /**
+   * Indice del tab seleccionado, para lo métodos no entren en conflicto
+   */
+  @Input () tabSelect:number;
 
   /**
    * Decorador obtención de las propiedades de la directiva inputName
@@ -29,30 +33,54 @@ export class PercentagesComponent implements OnInit {
   @ViewChild('iName', {static:false}) iName: ElementRef;
 
   /**
+   * Decorador obtención de las propiedades de la directiva iNameSearch
+   */
+  @ViewChild('iNameSearch', {static:false}) iNameSearch : ElementRef;
+
+  /**
    * Decorador obtención de las propiedades de la directiva iPercentage
    */
   @ViewChild('iPercentage', {static:false}) iPercentage: ElementRef;
 
   /**
+   * Decorador obtención de las propiedades de la directiva iDateInit
+   */
+  @ViewChild('iDateInit', {static:false}) iDateInit: NzDatePickerComponent;
+
+  /**
+   * Decorador obtención de las propiedades de la directiva iDateEnd
+   */
+  @ViewChild('iDateEnd', {static:false}) iDateEnd:NzDatePickerComponent;
+
+  /**
+  * Busqueda por nombre
+  */
+  public nameSearch:string="";
+
+   /** 
+  * Visualizar dropmenu del search name 
+  */
+  public vSearchName:boolean=false;
+
+  /**
    * Propiedad editCache
    */
-  editCache: { [key: number]: { edit: boolean; data: Percentage; validate:boolean; n:boolean } } = [];
+  public editCache: { [key: number]: { edit: boolean; data: Percentage; validate:boolean; n:boolean } } = [];
 
   /**
    * Lista de datos
    */
-  listOfData: Percentage[] = [];
-
- 
+  public listOfData: Percentage[] = [];
 
   /**
    * Errores campos input
+   * @example error[0] = 'error'
    */
   public error = {
-    name:'',
-    dateInit:'',
-    dateEnd:'',
-    percentage: ['','']
+    name:['',''],
+    dateInit:['',''],
+    dateEnd:['',''],
+    percentage: ['',''],
   }
   
   /**
@@ -62,24 +90,44 @@ export class PercentagesComponent implements OnInit {
    * @param _notification Servicio de ngZorro para mostrar mensaje de forma global
    * @param router Servicio que proporciona navegación entre vista y capacidades de manipulación de la url
    */
-  constructor(public _taxesServices:TaxesService, private _notification:NzNotificationService, private router:Router,
-    
-    ) {}
+  constructor(public _taxesServices:TaxesService, private _notification:NzNotificationService, private router:Router) {}
 
   /**
    * Directiva ciclo de vida del component - Primera ejecución (Lifecycle hooks)
    */
   ngOnInit(): void {
-    console.log(this.tax._id)
       this.load();
       this.updateEditCache();
   }
 
   /**
+   * Decorador de métodos. Escucha eventos emitidos por el host
+   * 
+   * @param e KeyboardEvent
+  */
+  @HostListener ('window:keydown', ['$event']) onKeyDown(e:KeyboardEvent) {
+    
+    //Si pulsamos alt+b mostramos la ventana busqueda por nombre
+    if(e.altKey && e.code==="KeyB" && this.tabSelect===1) {
+      this.vSearchName = !this.vSearchName
+      setTimeout(() => {
+        this.iNameSearch.nativeElement.focus();
+      }, 300);  
+    }
+    
+    //Si pulsamo la tecka alt + i  insertamos un nuevo registros
+    if(e.altKey && e.code==="KeyI" && this.tabSelect===1) {
+      setTimeout(() => {
+        this.add(); 
+      }, 300);
+    }
+      
+  }
+
+  /**
    * Leer y recorrer array con los tipos de porcentajes
    */
-  public load(){
-    
+  public load():void{
     this.tax.percentages.forEach((item:Percentage)=>{
       item.dateInit = new Date(item.dateInit);
       if (item.dateEnd) {
@@ -89,16 +137,18 @@ export class PercentagesComponent implements OnInit {
     this.listOfData = this.tax.percentages;
   }
 
+  /**
+   * Añadimos un tipo de porcentaje nuevo
+   */
+  public add():void{
 
-  public add(){
-
-    if (!this.editCache[-1]) {
-
+    //Si no existe
+    if (!this.editCache[-101]) {
 
       let percentage = new Percentage();
       percentage._id="";
       percentage.name = "";
-      percentage.percentage = -1;
+      percentage.percentage = -101;
       percentage.dateInit = new Date();
       percentage.dateEnd = null;
       
@@ -110,14 +160,14 @@ export class PercentagesComponent implements OnInit {
       ];
       this.updateEditCache();
   
-      this.editCache[-1].edit = true;
-      this.editCache[-1].n = true;
+      this.editCache[-101].edit = true;
+      this.editCache[-101].n = true;
       
+      
+      //Esperamos 2 milisegundo para obtener el foco en el nombre
       setTimeout(() => {
         this.iName.nativeElement.focus();
-       
       }, 200);
-
 
     }
 
@@ -127,7 +177,6 @@ export class PercentagesComponent implements OnInit {
 
   }
 
-
   /**
    * Iniciar edicion de la fila
    * 
@@ -135,12 +184,12 @@ export class PercentagesComponent implements OnInit {
    */
   public startEdit(id: string): void {
     this.editCache[id].edit = true;
+    setTimeout(() => {
+      this.iName.nativeElement.focus()
+    }, 300);
+    
   }
    
-  public changeDecimal(e:KeyboardEvent,id:string) {
-    this.editCache[id].data.percentage =  parseFloat(this.editCache[id].data.percentage).toFixed(2)
-    console.log(this.editCache[id].data.percentage)
-  }
 
   /**
    * Cancelar edición de la fila
@@ -159,10 +208,61 @@ export class PercentagesComponent implements OnInit {
       validate:true,
       n:false
     };
+
+    
+
+  }
+
+  public search(){
+    this.load()
+    this.listOfData = this.listOfData.filter( (item:Percentage)=>{
+      return item.name.toLocaleUpperCase().includes(this.nameSearch.toLocaleUpperCase());
+    })
+    this.updateEditCache();
   }
 
   onChange(result: Date): void {
     console.log('onChange: ', result);
+  }
+
+  /**
+   * Acciones a realizar con eventos de teclado en los inputs
+   * 
+   * @param n Campo
+   * @param id Identificador de la linea
+   */
+  public saveEnter(n:NgModel,id?:number):void {
+
+    switch(n.name) {
+      case 'name' : {
+        if (this.iPercentage.nativeElement.disabled) {
+          this.iDateInit.picker.focus();
+        } else {
+          this.iPercentage.nativeElement.focus();
+        }
+
+        break;
+      }
+      case 'percentage': {
+        this.iDateInit.picker.focus();
+        break;
+      }
+      case 'dateInit': {
+        this.iDateEnd.picker.focus();
+        break;
+      }
+      case 'dateEnd': {
+       if (this.editCache[id].validate) {
+         this.iName.nativeElement.focus();
+       } else {
+         this.saveEdit(id);
+       }
+       break;
+      }
+
+    }
+
+    
   }
 
   /**
@@ -171,32 +271,37 @@ export class PercentagesComponent implements OnInit {
    * @param id Indice en el array
    */
   public saveEdit(id: number): void {
+    
     //Obtención de indice en el array
     const index = this.listOfData.findIndex(item => item.percentage === id);
-        
+     
     Object.assign(this.listOfData[index], this.editCache[id].data);
-    
-    if(this.editCache[id]) {
-      this.editCache[id].edit = false;
-    } else {
-      this.editCache[-1].edit = false;
-      this.editCache[-1].n = false;
-    }
-    
-    this.tax.percentages = this.listOfData;
+
+    //Quitamos el filtro de busqueda antes de grabar
+    //this.nameSearch ='';
+    //this.search();
+
+    //Establecemos un tiempo para restaurar la lista de datos
+
+      this.tax.percentages = this.listOfData;
   
-    //Grabamos los datos
-    this._taxesServices.save(this.tax, this.tax._id).subscribe(
-      (resp:any)=>{
-        this._notification.info('Tipo impositivo', "Tipo impositivo actualizado correctamente")
-      },
-      ()=>{
-        this._notification.error('Error', 'Existe un error al actualizar los tipos impositivos')
-      }
-    )
+      //Grabamos los datos
+      this._taxesServices.save(this.tax, this.tax._id).subscribe(
+        (resp:any)=>{
+          this._notification.info('Tipo impositivo', "Tipo impositivo actualizado correctamente")
+        },
+        ()=>{
+          this._notification.error('Error', 'Existe un error al actualizar los tipos impositivos')
+        }
+      )
+      this.load();
+      this.updateEditCache();
+
+    
+    
   }
 
- /**
+  /**
   * Validación de los campos del formulario
   * 
   * @param n Directiva de atributo binding - Campos del formulario
@@ -208,69 +313,86 @@ export class PercentagesComponent implements OnInit {
       //Establece null la validación inicial de la fila
       this.editCache[id].validate = null;
       
+      
       //Creamos un patron para el campo nombre
       let patron = new RegExp("[a-zA-Z0-9]{3}")
-
-      //Si el campo es nombre y el patron es falso
-      if(n.name==="name" && !patron.test(n.value)) {
-        this.error.name = 'error';
-        this.editCache[id].validate = false;
-      }
-      //Si la fecha de inicio es nula
-      if (n.name==="dateInit" && n.value===null) {
-        this.error.dateInit = 'error';
-        this.editCache[id].validate = false;
-      } 
-      //Si la fecha de inicio es distinta a nula
-      if (n.name==="dateInit" && n.value!=null) {
-        this.error.dateInit = ''
-      } 
-      //Si la fecha de fin es nula
-      if (n.name==="dateEnd" && n.value===null) {
-        this.error.dateEnd = '';
-      } 
-      //Si la fecha de fin no es nula
-      if (n.name==="dateEnd" && n.value!=null) {
-        let dateInit= this.editCache[id].data.dateInit;
-        let dateEnd = n.value;
-        this.error.dateEnd = '';
-        //Compramos que la fecha de fin no sea inferior a la fecha de inicio
-        if(dateEnd<dateInit) {
-          this.error.dateEnd = 'error';
-          this.editCache[id].validate = false;
-        } 
-      }
-
-      this.error.percentage[0] = '';
-      this.error.percentage[1] = '';
       
-      //Si el pocentaje es nulo
-      if (n.name==="percentage" && n.value===null) {
-        this.error.percentage[0] = 'error';
-        this.error.percentage[1] = 'No puede ser nulo';
-        this.editCache[id].validate = false;
-      }
+      switch (n.name) {
 
-      if (n.name==="percentage" && n.value!=null) {
-        //Comprobamos que no sea superior ni inferior a 100
-        if (n.value>100 || n.value<-100) {
-          this.error.percentage[0] = 'error';
-          this.error.percentage[1] = 'No puede ser superior a 100 ni inferior a -100';
-          this.editCache[id].validate = false;
-        }
-        //Comprobamos que no exista ese porcentaje
-        this.tax.percentages.forEach(
-          (item:Percentage)=>{
-            if (item.percentage===n.value) {
-              this.error.percentage[0] = 'error';
-              this.error.percentage[1] = 'Ya existe este pocentaje';
-              this.editCache[id].validate = false;
-            }
+        
+        case 'name': {
+          if (!patron.test(n.value)) {
+            this.error.name[0] = 'error';
+            this.editCache[id].validate = false;
+          } else {
+            this.error.name[0] = '';
           }
-        )
+          break;
+        }
+
+        case 'percentage': {
+          this.error.percentage[1] = '';
+         
+          if (n.value===null) {
+            this.error.percentage[0] = 'error';
+            this.error.percentage[1] = 'No puede ser nulo';
+            this.editCache[id].validate = false;
+          } else {
+              //Comprobamos que no sea superior ni inferior a 100
+              if (n.value>100 || n.value<-100) {
+                this.error.percentage[0] = 'error';
+                this.error.percentage[1] = 'No puede ser superior a 100 ni inferior a -100';
+                this.editCache[id].validate = false;
+              }
+              //Comprobamos que no exista ese porcentaje
+              this.tax.percentages.forEach(
+                (item:Percentage)=>{
+                  if (item.percentage===n.value) {
+                    this.error.percentage[0] = 'error';
+                    this.error.percentage[1] = 'Ya existe este pocentaje';
+                    this.editCache[id].validate = false;
+                  }
+                }
+              )
+          }
+          break;
+        }
+
+        case 'dateInit': {
+          if (n.value===null) {
+            this.error.dateInit[0] = 'error';
+            this.editCache[id].validate = false;
+          } else {
+            this.error.dateInit[0] = '';
+          }
+          break;
+        }
+
+        case 'dateEnd': {
+          this.error.dateEnd[0] = '';
+          if (n.value!=null) {
+            let dateInit= this.editCache[id].data.dateInit;
+            let dateEnd = n.value;
+            //Compramos que la fecha de fin no sea inferior a la fecha de inicio
+            if(dateEnd<dateInit) {
+              this.error.dateEnd[0] = 'error';
+              this.editCache[id].validate = false;
+            } 
+            
+          }
+          break;
+        }
+        
+       
 
       }
      
+      if (this.error.name[0]==='error' || this.error.percentage[0]==='error' 
+      || this.error.dateEnd[0]==='error'
+      || this.error.dateInit[0]==='error') {
+        this.editCache[id].validate = false;
+      }
+      
 
     } catch (error) {
       this._notification.error('Error','Existe un error en la validación de datos.',{nzDuration:800});
@@ -288,6 +410,9 @@ export class PercentagesComponent implements OnInit {
    */
   public updateEditCache(): void {
     
+
+    this.editCache = [];
+
     this.listOfData.forEach(item => {
       this.editCache[item.percentage] = {
         edit: false,
@@ -297,12 +422,12 @@ export class PercentagesComponent implements OnInit {
       };
     }); 
 
+
   }
 
   public delete(id:number) {
     const index = this.listOfData.findIndex(item => item.percentage === id);
 
-    
   }
 
 
