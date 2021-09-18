@@ -30,7 +30,7 @@
         <nz-table
             nzShowSizeChanger
             [nzBordered]=true
-            [nzTitle]="false ? 'Usuarios' : null"
+            [nzTitle]="false ? 'Impuestos' : null"
             [nzData]="taxes"
             [nzFrontPagination]="false"
             [nzLoading]="loading"
@@ -43,7 +43,22 @@
             >
             <thead>
                 <tr>
-                <th nzColumnKey="rol" nzWidth="15%">Código</th>
+                <th nzColumnKey="rol" nzWidth="15%" nzCustomFilter>Código
+                    <!-- DropMenu Search code-->
+                    <nz-dropdown-menu #SearchCode="nzDropdownMenu">
+                        <div class="ant-table-filter-dropdown " style="padding:10px">
+                            <div class="search-box" >
+                            <input type="number" nz-input placeholder="Código impuesto" [(ngModel)]="codeSearch" #iCodeSearch (keydown.enter)="search()" max="9"/>
+                            <button nz-button nzSize="small" nzType="primary" class="search-button" style="margin-top: 10px; margin-right: 2px;" (click)="search()">Buscar</button>
+                            <button nz-button nzSize="small" style="margin-top: 10px;" (click)="codeSearch=null">Limpiar</button>
+                            </div>
+                        </div>
+                    </nz-dropdown-menu>
+                <!-- ----------------------- -->
+                    <nz-filter-trigger [(nzVisible)]="vSearchCode" [nzActive]="codeSearch" [nzDropdownMenu]="SearchCode" title="Alt+b">
+                        <i nz-icon nzType="search" ></i>
+                    </nz-filter-trigger>
+                </th>
 
                 <th nzColumnKey="name" [nzSortFn]="true" nzCustomFilter>Nombre
                     <!-- DropMenu Search name-->
@@ -51,8 +66,8 @@
                             <div class="ant-table-filter-dropdown " style="padding:10px">
                                 <div class="search-box" >
                                 <input type="text" nz-input placeholder="Nombre del usuario" [(ngModel)]="nameSearch" #iNameSearch (keydown.enter)="search()"/>
-                                <button nz-button nzSize="small" nzType="primary" class="search-button" style="margin-top: 10px; margin-right: 2px;">Buscar</button>
-                                <button nz-button nzSize="small" style="margin-top: 10px;">Limpiar</button>
+                                <button nz-button nzSize="small" nzType="primary" class="search-button" style="margin-top: 10px; margin-right: 2px;" (click)="search()">Buscar</button>
+                                <button nz-button nzSize="small" style="margin-top: 10px;" (click)="nameSearch=''">Limpiar</button>
                                 </div>
                             </div>
                         </nz-dropdown-menu>
@@ -75,7 +90,7 @@
                 <td>
                     <a style="margin-right: 10px;" (click)="edit(data._id)">Editar</a>
                     <nz-divider nzType="vertical"></nz-divider>
-                    <a nz-popconfirm nzPopconfirmTitle="¿Seguro de eliminar el registro?" (nzOnConfirm)="deleteRow(data.id)">Eliminar</a>
+                    <a nz-popconfirm nzPopconfirmTitle="¿Seguro de eliminar el registro?" (nzOnConfirm)="deleteRow(data)">Eliminar</a>
                 </td>
                 </tr>
             </tbody>

@@ -10,7 +10,7 @@
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
         <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
-        <link rel="stylesheet" href="../styles/readthedocs.css">
+        <link rel="stylesheet" href="../styles/Laravel.css">
     </head>
     <body>
 
@@ -168,7 +168,15 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Private</span>
+                                <a href="#loadPostal" >loadPostal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
                                 <a href="#loadTypeNif" >loadTypeNif</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#loadVias" >loadVias</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
@@ -191,17 +199,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(_side: <a href="../injectables/SideService.html" target="_self">SideService</a>, _app: <a href="../injectables/AppService.html" target="_self">AppService</a>, _notification: NzNotificationService, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(_side: <a href="../injectables/SideService.html" target="_self">SideService</a>, _app: <a href="../injectables/AppService.html" target="_self">AppService</a>, _notification: NzNotificationService, _vias: ViasService, _postal: PostalService, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/pages/pages.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/pages/pages.component.ts:35</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -242,6 +252,8 @@
                                                     </td>
                                                     
                                                         <td>
+                                                                <code><p>Servicios app de datos no modificables y necesarios para el funcionamiento de la aplicación.</p>
+</code>
                                                         </td>
                                                 </tr>
                                                 <tr>
@@ -249,6 +261,36 @@
                                                   
                                                         <td>
                                                                     <code>NzNotificationService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Servicio de notificación de ngZorro</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>_vias</td>
+                                                  
+                                                        <td>
+                                                                    <code>ViasService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>_postal</td>
+                                                  
+                                                        <td>
+                                                                    <code>PostalService</code>
                                                         </td>
                                                   
                                                     <td>
@@ -270,6 +312,8 @@
                                                     </td>
                                                     
                                                         <td>
+                                                                <code><p>Servicio de Angular Routere, que permite la navegación de una vista a la siguiente.</p>
+</code>
                                                         </td>
                                                 </tr>
                                         </tbody>
@@ -294,6 +338,47 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="loadPostal"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>loadPostal</b></span>
+                        <a href="#loadPostal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadPostal()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/app/pages/pages.component.ts:101</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Cargamos parte de los códigos postales</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="loadTypeNif"></a>
                     <span class="name">
                         <span class="modifier">Private</span>
@@ -312,8 +397,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/pages/pages.component.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">src/app/pages/pages.component.ts:69</a></div>
                 </td>
             </tr>
 
@@ -321,6 +406,47 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-description"><p>Cargamos los tipos de NIF</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadVias"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>loadVias</b></span>
+                        <a href="#loadVias"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadVias()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/pages/pages.component.ts:86</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Cargamos las vias</p>
 </div>
 
                     <div class="io-description">
@@ -351,14 +477,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/app/pages/pages.component.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/pages/pages.component.ts:55</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Directiva ciclo de vida del componente - Primera ejecución (Lifecycle hooks)</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -394,7 +522,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/pages/pages.component.ts:28</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/pages/pages.component.ts:43</a></div>
                         </td>
                     </tr>
 
@@ -425,10 +553,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/pages/pages.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/pages/pages.component.ts:27</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Sidebar recogido</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -457,10 +591,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/pages/pages.component.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/pages/pages.component.ts:31</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Variable que muestra la carga</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -489,10 +629,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/pages/pages.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/pages/pages.component.ts:35</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Varible que muestra pages</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -516,15 +662,21 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;ngzorro&#x27;</code>
+                        <i>Default value : </i><code>&#x27;Harena Fuerteventura&#x27;</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/pages/pages.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/pages/pages.component.ts:23</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Titulo</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -538,8 +690,12 @@
 import { Router } from &#x27;@angular/router&#x27;;
 import { NzMenuItemDirective } from &#x27;ng-zorro-antd/menu/menu-item.directive&#x27;;
 import { NzNotificationService } from &#x27;ng-zorro-antd/notification&#x27;;
+import { Respuesta } from &#x27;../models/response.model&#x27;;
 import { TypeNif } from &#x27;../models/typenif.model&#x27;;
+import { Vias } from &#x27;../models/vias.model&#x27;;
 import { AppService } from &#x27;../services/app.service&#x27;;
+import { PostalService } from &#x27;../services/parametros/postal.service&#x27;;
+import { ViasService } from &#x27;../services/parametros/vias.service&#x27;;
 import { SideService } from &#x27;../services/side.service&#x27;;
 
 
@@ -549,29 +705,50 @@ import { SideService } from &#x27;../services/side.service&#x27;;
   styleUrls: [&#x27;./pages.component.css&#x27;]
 })
 export class PagesComponent implements OnInit {
-
-  public title &#x3D; &#x27;ngzorro&#x27;;
-
+  /**
+   * Titulo
+   */
+  public title &#x3D; &#x27;Harena Fuerteventura&#x27;;
+  /**
+   * Sidebar recogido
+   */
   public isCollapsed &#x3D; false;
-
+  /**
+   * Variable que muestra la carga
+   */
   public isLoad:boolean &#x3D; false;
-
+  /**
+   * Varible que muestra pages
+   */
   public Load:boolean&#x3D; false;
   /**
-   * 
+   * Constructor
    * @param _side Servicios de configuración del sidebar
+   * @param _app Servicios app de datos no modificables y necesarios para el funcionamiento de la aplicación.
+   * @param _notification Servicio de notificación de ngZorro
+   * @param router Servicio de Angular Routere, que permite la navegación de una vista a la siguiente.
    */
   constructor(public _side:SideService,
       private _app:AppService,
       private _notification:NzNotificationService,
+      private _vias:ViasService,
+      private _postal:PostalService,
       private router:Router,
     ){}
 
 
-
+  /**
+   * Directiva ciclo de vida del componente - Primera ejecución (Lifecycle hooks)
+   */
   ngOnInit(): void {
     this.isLoad &#x3D; true;
     this.loadTypeNif();
+    this.loadVias();
+    this.loadPostal();
+    setTimeout(()&#x3D;&gt;{
+      this.isLoad &#x3D; false;
+      this.Load &#x3D; true;
+    },2000)
   }
 
   /**
@@ -582,7 +759,6 @@ export class PagesComponent implements OnInit {
       (resp:TypeNif[])&#x3D;&gt;{
         this._app.TYPENIF &#x3D; resp;
         setTimeout(()&#x3D;&gt;{
-          this.isLoad &#x3D; false;
           this.Load &#x3D; true;
         },1000)
       }, 
@@ -592,6 +768,33 @@ export class PagesComponent implements OnInit {
       }
     )
   }
+  /**
+   * Cargamos las vias
+   */
+  private loadVias() {
+    this._vias.getVias().subscribe(
+      (resp:Respuesta)&#x3D;&gt;{
+        this._vias.vias &#x3D; resp.data as Vias[];
+      },
+      (e)&#x3D;&gt;{
+        this._notification.error(&#x27;Error&#x27;, &#x27;Existe un error en la carga de las vías&#x27;);
+        this.router.navigate([&#x27;/login&#x27;]);
+      }
+    )
+  }
+
+  /**
+  * Cargamos parte de los códigos postales
+  */
+ private loadPostal() {
+  this._postal.getPostal().subscribe(
+    ()&#x3D;&gt;{},
+    (e)&#x3D;&gt;{
+      this._notification.error(&#x27;Error&#x27;, &#x27;Existe un error en la carga de los códigos postales&#x27;);
+      this.router.navigate([&#x27;/login&#x27;]);
+    }
+  )
+ }
 
 }
 </code></pre>
@@ -750,7 +953,7 @@ nz-breadcrumb {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><nz-spin nzTip="Cargando. Espere por favor..." style="height: 100%;" *ngIf="isLoad">  <nz-result nzStatus="info" nzTitle="">      </nz-result></nz-spin>  <nz-layout style="height: 100%;" *ngIf="Load">          <!-- Sidebar-->      <nz-sider nzCollapsible      [nzWidth]="_side.width" [nzTheme]="_side.theme"       [(nzCollapsed)]="isCollapsed" nzBreakpoint="sm"  [nzCollapsedWidth]="0" [nzTrigger]="null">        <app-sider></app-sider>      </nz-sider>      <!-- End Sidebar-->          <nz-layout >                <nz-header>          <div nz-row nzJustify="space-between">            <div nz-col nzSpan="4"> <i class="trigger" nz-icon [nzType]="isCollapsed ? \'menu-unfold\' : \'menu-fold\'" (click)="isCollapsed = !isCollapsed"></i></div>            <div nz-col nzSpan="4" style="text-align: right; padding-right: 10px;" >                          <a nz-dropdown [nzDropdownMenu]="menu">                <nz-badge [nzCount]="5" style="margin-right: 24px;">                  <nz-avatar nzIcon="user" ></nz-avatar>                </nz-badge>              </a>              <nz-dropdown-menu #menu="nzDropdownMenu">                <ul nz-menu>                  <li nz-menu-item>1st menu item</li>                  <li nz-menu-item>2nd menu item</li>                  <li nz-menu-divider></li>                  <li nz-menu-item nzDisabled>disabled menu item</li>                  <li nz-submenu nzTitle="sub menu">                    <ul>                      <li nz-menu-item>3rd menu item</li>                      <li nz-menu-item>4th menu item</li>                    </ul>                  </li>                  <li nz-submenu nzDisabled nzTitle="disabled sub menu">                    <ul>                      <li nz-menu-item>3rd menu item</li>                      <li nz-menu-item>4th menu item</li>                    </ul>                  </li>                </ul>              </nz-dropdown-menu>                          </div>          </div>          <div>                                </div>        </nz-header>        <nz-content>          <nz-breadcrumb>            <app-breadcrumb></app-breadcrumb>          </nz-breadcrumb>          <router-outlet></router-outlet>                  </nz-content>        <app-footer></app-footer>              </nz-layout>        </nz-layout></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'SiderComponent', 'selector': 'app-sider'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'PercentagesComponent', 'selector': 'app-percentages'},{'name': 'SiderComponent', 'selector': 'app-sider'},{'name': 'TaxComponent', 'selector': 'app-tax'},{'name': 'TaxesComponent', 'selector': 'app-taxes'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UsersComponent', 'selector': 'app-users'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PagesComponent'};
 </script>

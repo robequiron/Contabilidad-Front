@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { APP_ROUTES } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {  NZ_I18N } from 'ng-zorro-antd/i18n';
 import { es_ES } from 'ng-zorro-antd/i18n';
@@ -24,6 +24,9 @@ import { ConfigComponent } from './pages/config/config.component';
 import { TaxesComponent } from './pages/taxes/taxes.component';
 import { TaxComponent } from './pages/taxes/tax.component';
 import { PercentagesComponent } from './pages/taxes/percentages.component';
+import { InterceptorService } from './interceptors/interceptor.service';
+import { CuentasComponent } from './pages/cuentas/cuentas.component';
+import { CuentaComponent } from './pages/cuentas/cuenta.component';
 
 registerLocaleData(es);
 
@@ -42,20 +45,25 @@ registerLocaleData(es);
     TaxesComponent,
     TaxComponent,
     PercentagesComponent,
+    CuentasComponent,
+    CuentaComponent,
    
   ],
   imports: [
     PAGES_ROUTES,
     APP_ROUTES,
     BrowserModule,
-    
     FormsModule,
     HttpClientModule,
     NgzorroModule,
     BrowserAnimationsModule,
     ReactiveFormsModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: es_ES }],
+  providers: [
+    { provide: NZ_I18N, useValue: es_ES },
+    { provide: HTTP_INTERCEPTORS, useClass:InterceptorService, multi:true}
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

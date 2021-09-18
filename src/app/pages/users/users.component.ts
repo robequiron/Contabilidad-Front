@@ -1,4 +1,3 @@
-import { ThrowStmt } from '@angular/compiler';
 import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
@@ -113,6 +112,7 @@ export class UsersComponent implements OnInit, OnDestroy {
    * @param _userService Servicios usuario
    * @param _userListService Servicio impresión usuarios
    * @param _notificacion Servicios de ngZorro para mostrar mensaje de forma global
+   * @param _tablesgrid Servicio para el desplazamiento de la páginas en las tablas
    * @param router Servicio que proporcina navegación entre vista y capacidades de manipulación de la url
    */
   constructor(private _userService: UsersService,
@@ -168,27 +168,20 @@ export class UsersComponent implements OnInit, OnDestroy {
       }, 300);
     }
 
+    //Desplazamiento de la tabla
     if (e.shiftKey && e.code==="ArrowRight") {
-      if (this.total>0) {
         this.pageIndex = this._tablesgrid.movePages(1,this.pageIndex,this.total,this.pageSize);
-      }
     }
     if (e.shiftKey && e.code==="ArrowLeft") {
-      if (this.total>0){
         this.pageIndex = this._tablesgrid.movePages(-1,this.pageIndex,this.total,this.pageSize);
-      }
     }
     if(e.shiftKey && e.code==="ArrowUp") {
-      if (this.total>0) {
         this.pageIndex=1;
-      }
+    }
+    if (e.shiftKey && e.code==="ArrowDown") {
+        this.pageIndex = this._tablesgrid.moveFinish(this.total,this.pageSize);
     }
 
-    if (e.shiftKey && e.code==="ArrowDown") {
-      if (this.total>0) {
-        this.pageIndex = this._tablesgrid.moveFinish(this.total,this.pageSize);
-      }
-    }
   }
 
   /**

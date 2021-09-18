@@ -2,6 +2,7 @@ import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@
 import { NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NzDatePickerComponent } from 'ng-zorro-antd/date-picker';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { Percentage } from 'src/app/models/percentage.model';
 import { Taxes } from 'src/app/models/taxes.model';
@@ -88,9 +89,13 @@ export class PercentagesComponent implements OnInit {
    * 
    * @param _taxesServices Servicios Taxes - Impuesto
    * @param _notification Servicio de ngZorro para mostrar mensaje de forma global
-   * @param router Servicio que proporciona navegación entre vista y capacidades de manipulación de la url
+   * @param _message Servicio de ngZorro para mostrar notificaciones de forma global
+   * @param router Servicio de Angular Router, que permite la navegación de una vista a la siguiente
    */
-  constructor(public _taxesServices:TaxesService, private _notification:NzNotificationService, private router:Router) {}
+  constructor(public _taxesServices:TaxesService, 
+    private _notification:NzNotificationService, 
+    private _message: NzMessageService,
+    private router:Router) {}
 
   /**
    * Directiva ciclo de vida del component - Primera ejecución (Lifecycle hooks)
@@ -120,6 +125,15 @@ export class PercentagesComponent implements OnInit {
       setTimeout(() => {
         this.add(); 
       }, 300);
+    }
+
+    //Editar registro buscado con anterioridad
+    if (e.altKey && e.shiftKey && e.code==="KeyE" && this.tabSelect===1) {
+      if (this.listOfData.length===1) {
+        this.startEdit(this.listOfData[0].percentage.toString());
+      } else {
+        this._message.warning('Sólo se puede editar un registro encontrado')
+      }
     }
       
   }
@@ -171,10 +185,6 @@ export class PercentagesComponent implements OnInit {
 
     }
 
-   
-
-
-
   }
 
   /**
@@ -189,7 +199,6 @@ export class PercentagesComponent implements OnInit {
     }, 300);
     
   }
-   
 
   /**
    * Cancelar edición de la fila
@@ -209,22 +218,19 @@ export class PercentagesComponent implements OnInit {
       n:false
     };
 
-    
-
   }
 
-  public search(){
+  /**
+   * Busqueda de tipo de impuesto por porcentaje
+   */
+  public search():void{
     this.load()
     this.listOfData = this.listOfData.filter( (item:Percentage)=>{
       return item.name.toLocaleUpperCase().includes(this.nameSearch.toLocaleUpperCase());
     })
     this.updateEditCache();
   }
-
-  onChange(result: Date): void {
-    console.log('onChange: ', result);
-  }
-
+ 
   /**
    * Acciones a realizar con eventos de teclado en los inputs
    * 
@@ -278,8 +284,8 @@ export class PercentagesComponent implements OnInit {
     Object.assign(this.listOfData[index], this.editCache[id].data);
 
     //Quitamos el filtro de busqueda antes de grabar
-    //this.nameSearch ='';
-    //this.search();
+    this.nameSearch ='';
+    this.search();
 
     //Establecemos un tiempo para restaurar la lista de datos
 
@@ -409,7 +415,6 @@ export class PercentagesComponent implements OnInit {
    * Array con los datos a actualizar
    */
   public updateEditCache(): void {
-    
 
     this.editCache = [];
 
@@ -425,9 +430,14 @@ export class PercentagesComponent implements OnInit {
 
   }
 
+  /**
+   * Eliminar tipo de impuesto, sino tiene registros en la colección taxBook
+   * 
+   * @param id Identificador
+   */
   public delete(id:number) {
     const index = this.listOfData.findIndex(item => item.percentage === id);
-
+    //TODO:Comprobación que no exista registros en la colección taxBook para su posterior eliminación
   }
 
 

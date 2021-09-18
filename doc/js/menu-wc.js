@@ -55,13 +55,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link" >AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-05e69508d9b819e606544f06b1d42343"' : 'data-target="#xs-components-links-module-AppModule-05e69508d9b819e606544f06b1d42343"' }>
+                                            'data-target="#components-links-module-AppModule-1029ec8ca9d3ca565b49c01df2961656"' : 'data-target="#xs-components-links-module-AppModule-1029ec8ca9d3ca565b49c01df2961656"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-05e69508d9b819e606544f06b1d42343"' :
-                                            'id="xs-components-links-module-AppModule-05e69508d9b819e606544f06b1d42343"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-1029ec8ca9d3ca565b49c01df2961656"' :
+                                            'id="xs-components-links-module-AppModule-1029ec8ca9d3ca565b49c01df2961656"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AppComponent</a>
                                             </li>
@@ -81,7 +81,19 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                 <a href="components/LoginComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >LoginComponent</a>
                                             </li>
                                             <li class="link">
+                                                <a href="components/PagesComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >PagesComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/PercentagesComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >PercentagesComponent</a>
+                                            </li>
+                                            <li class="link">
                                                 <a href="components/SiderComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >SiderComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/TaxComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >TaxComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/TaxesComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >TaxesComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/UserComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >UserComponent</a>
@@ -98,22 +110,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                 </ul>
                 </li>
                     <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#components-links"' :
-                            'data-target="#xs-components-links"' }>
-                            <span class="icon ion-md-cog"></span>
-                            <span>Components</span>
-                            <span class="icon ion-ios-arrow-down"></span>
-                        </div>
-                        <ul class="links collapse " ${ isNormalMode ? 'id="components-links"' : 'id="xs-components-links"' }>
-                            <li class="link">
-                                <a href="components/AppComponent.html" data-type="entity-link" >AppComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/PagesComponent.html" data-type="entity-link" >PagesComponent</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#classes-links"' :
                             'data-target="#xs-classes-links"' }>
                             <span class="icon ion-ios-paper"></span>
@@ -123,6 +119,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
                                 <a href="classes/Config.html" data-type="entity-link" >Config</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/Percentage.html" data-type="entity-link" >Percentage</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/Taxes.html" data-type="entity-link" >Taxes</a>
                             </li>
                             <li class="link">
                                 <a href="classes/TypeNif.html" data-type="entity-link" >TypeNif</a>
@@ -157,6 +159,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="link">
                                     <a href="injectables/TablesgridService.html" data-type="entity-link" >TablesgridService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/TaxesService.html" data-type="entity-link" >TaxesService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/UserslistService.html" data-type="entity-link" >UserslistService</a>
@@ -201,7 +206,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                     <li class="divider"></li>
                     <li class="copyright">
                         Documentation generated using <a href="https://compodoc.app/" target="_blank">
-                            <img data-src="images/compodoc-vectorise-inverted.png" class="img-responsive" data-type="compodoc-logo">
+                            <img data-src="images/compodoc-vectorise.png" class="img-responsive" data-type="compodoc-logo">
                         </a>
                     </li>
             </ul>

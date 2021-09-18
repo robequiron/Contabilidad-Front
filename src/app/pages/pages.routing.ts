@@ -8,6 +8,8 @@ import { UserComponent } from './users/user.component';
 import { ConfigComponent } from './config/config.component';
 import { TaxesComponent } from './taxes/taxes.component';
 import { TaxComponent } from './taxes/tax.component';
+import { CuentasComponent } from './cuentas/cuentas.component';
+import { CuentaComponent } from './cuentas/cuenta.component';
 
 
 
@@ -24,7 +26,8 @@ const pagesRoutes: Routes = [
       {path:'taxes', component:TaxesComponent, data:{menu:"Configuración",submenu:"Parametros", titulo:"Consulta impuestos"}},
       {path:'user/:id', component:UserComponent, data:{menu:"Configuración",titulo:"Editar usuario"}},
       {path:'users', component:UsersComponent, data:{menu:"Configuración",titulo:"Consulta usuarios"}},
-      
+      {path:'cuentas', component:CuentasComponent, data:{menu:"Comercial",titulo:"Consulta cuentas"}},
+      {path:'cuenta/:id', component:CuentaComponent, data:{menu:"Comercial",titulo:"Cuenta"}},
       //{path:'grupos', component:GruposComponent, data:{titulo:"Grupos contables"}},
       //{path:'grupo/:id', component:GrupoComponent, data:{titulo:"Edición grupo contable"}},
       //{path:'subgrupos', component:SubgruposComponent, data:{titulo:"Subgrupos contables"}},

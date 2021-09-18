@@ -61,7 +61,6 @@ export class UserComponent implements OnInit {
   }
   /**
    * Ciclo de vida del componente. Lifecycle hooks
-   * @ignore
    */
   ngOnInit(): void {
     this.createForm();

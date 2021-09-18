@@ -1,0 +1,2422 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ngzorro documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/Laravel.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ngzorro documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  PercentagesComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/taxes/percentages.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente con datagrid de los tipos impositivos de un impuesto.
+Formulario en la tabla que permite Añadir, Modificar y Eliminar (Si no existen registros en la tabla Taxbook)</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-percentages</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./percentages.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./percentages.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_taxesServices" >_taxesServices</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#editCache" >editCache</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#error" >error</a>
+                            </li>
+                            <li>
+                                <a href="#iDateEnd" >iDateEnd</a>
+                            </li>
+                            <li>
+                                <a href="#iDateInit" >iDateInit</a>
+                            </li>
+                            <li>
+                                <a href="#iName" >iName</a>
+                            </li>
+                            <li>
+                                <a href="#iNameSearch" >iNameSearch</a>
+                            </li>
+                            <li>
+                                <a href="#iPercentage" >iPercentage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#listOfData" >listOfData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#nameSearch" >nameSearch</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#vSearchName" >vSearchName</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#add" >add</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#cancelEdit" >cancelEdit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#delete" >delete</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#load" >load</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onKeyDown" >onKeyDown</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#saveEdit" >saveEdit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#saveEnter" >saveEnter</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#search" >search</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#startEdit" >startEdit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updateEditCache" >updateEditCache</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#validate" >validate</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#tabSelect" >tabSelect</a>
+                            </li>
+                            <li>
+                                <a href="#tax" >tax</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#window:keydown" >window:keydown</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_taxesServices: <a href="../injectables/TaxesService.html" target="_self">TaxesService</a>, _notification: NzNotificationService, _message: NzMessageService, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/pages/taxes/percentages.component.ts:85</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_taxesServices</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TaxesService.html" target="_self" >TaxesService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Servicios Taxes - Impuesto</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>_notification</td>
+                                                  
+                                                        <td>
+                                                                    <code>NzNotificationService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Servicio de ngZorro para mostrar mensaje de forma global</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>_message</td>
+                                                  
+                                                        <td>
+                                                                    <code>NzMessageService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Servicio de ngZorro para mostrar notificaciones de forma global</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Servicio de Angular Router, que permite la navegación de una vista a la siguiente</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tabSelect"></a>
+                        <b>tabSelect</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/pages/taxes/percentages.component.ts:29</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Indice del tab seleccionado, para lo métodos no entren en conflicto</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tax"></a>
+                        <b>tax</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Taxes.html" target="_self" >Taxes</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/pages/taxes/percentages.component.ts:24</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Decorador de propiedades. Datos recibidos del padres. Objecto tax</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="window:keydown"></a>
+                    <span class="name">
+                        <span ><b>window:keydown</b></span>
+                        <a href="#window:keydown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>window:keydown(e: KeyboardEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="113"
+                            class="link-to-prism">src/app/pages/taxes/percentages.component.ts:113</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Decorador de métodos. Escucha eventos emitidos por el host</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>KeyboardEvent</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="add"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>add</b></span>
+                        <a href="#add"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>add()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="157"
+                            class="link-to-prism">src/app/pages/taxes/percentages.component.ts:157</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Añadimos un tipo de porcentaje nuevo</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelEdit"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>cancelEdit</b></span>
+                        <a href="#cancelEdit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cancelEdit(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="208"
+                            class="link-to-prism">src/app/pages/taxes/percentages.component.ts:208</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Cancelar edición de la fila</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Idenfiticador de la fila</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delete"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>delete</b></span>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="438"
+                            class="link-to-prism">src/app/pages/taxes/percentages.component.ts:438</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Eliminar tipo de impuesto, sino tiene registros en la colección taxBook</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Identificador</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="load"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>load</b></span>
+                        <a href="#load"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>load()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="144"
+                            class="link-to-prism">src/app/pages/taxes/percentages.component.ts:144</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Leer y recorrer array con los tipos de porcentajes</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/app/pages/taxes/percentages.component.ts:103</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Directiva ciclo de vida del component - Primera ejecución (Lifecycle hooks)</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onKeyDown"></a>
+                    <span class="name">
+                        <span ><b>onKeyDown</b></span>
+                        <a href="#onKeyDown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onKeyDown(e: KeyboardEvent)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;window:keydown&#x27;, [&#x27;$event&#x27;])<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="113"
+                            class="link-to-prism">src/app/pages/taxes/percentages.component.ts:113</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Decorador de métodos. Escucha eventos emitidos por el host</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e</td>
+                                    <td>
+                                            <code>KeyboardEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>KeyboardEvent</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveEdit"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>saveEdit</b></span>
+                        <a href="#saveEdit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>saveEdit(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="279"
+                            class="link-to-prism">src/app/pages/taxes/percentages.component.ts:279</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Grabamos los datos en el array tipo de porcentajes . Percentages</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Indice en el array</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveEnter"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>saveEnter</b></span>
+                        <a href="#saveEnter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>saveEnter(n: <a href="https://angular.io/api/forms/NgModel" target="_blank">NgModel</a>, id?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="240"
+                            class="link-to-prism">src/app/pages/taxes/percentages.component.ts:240</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Acciones a realizar con eventos de teclado en los inputs</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>n</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/forms/NgModel" target="_blank" >NgModel</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Campo</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Identificador de la linea</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="search"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>search</b></span>
+                        <a href="#search"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>search()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="226"
+                            class="link-to-prism">src/app/pages/taxes/percentages.component.ts:226</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Busqueda de tipo de impuesto por porcentaje</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startEdit"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>startEdit</b></span>
+                        <a href="#startEdit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>startEdit(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="195"
+                            class="link-to-prism">src/app/pages/taxes/percentages.component.ts:195</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Iniciar edicion de la fila</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Identificador de la fila</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateEditCache"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>updateEditCache</b></span>
+                        <a href="#updateEditCache"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateEditCache()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="417"
+                            class="link-to-prism">src/app/pages/taxes/percentages.component.ts:417</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Array con los datos a actualizar</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validate"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>validate</b></span>
+                        <a href="#validate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validate(n: <a href="https://angular.io/api/forms/NgModel" target="_blank">NgModel</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="316"
+                            class="link-to-prism">src/app/pages/taxes/percentages.component.ts:316</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Validación de los campos del formulario</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>n</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/forms/NgModel" target="_blank" >NgModel</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Directiva de atributo binding - Campos del formulario</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Indice del array</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_taxesServices"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_taxesServices</b></span>
+                        <a href="#_taxesServices"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/TaxesService.html" target="_self" >TaxesService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/app/pages/taxes/percentages.component.ts:95</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">Servicios Taxes - Impuesto</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editCache"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>editCache</b></span>
+                        <a href="#editCache"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/pages/taxes/percentages.component.ts:69</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Propiedad editCache</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="error"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>error</b></span>
+                        <a href="#error"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    name:[&#x27;&#x27;,&#x27;&#x27;],
+    dateInit:[&#x27;&#x27;,&#x27;&#x27;],
+    dateEnd:[&#x27;&#x27;,&#x27;&#x27;],
+    percentage: [&#x27;&#x27;,&#x27;&#x27;],
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/pages/taxes/percentages.component.ts:80</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Errores campos input</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="iDateEnd"></a>
+                    <span class="name">
+                        <span ><b>iDateEnd</b></span>
+                        <a href="#iDateEnd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>NzDatePickerComponent</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;iDateEnd&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/pages/taxes/percentages.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Decorador obtención de las propiedades de la directiva iDateEnd</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="iDateInit"></a>
+                    <span class="name">
+                        <span ><b>iDateInit</b></span>
+                        <a href="#iDateInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>NzDatePickerComponent</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;iDateInit&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/pages/taxes/percentages.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Decorador obtención de las propiedades de la directiva iDateInit</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="iName"></a>
+                    <span class="name">
+                        <span ><b>iName</b></span>
+                        <a href="#iName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;iName&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/pages/taxes/percentages.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Decorador obtención de las propiedades de la directiva inputName</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="iNameSearch"></a>
+                    <span class="name">
+                        <span ><b>iNameSearch</b></span>
+                        <a href="#iNameSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;iNameSearch&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/pages/taxes/percentages.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Decorador obtención de las propiedades de la directiva iNameSearch</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="iPercentage"></a>
+                    <span class="name">
+                        <span ><b>iPercentage</b></span>
+                        <a href="#iPercentage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;iPercentage&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/pages/taxes/percentages.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Decorador obtención de las propiedades de la directiva iPercentage</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listOfData"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>listOfData</b></span>
+                        <a href="#listOfData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Percentage.html" target="_self" >Percentage[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/pages/taxes/percentages.component.ts:74</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista de datos</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nameSearch"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>nameSearch</b></span>
+                        <a href="#nameSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/pages/taxes/percentages.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Busqueda por nombre</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="vSearchName"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>vSearchName</b></span>
+                        <a href="#vSearchName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/pages/taxes/percentages.component.ts:64</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Visualizar dropmenu del search name</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { NgModel } from &#x27;@angular/forms&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { NzDatePickerComponent } from &#x27;ng-zorro-antd/date-picker&#x27;;
+import { NzMessageService } from &#x27;ng-zorro-antd/message&#x27;;
+import { NzNotificationService } from &#x27;ng-zorro-antd/notification&#x27;;
+import { Percentage } from &#x27;src/app/models/percentage.model&#x27;;
+import { Taxes } from &#x27;src/app/models/taxes.model&#x27;;
+import { TaxesService } from &#x27;src/app/services/taxes.service&#x27;;
+
+/**
+ * Componente con datagrid de los tipos impositivos de un impuesto. 
+ * Formulario en la tabla que permite Añadir, Modificar y Eliminar (Si no existen registros en la tabla Taxbook)
+ */
+@Component({
+  selector: &#x27;app-percentages&#x27;,
+  templateUrl: &#x27;./percentages.component.html&#x27;,
+  styleUrls: [&#x27;./percentages.component.css&#x27;]
+})
+export class PercentagesComponent implements OnInit {
+  /**
+   * Decorador de propiedades. Datos recibidos del padres. Objecto tax
+   */
+  @Input() tax:Taxes;
+
+  /**
+   * Indice del tab seleccionado, para lo métodos no entren en conflicto
+   */
+  @Input () tabSelect:number;
+
+  /**
+   * Decorador obtención de las propiedades de la directiva inputName
+   */
+  @ViewChild(&#x27;iName&#x27;, {static:false}) iName: ElementRef;
+
+  /**
+   * Decorador obtención de las propiedades de la directiva iNameSearch
+   */
+  @ViewChild(&#x27;iNameSearch&#x27;, {static:false}) iNameSearch : ElementRef;
+
+  /**
+   * Decorador obtención de las propiedades de la directiva iPercentage
+   */
+  @ViewChild(&#x27;iPercentage&#x27;, {static:false}) iPercentage: ElementRef;
+
+  /**
+   * Decorador obtención de las propiedades de la directiva iDateInit
+   */
+  @ViewChild(&#x27;iDateInit&#x27;, {static:false}) iDateInit: NzDatePickerComponent;
+
+  /**
+   * Decorador obtención de las propiedades de la directiva iDateEnd
+   */
+  @ViewChild(&#x27;iDateEnd&#x27;, {static:false}) iDateEnd:NzDatePickerComponent;
+
+  /**
+  * Busqueda por nombre
+  */
+  public nameSearch:string&#x3D;&quot;&quot;;
+
+   /** 
+  * Visualizar dropmenu del search name 
+  */
+  public vSearchName:boolean&#x3D;false;
+
+  /**
+   * Propiedad editCache
+   */
+  public editCache: { [key: number]: { edit: boolean; data: Percentage; validate:boolean; n:boolean } } &#x3D; [];
+
+  /**
+   * Lista de datos
+   */
+  public listOfData: Percentage[] &#x3D; [];
+
+  /**
+   * Errores campos input
+   * @example error[0] &#x3D; &#x27;error&#x27;
+   */
+  public error &#x3D; {
+    name:[&#x27;&#x27;,&#x27;&#x27;],
+    dateInit:[&#x27;&#x27;,&#x27;&#x27;],
+    dateEnd:[&#x27;&#x27;,&#x27;&#x27;],
+    percentage: [&#x27;&#x27;,&#x27;&#x27;],
+  }
+  
+  /**
+   * Constructor
+   * 
+   * @param _taxesServices Servicios Taxes - Impuesto
+   * @param _notification Servicio de ngZorro para mostrar mensaje de forma global
+   * @param _message Servicio de ngZorro para mostrar notificaciones de forma global
+   * @param router Servicio de Angular Router, que permite la navegación de una vista a la siguiente
+   */
+  constructor(public _taxesServices:TaxesService, 
+    private _notification:NzNotificationService, 
+    private _message: NzMessageService,
+    private router:Router) {}
+
+  /**
+   * Directiva ciclo de vida del component - Primera ejecución (Lifecycle hooks)
+   */
+  ngOnInit(): void {
+      this.load();
+      this.updateEditCache();
+  }
+
+  /**
+   * Decorador de métodos. Escucha eventos emitidos por el host
+   * 
+   * @param e KeyboardEvent
+  */
+  @HostListener (&#x27;window:keydown&#x27;, [&#x27;$event&#x27;]) onKeyDown(e:KeyboardEvent) {
+    
+    //Si pulsamos alt+b mostramos la ventana busqueda por nombre
+    if(e.altKey &amp;&amp; e.code&#x3D;&#x3D;&#x3D;&quot;KeyB&quot; &amp;&amp; this.tabSelect&#x3D;&#x3D;&#x3D;1) {
+      this.vSearchName &#x3D; !this.vSearchName
+      setTimeout(() &#x3D;&gt; {
+        this.iNameSearch.nativeElement.focus();
+      }, 300);  
+    }
+    
+    //Si pulsamo la tecka alt + i  insertamos un nuevo registros
+    if(e.altKey &amp;&amp; e.code&#x3D;&#x3D;&#x3D;&quot;KeyI&quot; &amp;&amp; this.tabSelect&#x3D;&#x3D;&#x3D;1) {
+      setTimeout(() &#x3D;&gt; {
+        this.add(); 
+      }, 300);
+    }
+
+    //Editar registro buscado con anterioridad
+    if (e.altKey &amp;&amp; e.shiftKey &amp;&amp; e.code&#x3D;&#x3D;&#x3D;&quot;KeyE&quot; &amp;&amp; this.tabSelect&#x3D;&#x3D;&#x3D;1) {
+      if (this.listOfData.length&#x3D;&#x3D;&#x3D;1) {
+        this.startEdit(this.listOfData[0].percentage.toString());
+      } else {
+        this._message.warning(&#x27;Sólo se puede editar un registro encontrado&#x27;)
+      }
+    }
+      
+  }
+
+  /**
+   * Leer y recorrer array con los tipos de porcentajes
+   */
+  public load():void{
+    this.tax.percentages.forEach((item:Percentage)&#x3D;&gt;{
+      item.dateInit &#x3D; new Date(item.dateInit);
+      if (item.dateEnd) {
+        item.dateEnd &#x3D; new Date(item.dateEnd);
+      }
+    })
+    this.listOfData &#x3D; this.tax.percentages;
+  }
+
+  /**
+   * Añadimos un tipo de porcentaje nuevo
+   */
+  public add():void{
+
+    //Si no existe
+    if (!this.editCache[-101]) {
+
+      let percentage &#x3D; new Percentage();
+      percentage._id&#x3D;&quot;&quot;;
+      percentage.name &#x3D; &quot;&quot;;
+      percentage.percentage &#x3D; -101;
+      percentage.dateInit &#x3D; new Date();
+      percentage.dateEnd &#x3D; null;
+      
+      this.listOfData &#x3D; [
+        {
+          ...percentage
+        },
+        ...this.listOfData
+      ];
+      this.updateEditCache();
+  
+      this.editCache[-101].edit &#x3D; true;
+      this.editCache[-101].n &#x3D; true;
+      
+      
+      //Esperamos 2 milisegundo para obtener el foco en el nombre
+      setTimeout(() &#x3D;&gt; {
+        this.iName.nativeElement.focus();
+      }, 200);
+
+    }
+
+  }
+
+  /**
+   * Iniciar edicion de la fila
+   * 
+   * @param id Identificador de la fila
+   */
+  public startEdit(id: string): void {
+    this.editCache[id].edit &#x3D; true;
+    setTimeout(() &#x3D;&gt; {
+      this.iName.nativeElement.focus()
+    }, 300);
+    
+  }
+
+  /**
+   * Cancelar edición de la fila
+   * 
+   * @param id Idenfiticador de la fila
+   */
+  public cancelEdit(id: number): void {
+    const index &#x3D; this.listOfData.findIndex(item &#x3D;&gt; item.percentage&#x3D;&#x3D;&#x3D; id);
+    
+    this.load();
+    this.updateEditCache();    
+
+    this.editCache[id] &#x3D; {
+      edit: false,
+      data: { ...this.listOfData[index] },
+      validate:true,
+      n:false
+    };
+
+  }
+
+  /**
+   * Busqueda de tipo de impuesto por porcentaje
+   */
+  public search():void{
+    this.load()
+    this.listOfData &#x3D; this.listOfData.filter( (item:Percentage)&#x3D;&gt;{
+      return item.name.toLocaleUpperCase().includes(this.nameSearch.toLocaleUpperCase());
+    })
+    this.updateEditCache();
+  }
+ 
+  /**
+   * Acciones a realizar con eventos de teclado en los inputs
+   * 
+   * @param n Campo
+   * @param id Identificador de la linea
+   */
+  public saveEnter(n:NgModel,id?:number):void {
+
+    switch(n.name) {
+      case &#x27;name&#x27; : {
+        if (this.iPercentage.nativeElement.disabled) {
+          this.iDateInit.picker.focus();
+        } else {
+          this.iPercentage.nativeElement.focus();
+        }
+
+        break;
+      }
+      case &#x27;percentage&#x27;: {
+        this.iDateInit.picker.focus();
+        break;
+      }
+      case &#x27;dateInit&#x27;: {
+        this.iDateEnd.picker.focus();
+        break;
+      }
+      case &#x27;dateEnd&#x27;: {
+       if (this.editCache[id].validate) {
+         this.iName.nativeElement.focus();
+       } else {
+         this.saveEdit(id);
+       }
+       break;
+      }
+
+    }
+
+    
+  }
+
+  /**
+   * Grabamos los datos en el array tipo de porcentajes . Percentages
+   * 
+   * @param id Indice en el array
+   */
+  public saveEdit(id: number): void {
+    
+    //Obtención de indice en el array
+    const index &#x3D; this.listOfData.findIndex(item &#x3D;&gt; item.percentage &#x3D;&#x3D;&#x3D; id);
+     
+    Object.assign(this.listOfData[index], this.editCache[id].data);
+
+    //Quitamos el filtro de busqueda antes de grabar
+    this.nameSearch &#x3D;&#x27;&#x27;;
+    this.search();
+
+    //Establecemos un tiempo para restaurar la lista de datos
+
+      this.tax.percentages &#x3D; this.listOfData;
+  
+      //Grabamos los datos
+      this._taxesServices.save(this.tax, this.tax._id).subscribe(
+        (resp:any)&#x3D;&gt;{
+          this._notification.info(&#x27;Tipo impositivo&#x27;, &quot;Tipo impositivo actualizado correctamente&quot;)
+        },
+        ()&#x3D;&gt;{
+          this._notification.error(&#x27;Error&#x27;, &#x27;Existe un error al actualizar los tipos impositivos&#x27;)
+        }
+      )
+      this.load();
+      this.updateEditCache();
+
+    
+    
+  }
+
+  /**
+  * Validación de los campos del formulario
+  * 
+  * @param n Directiva de atributo binding - Campos del formulario
+  * @param id Indice del array
+  */
+  public validate(n:NgModel,id:string) {
+    
+    try {
+      //Establece null la validación inicial de la fila
+      this.editCache[id].validate &#x3D; null;
+      
+      
+      //Creamos un patron para el campo nombre
+      let patron &#x3D; new RegExp(&quot;[a-zA-Z0-9]{3}&quot;)
+      
+      switch (n.name) {
+
+        
+        case &#x27;name&#x27;: {
+          if (!patron.test(n.value)) {
+            this.error.name[0] &#x3D; &#x27;error&#x27;;
+            this.editCache[id].validate &#x3D; false;
+          } else {
+            this.error.name[0] &#x3D; &#x27;&#x27;;
+          }
+          break;
+        }
+
+        case &#x27;percentage&#x27;: {
+          this.error.percentage[1] &#x3D; &#x27;&#x27;;
+         
+          if (n.value&#x3D;&#x3D;&#x3D;null) {
+            this.error.percentage[0] &#x3D; &#x27;error&#x27;;
+            this.error.percentage[1] &#x3D; &#x27;No puede ser nulo&#x27;;
+            this.editCache[id].validate &#x3D; false;
+          } else {
+              //Comprobamos que no sea superior ni inferior a 100
+              if (n.value&gt;100 || n.value&lt;-100) {
+                this.error.percentage[0] &#x3D; &#x27;error&#x27;;
+                this.error.percentage[1] &#x3D; &#x27;No puede ser superior a 100 ni inferior a -100&#x27;;
+                this.editCache[id].validate &#x3D; false;
+              }
+              //Comprobamos que no exista ese porcentaje
+              this.tax.percentages.forEach(
+                (item:Percentage)&#x3D;&gt;{
+                  if (item.percentage&#x3D;&#x3D;&#x3D;n.value) {
+                    this.error.percentage[0] &#x3D; &#x27;error&#x27;;
+                    this.error.percentage[1] &#x3D; &#x27;Ya existe este pocentaje&#x27;;
+                    this.editCache[id].validate &#x3D; false;
+                  }
+                }
+              )
+          }
+          break;
+        }
+
+        case &#x27;dateInit&#x27;: {
+          if (n.value&#x3D;&#x3D;&#x3D;null) {
+            this.error.dateInit[0] &#x3D; &#x27;error&#x27;;
+            this.editCache[id].validate &#x3D; false;
+          } else {
+            this.error.dateInit[0] &#x3D; &#x27;&#x27;;
+          }
+          break;
+        }
+
+        case &#x27;dateEnd&#x27;: {
+          this.error.dateEnd[0] &#x3D; &#x27;&#x27;;
+          if (n.value!&#x3D;null) {
+            let dateInit&#x3D; this.editCache[id].data.dateInit;
+            let dateEnd &#x3D; n.value;
+            //Compramos que la fecha de fin no sea inferior a la fecha de inicio
+            if(dateEnd&lt;dateInit) {
+              this.error.dateEnd[0] &#x3D; &#x27;error&#x27;;
+              this.editCache[id].validate &#x3D; false;
+            } 
+            
+          }
+          break;
+        }
+        
+       
+
+      }
+     
+      if (this.error.name[0]&#x3D;&#x3D;&#x3D;&#x27;error&#x27; || this.error.percentage[0]&#x3D;&#x3D;&#x3D;&#x27;error&#x27; 
+      || this.error.dateEnd[0]&#x3D;&#x3D;&#x3D;&#x27;error&#x27;
+      || this.error.dateInit[0]&#x3D;&#x3D;&#x3D;&#x27;error&#x27;) {
+        this.editCache[id].validate &#x3D; false;
+      }
+      
+
+    } catch (error) {
+      this._notification.error(&#x27;Error&#x27;,&#x27;Existe un error en la validación de datos.&#x27;,{nzDuration:800});
+      setTimeout(() &#x3D;&gt; {
+        this.router.navigate([&#x27;/taxes&#x27;]);
+      }, 1200);
+    }
+
+   
+    
+  }
+
+  /**
+   * Array con los datos a actualizar
+   */
+  public updateEditCache(): void {
+
+    this.editCache &#x3D; [];
+
+    this.listOfData.forEach(item &#x3D;&gt; {
+      this.editCache[item.percentage] &#x3D; {
+        edit: false,
+        data: { ...item },
+        validate: true,
+        n:false
+      };
+    }); 
+
+
+  }
+
+  /**
+   * Eliminar tipo de impuesto, sino tiene registros en la colección taxBook
+   * 
+   * @param id Identificador
+   */
+  public delete(id:number) {
+    const index &#x3D; this.listOfData.findIndex(item &#x3D;&gt; item.percentage &#x3D;&#x3D;&#x3D; id);
+    //TODO:Comprobación que no exista registros en la colección taxBook para su posterior eliminación
+  }
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div nz-col [nzSpan]&#x3D;&quot;12&quot; style&#x3D;&quot;padding-bottom: 10px;&quot;&gt;
+  &lt;button nz-button nzType&#x3D;&quot;primary&quot; (click)&#x3D;&quot;add()&quot; [disabled]&#x3D;&quot;!tax._id&quot;&gt;
+      &lt;i nz-icon nzType&#x3D;&quot;plus&quot; nzTheme&#x3D;&quot;outline&quot;&gt;&lt;/i&gt;
+      &lt;u&gt;I&lt;/u&gt;nsertar
+  &lt;/button&gt;
+&lt;/div&gt;
+
+
+
+&lt;nz-table #editRowTable nzBordered [nzData]&#x3D;&quot;listOfData&quot; nzTableLayout&#x3D;&quot;fixed&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th nzWidth&#x3D;&quot;40%&quot; nzCustomFilter&gt;Nombre tipo impositivo
+
+          &lt;!-- DropMenu Search name--&gt;
+          &lt;nz-dropdown-menu #SearchName&#x3D;&quot;nzDropdownMenu&quot;&gt;
+            &lt;div class&#x3D;&quot;ant-table-filter-dropdown &quot; style&#x3D;&quot;padding:10px&quot;&gt;
+                &lt;div class&#x3D;&quot;search-box&quot; &gt;
+                &lt;input type&#x3D;&quot;text&quot; nz-input placeholder&#x3D;&quot;Nombre del impuesto&quot; [(ngModel)]&#x3D;&quot;nameSearch&quot; #iNameSearch (keydown.enter)&#x3D;&quot;search()&quot;/&gt;
+                &lt;button nz-button nzSize&#x3D;&quot;small&quot; nzType&#x3D;&quot;primary&quot; class&#x3D;&quot;search-button&quot; style&#x3D;&quot;margin-top: 10px; margin-right: 2px;&quot;&gt;Buscar&lt;/button&gt;
+                &lt;button nz-button nzSize&#x3D;&quot;small&quot; style&#x3D;&quot;margin-top: 10px;&quot;&gt;Limpiar&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/nz-dropdown-menu&gt;
+          &lt;!-- ----------------------- --&gt;
+
+          &lt;nz-filter-trigger [(nzVisible)]&#x3D;&quot;vSearchName&quot; [nzActive]&#x3D;&quot;nameSearch.length &gt; 0&quot; [nzDropdownMenu]&#x3D;&quot;SearchName&quot; title&#x3D;&quot;Alt+b&quot;&gt;
+            &lt;i nz-icon nzType&#x3D;&quot;search&quot; &gt;&lt;/i&gt;
+          &lt;/nz-filter-trigger&gt;          
+        &lt;/th&gt;
+        &lt;th nzWidth&#x3D;&quot;15%&quot;&gt;%&lt;/th&gt;
+        &lt;th nzWidth&#x3D;&quot;15%&quot;&gt;Fecha Inicio&lt;/th&gt;
+        &lt;th nzWidth&#x3D;&quot;15%&quot;&gt;Fecha Fin&lt;/th&gt;
+        &lt;th&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr *ngFor&#x3D;&quot;let data of editRowTable.data&quot;&gt;
+       
+        &lt;!--Row  mostrar datos --&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;!editCache[data.percentage].edit ; else editTemplate&quot;&gt;
+          &lt;td&gt;{{ data.name }} &lt;/td&gt;
+          &lt;td&gt;{{ data.percentage }}&lt;/td&gt;
+          &lt;td&gt;{{ data.dateInit | date: &#x27;d/M/yy&#x27;}}
+          &lt;/td&gt;
+          &lt;td&gt;{{ data.dateEnd | date: &#x27;d/M/yy&#x27;}}&lt;/td&gt;
+          &lt;td&gt;
+            &lt;a (click)&#x3D;&quot;startEdit(data.percentage)&quot; title&#x3D;&quot;ALT+SHIFT+E&quot;&gt;Edit&lt;/a&gt;
+            &lt;nz-divider nzType&#x3D;&quot;vertical&quot;&gt;&lt;/nz-divider&gt;
+            &lt;a nz-popconfirm nzPopconfirmTitle&#x3D;&quot;Seguros de cancelar&quot; (nzOnConfirm)&#x3D;&quot;delete(data.percentage)&quot; title&#x3D;&quot;ALT+SHIFT+D&quot;&gt;Eliminar&lt;/a&gt;
+          &lt;/td&gt;
+        &lt;/ng-container&gt;
+        &lt;!--Row edición datos --&gt; 
+        &lt;ng-template #editTemplate&gt;
+          &lt;td&gt;
+            &lt;!-- Input name --&gt;
+            &lt;nz-form-control nzErrorTip&#x3D;&quot;El campo no puede ser nulo. Debe contener 3 o más caracteres&quot; [nzValidateStatus]&#x3D;&quot;error.name[0]&quot;
+            title&#x3D;&quot;ESCAPE &#x27;Cancelar edición línea&#x27;&quot;
+            &gt;
+              &lt;input type&#x3D;&quot;text&quot; nz-input 
+              [(ngModel)]&#x3D;&quot;editCache[data.percentage].data.name&quot; 
+              #inputName&#x3D;&quot;ngModel&quot; name&#x3D;&quot;name&quot; 
+              #iName
+              (keydown.enter)&#x3D;&quot;saveEnter(inputName)&quot;
+              (keydown.escape)&#x3D;&quot;cancelEdit(data.percentage)&quot;
+              (keydown)&#x3D;&quot;validate(inputName,data.percentage)&quot;
+              (focusout)&#x3D;&quot;validate(inputName,data.percentage)&quot; /&gt;
+            &lt;/nz-form-control&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;nz-form-control [nzErrorTip]&#x3D;&quot;error.percentage[1]&quot; [nzValidateStatus]&#x3D;&quot;error.percentage[0]&quot;
+            title&#x3D;&quot;ESCAPE &#x27;Cancelar edición línea&#x27;&quot;&gt;
+              &lt;input type&#x3D;&quot;number&quot; nz-input [(ngModel)]&#x3D;&quot;editCache[data.percentage].data.percentage&quot; [disabled] &#x3D; &quot;!editCache[data.percentage].n&quot;
+              name&#x3D;&quot;percentage&quot; max&#x3D;&quot;100&quot;
+              #iPercentage
+              #inputPercentage&#x3D;&quot;ngModel&quot;
+              (keydown.escape)&#x3D;&quot;cancelEdit(data.percentage)&quot;
+              (keydown.enter)&#x3D;&quot;saveEnter(inputPercentage)&quot;
+              (focusout)&#x3D;&quot;validate(inputPercentage,data.percentage)&quot;
+              /&gt;
+            &lt;/nz-form-control&gt;
+        &lt;/td&gt;
+          &lt;td&gt;
+             &lt;!-- Input dateInit --&gt;
+            &lt;nz-form-control nzErrorTip&#x3D;&quot;El campo no puede ser nulo&quot; [nzValidateStatus]&#x3D;&quot;error.dateInit[0]&quot;&gt;
+              &lt;nz-date-picker [(ngModel)]&#x3D;&quot;editCache[data.percentage].data.dateInit&quot; 
+              nzFormat&#x3D;&quot;dd.MM.yyyy&quot; 
+              nzPlaceHolder&#x3D;&quot;F. Inicio&quot; 
+              #iDateInit
+              #inputDateInit&#x3D;&quot;ngModel&quot; name&#x3D;&quot;dateInit&quot;
+              (keydown.enter)&#x3D;&quot;saveEnter(inputDateInit)&quot;
+              (focusout)&#x3D;&quot;validate(inputDateInit,data.percentage)&quot;
+              (ngModelChange)&#x3D;&quot;validate(inputDateInit,data.percentage)&quot;&gt;
+              &lt;/nz-date-picker&gt;
+            &lt;/nz-form-control&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;nz-form-control nzErrorTip&#x3D;&quot;La fecha no puede ser anterior a la fecha de inicio&quot; [nzValidateStatus]&#x3D;&quot;error.dateEnd[0]&quot;
+            title&#x3D;&quot;CTRL+ENTER &#x27;Grabar línea&#x27;&quot;
+            &gt;
+              &lt;nz-date-picker [(ngModel)]&#x3D;&quot;editCache[data.percentage].data.dateEnd&quot; 
+              nzFormat&#x3D;&quot;dd.MM.yyyy&quot; 
+              nzPlaceHolder&#x3D;&quot;F. Fin&quot; 
+              #iDateEnd
+              #inputDateEnd&#x3D;&quot;ngModel&quot; name&#x3D;&quot;dateEnd&quot;
+              (keydown.control.enter)&#x3D;&quot;saveEnter(inputDateEnd,data.percentage)&quot;
+              (focusout)&#x3D;&quot;validate(inputDateEnd,data.percentage)&quot;
+              (ngModelChange)&#x3D;&quot;validate(inputDateEnd,data.percentage)&quot;&gt;&lt;/nz-date-picker&gt;
+            &lt;/nz-form-control&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;a (click)&#x3D;&quot;saveEdit(data.percentage)&quot; 
+            [attr.disabled]&#x3D;&quot;editCache[data.percentage].validate&quot;
+            class&#x3D;&quot;save&quot;&gt;Save&lt;/a&gt;
+            &lt;nz-divider nzType&#x3D;&quot;vertical&quot;&gt;&lt;/nz-divider&gt;
+            &lt;a nz-popconfirm nzPopconfirmTitle&#x3D;&quot;¿Seguro de cancelar la edición?&quot; (nzOnConfirm)&#x3D;&quot;cancelEdit(data.percentage)&quot;&gt;Cancel&lt;/a&gt;
+          &lt;/td&gt;
+        &lt;/ng-template&gt;
+
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/nz-table&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./percentages.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div nz-col [nzSpan]="12" style="padding-bottom: 10px;">  <button nz-button nzType="primary" (click)="add()" [disabled]="!tax._id">      <i nz-icon nzType="plus" nzTheme="outline"></i>      <u>I</u>nsertar  </button></div><nz-table #editRowTable nzBordered [nzData]="listOfData" nzTableLayout="fixed">    <thead>      <tr>        <th nzWidth="40%" nzCustomFilter>Nombre tipo impositivo          <!-- DropMenu Search name-->          <nz-dropdown-menu #SearchName="nzDropdownMenu">            <div class="ant-table-filter-dropdown " style="padding:10px">                <div class="search-box" >                <input type="text" nz-input placeholder="Nombre del impuesto" [(ngModel)]="nameSearch" #iNameSearch (keydown.enter)="search()"/>                <button nz-button nzSize="small" nzType="primary" class="search-button" style="margin-top: 10px; margin-right: 2px;">Buscar</button>                <button nz-button nzSize="small" style="margin-top: 10px;">Limpiar</button>                </div>            </div>          </nz-dropdown-menu>          <!-- ----------------------- -->          <nz-filter-trigger [(nzVisible)]="vSearchName" [nzActive]="nameSearch.length > 0" [nzDropdownMenu]="SearchName" title="Alt+b">            <i nz-icon nzType="search" ></i>          </nz-filter-trigger>                  </th>        <th nzWidth="15%">%</th>        <th nzWidth="15%">Fecha Inicio</th>        <th nzWidth="15%">Fecha Fin</th>        <th></th>      </tr>    </thead>    <tbody>      <tr *ngFor="let data of editRowTable.data">               <!--Row  mostrar datos -->        <ng-container *ngIf="!editCache[data.percentage].edit ; else editTemplate">          <td>{{ data.name }} </td>          <td>{{ data.percentage }}</td>          <td>{{ data.dateInit | date: \'d/M/yy\'}}          </td>          <td>{{ data.dateEnd | date: \'d/M/yy\'}}</td>          <td>            <a (click)="startEdit(data.percentage)" title="ALT+SHIFT+E">Edit</a>            <nz-divider nzType="vertical"></nz-divider>            <a nz-popconfirm nzPopconfirmTitle="Seguros de cancelar" (nzOnConfirm)="delete(data.percentage)" title="ALT+SHIFT+D">Eliminar</a>          </td>        </ng-container>        <!--Row edición datos -->         <ng-template #editTemplate>          <td>            <!-- Input name -->            <nz-form-control nzErrorTip="El campo no puede ser nulo. Debe contener 3 o más caracteres" [nzValidateStatus]="error.name[0]"            title="ESCAPE \'Cancelar edición línea\'"            >              <input type="text" nz-input               [(ngModel)]="editCache[data.percentage].data.name"               #inputName="ngModel" name="name"               #iName              (keydown.enter)="saveEnter(inputName)"              (keydown.escape)="cancelEdit(data.percentage)"              (keydown)="validate(inputName,data.percentage)"              (focusout)="validate(inputName,data.percentage)" />            </nz-form-control>          </td>          <td>            <nz-form-control [nzErrorTip]="error.percentage[1]" [nzValidateStatus]="error.percentage[0]"            title="ESCAPE \'Cancelar edición línea\'">              <input type="number" nz-input [(ngModel)]="editCache[data.percentage].data.percentage" [disabled] = "!editCache[data.percentage].n"              name="percentage" max="100"              #iPercentage              #inputPercentage="ngModel"              (keydown.escape)="cancelEdit(data.percentage)"              (keydown.enter)="saveEnter(inputPercentage)"              (focusout)="validate(inputPercentage,data.percentage)"              />            </nz-form-control>        </td>          <td>             <!-- Input dateInit -->            <nz-form-control nzErrorTip="El campo no puede ser nulo" [nzValidateStatus]="error.dateInit[0]">              <nz-date-picker [(ngModel)]="editCache[data.percentage].data.dateInit"               nzFormat="dd.MM.yyyy"               nzPlaceHolder="F. Inicio"               #iDateInit              #inputDateInit="ngModel" name="dateInit"              (keydown.enter)="saveEnter(inputDateInit)"              (focusout)="validate(inputDateInit,data.percentage)"              (ngModelChange)="validate(inputDateInit,data.percentage)">              </nz-date-picker>            </nz-form-control>          </td>          <td>            <nz-form-control nzErrorTip="La fecha no puede ser anterior a la fecha de inicio" [nzValidateStatus]="error.dateEnd[0]"            title="CTRL+ENTER \'Grabar línea\'"            >              <nz-date-picker [(ngModel)]="editCache[data.percentage].data.dateEnd"               nzFormat="dd.MM.yyyy"               nzPlaceHolder="F. Fin"               #iDateEnd              #inputDateEnd="ngModel" name="dateEnd"              (keydown.control.enter)="saveEnter(inputDateEnd,data.percentage)"              (focusout)="validate(inputDateEnd,data.percentage)"              (ngModelChange)="validate(inputDateEnd,data.percentage)"></nz-date-picker>            </nz-form-control>          </td>          <td>            <a (click)="saveEdit(data.percentage)"             [attr.disabled]="editCache[data.percentage].validate"            class="save">Save</a>            <nz-divider nzType="vertical"></nz-divider>            <a nz-popconfirm nzPopconfirmTitle="¿Seguro de cancelar la edición?" (nzOnConfirm)="cancelEdit(data.percentage)">Cancel</a>          </td>        </ng-template>      </tr>    </tbody>  </nz-table></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'PercentagesComponent', 'selector': 'app-percentages'},{'name': 'SiderComponent', 'selector': 'app-sider'},{'name': 'TaxComponent', 'selector': 'app-tax'},{'name': 'TaxesComponent', 'selector': 'app-taxes'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'PercentagesComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PercentagesComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       
+       <script type="module" src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

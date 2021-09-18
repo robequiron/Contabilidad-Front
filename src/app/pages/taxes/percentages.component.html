@@ -26,8 +26,7 @@
 
           <nz-filter-trigger [(nzVisible)]="vSearchName" [nzActive]="nameSearch.length > 0" [nzDropdownMenu]="SearchName" title="Alt+b">
             <i nz-icon nzType="search" ></i>
-          </nz-filter-trigger>  
-                  
+          </nz-filter-trigger>          
         </th>
         <th nzWidth="15%">%</th>
         <th nzWidth="15%">Fecha Inicio</th>
@@ -46,9 +45,9 @@
           </td>
           <td>{{ data.dateEnd | date: 'd/M/yy'}}</td>
           <td>
-            <a (click)="startEdit(data.percentage)">Edit</a>
+            <a (click)="startEdit(data.percentage)" title="ALT+SHIFT+E">Edit</a>
             <nz-divider nzType="vertical"></nz-divider>
-            <a nz-popconfirm nzPopconfirmTitle="Seguros de cancelar" (nzOnConfirm)="delete(data.percentage)">Eliminar</a>
+            <a nz-popconfirm nzPopconfirmTitle="Seguros de cancelar" (nzOnConfirm)="delete(data.percentage)" title="ALT+SHIFT+D">Eliminar</a>
           </td>
         </ng-container>
         <!--Row edición datos --> 

@@ -24,7 +24,7 @@ export class TablesgridService {
    public movePages(n:number,pageIndex:number, total:number, pageSize:number):number {
 
     if (total===0) {
-      return 0;
+      return 1;
     }
     
     //Comprobamos el total de paginas
@@ -52,8 +52,10 @@ export class TablesgridService {
     
     //Comprobamos el total de paginas
     let pagesTotal:number =total / pageSize 
+    return Math.ceil(pagesTotal)
+    
 
-    return parseInt(pagesTotal.toFixed(0))
+    //return parseInt(Math.ceil(pagesTotal))
   }
   
 

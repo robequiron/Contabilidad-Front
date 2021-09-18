@@ -10,7 +10,7 @@
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
         <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
-        <link rel="stylesheet" href="../styles/readthedocs.css">
+        <link rel="stylesheet" href="../styles/Laravel.css">
     </head>
     <body>
 
@@ -99,7 +99,10 @@ import { NzSelectModule } from &#x27;ng-zorro-antd/select&#x27;;
 import { NzSkeletonModule } from &#x27;ng-zorro-antd/skeleton&#x27;;
 import { NzResultModule } from &#x27;ng-zorro-antd/result&#x27;;
 import { NzSpinModule } from &#x27;ng-zorro-antd/spin&#x27;;
-
+import { NzModalModule } from &#x27;ng-zorro-antd/modal&#x27;;
+import { NzDividerModule } from &#x27;ng-zorro-antd/divider&#x27;;
+import { NzDatePickerModule } from &#x27;ng-zorro-antd/date-picker&#x27;;
+import { NzMessageModule } from &#x27;ng-zorro-antd/message&#x27;;
 
 // Import what you need. RECOMMENDED. ✔️
 import { AccountBookFill, AlertFill, AlertOutline,
@@ -138,6 +141,10 @@ const icons: IconDefinition[] &#x3D; [
     NzSkeletonModule,
     NzResultModule,
     NzSpinModule,
+    NzModalModule,
+    NzDividerModule,
+    NzDatePickerModule,
+    NzMessageModule,
     NzIconModule.forRoot(icons),
     
     
@@ -166,6 +173,10 @@ const icons: IconDefinition[] &#x3D; [
     NzSelectModule,
     NzResultModule,
     NzSpinModule, 
+    NzModalModule,
+    NzDividerModule,
+    NzDatePickerModule,
+    NzMessageModule,
     NzSkeletonModule 
   ]
 })

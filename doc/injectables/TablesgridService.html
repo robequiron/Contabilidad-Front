@@ -10,7 +10,7 @@
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
         <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
-        <link rel="stylesheet" href="../styles/readthedocs.css">
+        <link rel="stylesheet" href="../styles/Laravel.css">
     </head>
     <body>
 
@@ -384,7 +384,7 @@ export class TablesgridService {
    public movePages(n:number,pageIndex:number, total:number, pageSize:number):number {
 
     if (total&#x3D;&#x3D;&#x3D;0) {
-      return 0;
+      return 1;
     }
     
     //Comprobamos el total de paginas
@@ -412,8 +412,10 @@ export class TablesgridService {
     
     //Comprobamos el total de paginas
     let pagesTotal:number &#x3D;total / pageSize 
+    return Math.ceil(pagesTotal)
+    
 
-    return parseInt(pagesTotal.toFixed(0))
+    //return parseInt(Math.ceil(pagesTotal))
   }
   
 

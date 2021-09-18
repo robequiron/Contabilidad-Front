@@ -1,8 +1,9 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient,  HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment.prod';
+import { Respuesta } from '../models/response.model';
 import { Taxes } from '../models/taxes.model';
 /**
  * Servicios impuestos y porcentajes
@@ -23,6 +24,7 @@ export class TaxesService {
 
 
   /**
+   * Constructor
    * 
    * @param http Servicio de angular para las peticiones HTTP
    */
@@ -45,16 +47,15 @@ export class TaxesService {
       .append('pageSize', `${pageSize}`)
       .append('sortField', `${sortField}`)
       .append('sortOrder', `${sortOrder}`)
-      .append('name', `${name}`)
+      
       
         filters.forEach(filter => {
           filter.value.forEach(value => {
             params = params.append(filter.key, value);
           });
         });
-      
-
-      let url = environment.URL_SERVICIOS + `/taxes?token=${this.token}`;
+       
+      let url = environment.URL_SERVICIOS + `/taxes`;
       return this.http.get(url, {params});
   }
 
@@ -68,7 +69,7 @@ export class TaxesService {
    */
   public getTax(_id:string):Observable<Taxes> {
     
-    let url = environment.URL_SERVICIOS + `/taxes/${_id}?token=${this.token}`;
+    let url = environment.URL_SERVICIOS + `/taxes/${_id}`;
     
     return this.http.get(url)
     .pipe(
@@ -87,7 +88,7 @@ export class TaxesService {
    * @returns Observable number
    */
   public getLastCode():Observable<number> {
-    let url = environment.URL_SERVICIOS + `/taxes/lastcode?token=${this.token}`;
+    let url = environment.URL_SERVICIOS + `/taxes/lastcode`;
 
     return this.http.get(url).pipe(
       map<any, number>(
@@ -98,12 +99,35 @@ export class TaxesService {
     )
   }
 
+  /**
+   * Eliminar el impuesto
+   * 
+   * @param _id Identificado del impuesto
+   * @returns Observable Respuesta
+   */
+  public deleteTax(_id:string):Observable<Respuesta> {
+    let url = environment.URL_SERVICIOS + `/taxes/${_id}`;
+    return this.http.delete(url)
+    .pipe(
+      map<any, Respuesta>((resp:any)=>{
+          return resp as Respuesta
+      })
+    );
+  }
+
+  /**
+   * Creamos o modificamos el impuesto
+   * 
+   * @param tax Object tax
+   * @param _id Identificar del impuesto
+   * @returns Observable Taxes
+   */
   public save(tax:Taxes, _id:String):Observable<Taxes> {
     //Convertimos el nombre a mayusculas
     tax.name = tax.name.toLocaleUpperCase();
     //Modificamos el impuestos
     if(tax._id) {
-      let url = environment.URL_SERVICIOS + `/taxes/${tax._id}?token=${this.token}`;
+      let url = environment.URL_SERVICIOS + `/taxes/${tax._id}`;
       return this.http.put(url,tax).pipe(
         map<any, Taxes>(
           (resp:any)=>{
@@ -112,7 +136,7 @@ export class TaxesService {
         )
       )
     } else {
-      let url = environment.URL_SERVICIOS + `/taxes?token=${this.token}`;
+      let url = environment.URL_SERVICIOS + `/taxes`;
       return this.http.post(url,tax).pipe(
         map<any,Taxes>(
           (resp:any)=>{

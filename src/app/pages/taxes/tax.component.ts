@@ -1,5 +1,4 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener,  OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -49,7 +48,12 @@ export class TaxComponent implements OnInit {
   /**
    * Pestaña seleccionada
    */
-  public SelectedIndex = 0;
+  public SelectedIndex:number = 0;
+
+  /**
+   * Número total de pestañas 
+   */
+  public totalTab:number = 2;
 
   /**
    * Decorador obtención propiedades de la directiva nameInput
@@ -60,7 +64,16 @@ export class TaxComponent implements OnInit {
    */
   @ViewChild('codeInput', {static:false}) codeInput:ElementRef;
 
-
+  /**
+   * Constructor
+   * 
+   * @param activeRouter Clase que proporciona información sobre la ruta asociada al componenete.
+   * @param router Servicio de Angular Router, que permite la navegación de una vista a la siguiente
+   * @param _taxesServices Servicios impuestos y porcentajes 
+   * @param _modal Servicios de modales de ngZorro
+   * @param _notification Servicio de notificación de ngZorro
+   * @param fb Clases abstracta para la creación y configuracion del formulario
+   */
   constructor(private activeRouter:ActivatedRoute,
               private router:Router,
               private _taxesServices:TaxesService,
@@ -83,18 +96,20 @@ export class TaxComponent implements OnInit {
     }
   
   /**
-   * @ignore
+   * Ciclo de vida del componenete. Lifecycle hooks
    */
   ngOnInit(): void {
     this.create();
     setTimeout(()=>{
       this.tax._id ? this.nameInput.nativeElement.focus() : this.codeInput.nativeElement.focus(); 
     },800)
-    
-    
   }
 
+  /**
+   * Decorador de métodos. Escucha eventos emitidos por el host
+   */
   @HostListener( 'window:keydown', ['$event']) onKeyDown(e:KeyboardEvent) {
+    //Cerrar formulario de edición o salir del formulario
     if (e.code==="Escape" && this.SelectedIndex===0) {
       this.SelectedIndex = 0;
       this.loadPercentage = true;
@@ -123,14 +138,42 @@ export class TaxComponent implements OnInit {
         
       }
     }
+    //Desplazamiento del tab hacia la derecha
+    if (e.ctrlKey && e.altKey  && e.code==="KeyR") {
+      console.log(this.formTax.controls['name'])
+      if (this.nameInput) {
+        this.SelectedIndex<this.totalTab ? this.SelectedIndex++ : ''
+
+      }
+    }
+    //TODO Desplazamiento del tab hacia la izquierda y derecha
+    
+  }
+
+   /**
+   * Cargamos los datos del impuesto
+   * 
+   * @param id Identificar del impuesto
+   */
+  private load(id:string):void{
+    this._taxesServices.getTax(id).subscribe(
+      (resp:Taxes)=>{
+        this.tax = resp;
+        this.formTax.setValue({
+          _id: this.tax._id,
+          code: this.tax.code,
+          name: this.tax.name,
+        })
+        this.formTax.controls['code'].disable();
+        this.loadForm = false;
+        this.loadPercentage = false;
+      }
+    )
   }
 
 
-
-
-
   /**
-   * Retorna el error del campo codigo
+   * Comprueba el código del impuesto sea válido
    */
   public getCodeValid():void {
 
@@ -153,6 +196,9 @@ export class TaxComponent implements OnInit {
     this.getCode();
   }
 
+  /**
+   * Comprueba el nombre del impuesto sea válido
+   */
   public getNameValid():void {
     let control = this.formTax.get('name');
     if (control.touched && control.errors) {
@@ -161,29 +207,6 @@ export class TaxComponent implements OnInit {
         return;
       }
     }
-  }
-
-
-  /**
-   * Cargamos los datos del impuesto
-   * 
-   * @param id Identificar del impuesto
-   */
-
-  private load(id:string):void{
-    this._taxesServices.getTax(id).subscribe(
-      (resp:Taxes)=>{
-        this.tax = resp;
-        this.formTax.setValue({
-          _id: this.tax._id,
-          code: this.tax.code,
-          name: this.tax.name,
-        })
-        this.formTax.controls['code'].disable();
-        this.loadForm = false;
-        this.loadPercentage = false;
-      }
-    )
   }
 
   /**
@@ -265,7 +288,6 @@ export class TaxComponent implements OnInit {
     }
   }
 
-  
   /**
    * Salimos del formulario
    */

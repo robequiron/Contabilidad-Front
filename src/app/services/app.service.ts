@@ -6,7 +6,9 @@ import { map } from 'rxjs/internal/operators/map';
 import { environment } from 'src/environments/environment.prod';
 import { TypeNif } from '../models/typenif.model';
 /**
- * Servicios app
+ * Servicios app de datos no modificables y necesarios para el funcionamiento de la aplicación.
+ * 
+ * @return Consultas tipos de nif
  */
 @Injectable({
   providedIn: 'root'

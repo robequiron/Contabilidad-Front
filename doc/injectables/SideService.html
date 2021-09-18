@@ -10,7 +10,7 @@
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
         <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
-        <link rel="stylesheet" href="../styles/readthedocs.css">
+        <link rel="stylesheet" href="../styles/Laravel.css">
     </head>
     <body>
 
@@ -124,7 +124,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/services/side.service.ts:55</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/services/side.service.ts:50</a></div>
                             </td>
                         </tr>
 
@@ -192,22 +192,17 @@
         {title:&#x27;Usuarios&#x27;,path:&#x27;users&#x27; , disabled:false, rol:&quot;USER_ROLE&quot;,},
         {title:&#x27;Parametros&#x27;, rol:&quot;USER_ROLE&quot;,
         itemsSubmenu: [
-          {title:&#x27;Impuestos&#x27;,path:&#x27;/taxes&#x27;},
+          {title:&#x27;Impuestos&#x27;,path:&#x27;taxes&#x27;},
         ]}
       ]
     },
-    {title:&quot;Contabilidad&quot;,icon:&quot;team&quot;,open:false, disabled:false, rol:&quot;USER_ROLE&quot;,
-    items:[
-      {title:&#x27;Bill&#x27;,path:&#x27;/pages&#x27; , disabled:false, rol:&quot;USER_ROLE&quot;,},
-      {title:&#x27;Tony&#x27;,path:&#x27;login&#x27; , disabled:false, rol:&quot;USER_ROLE&quot;,},
-      {title:&#x27;Submenu&#x27;, rol:&quot;USER_ROLE&quot;,
-        itemsSubmenu: [
-          {title:&#x27;Bill&#x27;,path:&#x27;/pages&#x27;},
-          {title:&#x27;Tony&#x27;,path:&#x27;login&#x27;}
-        ]}
-    ]
+    {title:&quot;Comercial&quot;,icon:&quot;user&quot;,open:false, disabled:false, rol:&quot;USER_ROLE&quot;,
+      items:[
+        {title:&#x27;Cuentas&#x27;,path:&#x27;cuentas&#x27; , disabled:false, rol:&quot;ADMIN_ROLE&quot;,},
+        {title:&#x27;Ofertas&#x27;,path:&#x27;config&#x27; , disabled:false, rol:&quot;ADMIN_ROLE&quot;,},
+      ]
     },
-    {title:&quot;File&quot;,icon:&quot;file&quot;,path:&quot;login&quot;, rol:&quot;USER_ROLE&quot;,}
+    
   ]</code>
                     </td>
                 </tr>
@@ -348,11 +343,23 @@ export class SideService {
         {title:&#x27;Usuarios&#x27;,path:&#x27;users&#x27; , disabled:false, rol:&quot;USER_ROLE&quot;,},
         {title:&#x27;Parametros&#x27;, rol:&quot;USER_ROLE&quot;,
         itemsSubmenu: [
-          {title:&#x27;Impuestos&#x27;,path:&#x27;/taxes&#x27;},
+          {title:&#x27;Impuestos&#x27;,path:&#x27;taxes&#x27;},
         ]}
       ]
     },
-    {title:&quot;Contabilidad&quot;,icon:&quot;team&quot;,open:false, disabled:false, rol:&quot;USER_ROLE&quot;,
+    {title:&quot;Comercial&quot;,icon:&quot;user&quot;,open:false, disabled:false, rol:&quot;USER_ROLE&quot;,
+      items:[
+        {title:&#x27;Cuentas&#x27;,path:&#x27;cuentas&#x27; , disabled:false, rol:&quot;ADMIN_ROLE&quot;,},
+        {title:&#x27;Ofertas&#x27;,path:&#x27;config&#x27; , disabled:false, rol:&quot;ADMIN_ROLE&quot;,},
+      ]
+    },
+    
+  ]
+  constructor() { }
+
+  
+  /*
+  {title:&quot;Contabilidad&quot;,icon:&quot;team&quot;,open:false, disabled:false, rol:&quot;USER_ROLE&quot;,
     items:[
       {title:&#x27;Bill&#x27;,path:&#x27;/pages&#x27; , disabled:false, rol:&quot;USER_ROLE&quot;,},
       {title:&#x27;Tony&#x27;,path:&#x27;login&#x27; , disabled:false, rol:&quot;USER_ROLE&quot;,},
@@ -363,12 +370,7 @@ export class SideService {
         ]}
     ]
     },
-    {title:&quot;File&quot;,icon:&quot;file&quot;,path:&quot;login&quot;, rol:&quot;USER_ROLE&quot;,}
-  ]
-  constructor() { }
-
-  
-  
+    {title:&quot;File&quot;,icon:&quot;file&quot;,path:&quot;login&quot;, rol:&quot;USER_ROLE&quot;,}*/
 
 
 }

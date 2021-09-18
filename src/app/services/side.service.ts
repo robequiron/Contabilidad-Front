@@ -40,7 +40,19 @@ export class SideService {
         ]}
       ]
     },
-    {title:"Contabilidad",icon:"team",open:false, disabled:false, rol:"USER_ROLE",
+    {title:"Comercial",icon:"user",open:false, disabled:false, rol:"USER_ROLE",
+      items:[
+        {title:'Cuentas',path:'cuentas' , disabled:false, rol:"ADMIN_ROLE",},
+        {title:'Ofertas',path:'config' , disabled:false, rol:"ADMIN_ROLE",},
+      ]
+    },
+    
+  ]
+  constructor() { }
+
+  
+  /*
+  {title:"Contabilidad",icon:"team",open:false, disabled:false, rol:"USER_ROLE",
     items:[
       {title:'Bill',path:'/pages' , disabled:false, rol:"USER_ROLE",},
       {title:'Tony',path:'login' , disabled:false, rol:"USER_ROLE",},
@@ -51,12 +63,7 @@ export class SideService {
         ]}
     ]
     },
-    {title:"File",icon:"file",path:"login", rol:"USER_ROLE",}
-  ]
-  constructor() { }
-
-  
-  
+    {title:"File",icon:"file",path:"login", rol:"USER_ROLE",}*/
 
 
 }
