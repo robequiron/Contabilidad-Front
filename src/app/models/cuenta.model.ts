@@ -1,7 +1,8 @@
-/**
- * Clases cuenta (clientes/proveedores y acreedores)
- */
+import Email from "./email.model";
 
+/**
+ * Clase cuenta (clientes/proveedores y acreedores)
+ */
 export class Cuenta {
 
     /**
@@ -59,6 +60,11 @@ export class Cuenta {
      * Cuenta bloqueada para su uso
      */
     public locked:boolean;
+
+    /**
+     * Array email
+     */
+    public email:Email[]=[];
 
     /**
      * Constructor

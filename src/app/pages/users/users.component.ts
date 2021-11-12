@@ -303,7 +303,7 @@ export class UsersComponent implements OnInit, OnDestroy {
    * Ir al formulario añadir usuario
    */
   public add():void {
-    this.router.navigate(['/user']);
+    this.router.navigate(['/user', 'nuevo']);
   }
 
   /**

@@ -52,7 +52,7 @@ export class UserComponent implements OnInit {
       
       this.activedRouter.params.subscribe(
         (resp)=>{
-          if (resp.id) {
+          if (resp.id!='nuevo') {
             this.load(resp.id);
           }
         }

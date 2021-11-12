@@ -1,5 +1,7 @@
 
-<div nz-row style="background-color: white; height: auto;">
+<div nz-row style="background-color: white; "
+[ngStyle]="{'min-height': heightWindow}">
+
     <nz-tabset style="width: 100%; padding: 15px;"
             nzSize="small" 
             nzType="line" 
@@ -11,107 +13,133 @@
           <form nz-form style="padding: 15px;" [formGroup]="formCuenta" (ngSubmit)="save()">
                 <!-- Identificador del usuario -->
                 <nz-form-item>
-                    <nz-form-label [nzLg]="4" [nzMd]="4" [nzSm]="24" [nzXs]="24"  
+                    <nz-form-label [nzLg]="4" [nzMd]="4" [nzSm]="24" [nzXs]="24" 
+                    nzRequired nzFor="code" >
+                        Código
+                    </nz-form-label>
+                    <nz-form-control [nzLg]="{ span: 5, offset: 0 }" [nzMd]="8" [nzSm]="24" [nzXs]="24" 
+                    [nzErrorTip]='errorForm.code[1]' [nzValidateStatus]='errorForm.code[0]' >
+                        <input nz-input  id="code" formControlName="code" #codeInput type="number" placeholder="Código" max="99999" (keydown)="getCodeValid($event)" 
+                        (focusout)="getCodeValid($event)"
+                        />
+                    </nz-form-control>
+
+                    <nz-form-label [nzLg]="{ span: 4, offset: 3 }" [nzMd]="4" [nzSm]="24" [nzXs]="24"  
                     nzFor="_id">
                         Id
-                    </nz-form-label>
+                </nz-form-label>
                     <nz-form-control  [nzLg]="8" [nzMd]="8" [nzSm]="24" [nzXs]="24" nzErrorTip="El identificador no es válido!">
-                        <input nz-input  id="_id" disabled formControlName="_id"/>
+                        <input nz-input  id="_id"  formControlName="_id"/>
                     </nz-form-control>
                 </nz-form-item>
-                <!-- Nombre del usuario-->
+                <nz-divider nzText=""></nz-divider>
+
+                <!-- Nif y category  -->
+                <nz-form-item >
+                    <nz-form-label [nzLg]="4" [nzMd]="4" [nzSm]="24" [nzXs]="24"
+                    nzRequired nzFor="nif">
+                        NIF
+                    </nz-form-label>
+                    <nz-form-control [nzLg]="3" [nzMd]="4" [nzSm]="24" [nzXs]="24" style="padding-right: 0px !important;"
+                    nzErrorTip="El nif es obligatorio">
+                    <nz-select formControlName="typeNif" id=typeNif (ngModelChange)="selectNif()" #typeNifInput>
+                        <ng-container *ngFor="let code of _appServices.TYPENIF">
+                        <nz-option   [nzValue]="code.code" [nzLabel]="code.name" ></nz-option>
+                        </ng-container>
+                    </nz-select>    
+                    </nz-form-control>
+                    <nz-form-control [nzLg]="5" [nzMd]="4" [nzSm]="24" [nzXs]="24" nzErrorTip="El Nif/Cif no es válido!" style="padding-left: 0px !important">
+                        <input nz-input  id="nif" formControlName="nif" #nifInput type="text" placeholder="Número de identificación fiscal" (focusout)="checknif()"/>
+                    </nz-form-control>
+
+                    <nz-form-label [nzLg]="4" [nzMd]="4" [nzSm]="24" [nzXs]="24"
+                    nzFor="category">
+                      Categoría
+                    </nz-form-label>
+                    <nz-form-control [nzLg]="1" [nzMd]="1" [nzSm]="6" [nzXs]="6">
+                        <input nz-input id="category" formControlName="category"  type="text"/>
+                    </nz-form-control> 
+                    <nz-form-control [nzLg]="7" [nzMd]="7" [nzSm]="18" [nzXs]="18">
+                        <input nz-input id="category" formControlName="dCategory"  type="text" placeholder="Categoría de la cuenta"/>
+                    </nz-form-control> 
+                    
+                   
+                </nz-form-item>
+               
+
+                <!-- Nombre de la cuenta-->
                 <nz-form-item>
                     <nz-form-label [nzLg]="4" [nzMd]="4" [nzSm]="24" [nzXs]="24" 
                     nzRequired nzFor="name">
-                        Nombre
+                        {{labels.name[0]}}
                     </nz-form-label>
                     <nz-form-control [nzLg]="8" [nzMd]="8" [nzSm]="24" [nzXs]="24" 
                     nzErrorTip="El nombre no es válido!">
-                        <input nz-input  id="name" formControlName="name" #nameInput type="text" placeholder="Empresa"/>
+                        <input nz-input  id="name" formControlName="name" #nameInput type="text" [placeholder]="labels.name[1]" (focusout)="copyNameInterno()"/>
                     </nz-form-control>
                 </nz-form-item>
 
                 <!-- Apellidos y Segundo apellido -->
                 <nz-form-item >
                     <nz-form-label [nzLg]="4" [nzMd]="4" [nzSm]="24" [nzXs]="24" 
-                    nzRequired nzFor="Apellido" >
-                        Apellido
+                    nzRequired nzFor="surname" >
+                        {{labels.surname[0]}}
                     </nz-form-label>
                     <nz-form-control [nzLg]="8" [nzMd]="8" [nzSm]="24" [nzXs]="24" 
                     nzErrorTip="El nombre no es válido!">
-                        <input nz-input  id="name" formControlName="name" #nameInput type="text" placeholder="Primer apellido" />
+                        <input nz-input  id="surname" formControlName="surname"  type="text" [placeholder]="labels.surname[1]" />
                     </nz-form-control>
                   
                     <nz-form-label  [nzLg]="4" [nzMd]="4" [nzSm]="24" [nzXs]="24" 
-                    nzRequired nzFor="Apellido">
-                        Apellido
+                     nzFor="surname2" [nzNoColon]="!labels.surname2[0]">
+                    {{labels.surname2[0]}}
                     </nz-form-label>
                     <nz-form-control [nzLg]="8" [nzMd]="8" [nzSm]="24" [nzXs]="24" 
-                    nzErrorTip="El nombre no es válido!">
-                        <input nz-input  id="name" formControlName="name" #nameInput type="text" placeholder="Segundo apellido"/>
+                    nzErrorTip="El segundo apellido no es válido!">
+                        <input nz-input  id="surname2" formControlName="surname2"  type="text" [placeholder]="labels.surname2[1]"/>
                     </nz-form-control>
                 </nz-form-item>
 
-                <!-- Nif y sexo -->
+                <!-- Fecha de nacimiento y sexo -->
                 <nz-form-item>
                     <nz-form-label [nzLg]="4" [nzMd]="4" [nzSm]="24" [nzXs]="24"
-                    nzRequired nzFor="nif">
-                      NIF
+                    nzRequired nzFor="dateBrith">
+                      {{labels.dateBirth[0]}}
                     </nz-form-label>
-                    <nz-form-control [nzLg]="3" [nzMd]="8" [nzSm]="24" [nzXs]="24"
-                    nzErrorTip="El rol de usuario es obligatorio">
-                    <nz-select formControlName="codeNif" id=codeNif (ngModelChange)="checkNif()">
-                      <ng-container *ngFor="let code of _appServices.TYPENIF">
-                        <nz-option *ngIf="code.valida"  [nzValue]="code.code" [nzLabel]="code.name" ></nz-option>
-                      </ng-container>
-                    </nz-select>    
-                    </nz-form-control>
-                    <nz-form-control [nzLg]="5" [nzMd]="8" [nzSm]="24" [nzXs]="24" nzErrorTip="El Nif/Cif no es válido!" >
-                        <input nz-input  id="nif" formControlName="nif"  type="text" placeholder="Número de identificación fiscal" (focusout)="checkNif()"/>
+                    <nz-form-control [nzLg]="8" [nzMd]="8" [nzSm]="24" [nzXs]="24"
+                    nzErrorTip="La fecha es obligatoria">
+                    <nz-date-picker  nzFormat="dd/MM/yyyy"
+                    [nzDisabledDate]="disabledDate" 
+                    [nzPlaceHolder]="labels.dateBirth[1]" 
+                    formControlName="dateBirth" (ngModelChange)="onChange($event)"></nz-date-picker>  
                     </nz-form-control>
 
                     <nz-form-label [nzLg]="4" [nzMd]="4" [nzSm]="24" [nzXs]="24"
-                    nzRequired nzFor="sexo">
-                      Sexo
+                    [nzRequired]="labels.sexo[0]==='' ? false : true" [nzNoColon]="!labels.sexo[0]"  nzFor="sexo">
+                      {{labels.sexo[0]}}
                     </nz-form-label>
-                    <nz-form-control [nzLg]="8" [nzMd]="8" [nzSm]="24" [nzXs]="24">
-                        <nz-select formControlName="sexo" id="sexo">
+                    <nz-form-control [nzLg]="8" [nzMd]="8" [nzSm]="24" [nzXs]="24" nzErrorTip="El sexo es obligatorio">
+                        <nz-select formControlName="sexo" id="sexo" [nzPlaceHolder]="labels.sexo[1]" >
                             <nz-option  nzValue="F" nzLabel="Femenino"></nz-option>
                             <nz-option  nzValue="M" nzLabel="Masculino"></nz-option>
+                            <nz-option  nzValue="" nzLabel=""></nz-option>
                         </nz-select>
                     </nz-form-control> 
 
-
-
-
-                </nz-form-item>
-
-                <!-- Sexo -->
-                <nz-form-item>
-                    <nz-form-label>
-
-                    </nz-form-label>
                 </nz-form-item>
 
 
-
-                
-                
-
-
-                
-
-    
                 <nz-form-item nz-row>
-                  <nz-form-control [nzSpan]="12" style="text-align: center;">
+                  <nz-form-control [nzSpan]="24" style="text-align: center;">
                     <button nz-button  nzType="primary" style="margin-right: 5px;" [disabled]="!formCuenta.valid">Modificar</button>
+                    <button nz-button  nzType="default" (click)="exit()">Salir</button>
                   </nz-form-control>
                 </nz-form-item>
           </form>
         </nz-tab>
     </nz-tabset>
 </div>
-
+<app-footer></app-footer>
 <pre>
     Estado del formulario {{formCuenta.valid}}
     <br>

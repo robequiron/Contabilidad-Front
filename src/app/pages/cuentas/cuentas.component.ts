@@ -18,86 +18,100 @@ import { TablesgridService } from 'src/app/services/tablesgrid.service';
 export class CuentasComponent implements OnInit {
 
   /**
-   * Decorador obtención de las propiedades de la directiva iNameSearch
-   */
-   @ViewChild('iNameSearch', {static:false}) iNameSearch : ElementRef;
-   /**
-    * Decorador obtención de las propiedades de la directiva iEmailSearch
-    */
-   @ViewChild('iEmailSearch', {static:false}) iEmailSearch : ElementRef;
+  * Decorador obtención de las propiedades de la directiva iNameSearch
+  */
+  @ViewChild('iNameSearch', {static:false}) iNameSearch : ElementRef;
+  /**
+  * Decorador obtención de las propiedades de la directiva iEmailSearch
+  */
+  @ViewChild('iSurnameSearch', {static:false}) iSurnameSearch : ElementRef;
+  /**
+  * Decorador obtención de las propiedades de la directiva iEmailSearch
+  */
+  @ViewChild('iCodeSearch', {static:false}) iCodeSearch : ElementRef;
+  /**
+  * Decorador obtención de las propiedades de la directiva iEmailSearch
+  */
+  @ViewChild('iNifSearch', {static:false}) iNifSearch : ElementRef;  
+   
   
-   /**
-    * Suscripción listado cuentas
-    */
-   public $cuentaList:Subscription;
+  /**
+  * Suscripción listado cuentas
+  */
+  public $cuentaList:Subscription;
 
-   /**
-    * Array de cuentas
-    */
-   public cuentas:Cuenta[]=[];
+  /**
+  * Array de cuentas
+  */
+  public cuentas:Cuenta[]=[];
 
   /**
    * Busqueda por nombre
    */
-   public nameSearch:string="";
-   /**
-    * Busqueda por email
-    */
-   public emailSearch:string="";
+  public nameSearch:string="";
+  /**
+  * Busqueda por email
+  */
+  public surnameSearch:string="";
 
-     /** 
+  /**
+  * Busqueda por código
+  */
+  public codeSearch:number;
+
+  /**
+   * Busquda por nif
+   */
+  public nifSearch:string="";
+      /** 
    * Visualizar dropmenu del search name 
    */
   public vSearchName:boolean=false;
-  
+
   /*
   * Visualizar dropmenu del search email 
   */
-  public vSearchEmail:boolean=false;
+  public vSearchSurname:boolean=false;
+
+  /*
+  * Visualizar dropmenu del search código
+  */
+  public vSearchCode:boolean=false;
 
   /**
   * Texto a mostrar en el pie de la tabla
   */
   public textFooter:string;
 
-   /**
+  /**
    * Total de registros
    */
-    public total:number = 1;
- 
-    /**
-     * Estado leyendo
-     */
-    public loading = true;
-  
-    /**
-     * Número de registros por página
-     */
-    public pageSize:number = 10;
+  public total:number = 1;
+
+  /**
+   * Estado leyendo
+   */
+  public loading = true;
+
+  /**
+   * Número de registros por página
+   */
+  public pageSize:number = 10;
     
-    /**
-     * Número de página actual
-     */
-    public pageIndex:number = 1;
-    /**
-     * Campo a ordenar
-     */
-    public sortField:string = null; 
-    /**
-     *  Tipo de orden ascend | descend | null
-     */
-    public sortOrder:string = null;
+  /**
+   * Número de página actual
+   */
+  public pageIndex:number = 1;
+  /**
+   * Campo a ordenar
+   */
+  public sortField:string = null; 
+  /**
+   *  Tipo de orden ascend | descend | null
+   */
+  public sortOrder:string = null;
    
   /**
-   * Array para filtra con roles de usuario
-   */
-   public filterRol:Array<{text:string, value:string, byDefault?:boolean}> = [
-    { text: 'ADMIN_ROLE', value: 'ADMIN_ROLE' }, 
-    { text: 'SUPER_ROLE', value: 'SUPER_ROLE' },
-    { text: 'USER_ROLE', value: 'USER_ROLE', byDefault: true },
-  ];
-
-      /**
    * Filtros de busqueda
    */
   private filter:Array<{ key: string; value: string[]}>=[];
@@ -109,6 +123,28 @@ export class CuentasComponent implements OnInit {
     private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  /**
+   * Obtenemos los usuarios
+   * 
+   * 
+   * @param pageIndex Número de página
+   * @param pageSize Número de registros por página
+   * @param sortField Columna a ordenar
+   * @param sortOrder Orden de la columnta
+   * @param filter Filtros la consulta
+   */
+   public load(pageIndex:number, pageSize:number,sortField:string,sortOrder:string,filter: Array<{ key: string; value: string[] }>):void{
+    this.loading = true;
+    this.$cuentaList = this._cuentasService.getCuentas(pageIndex,pageSize,sortField,sortOrder,filter).subscribe(
+      (resp:any)=>{
+        this.loading = false;
+        this.cuentas  = resp.data as Cuenta[];
+        this.total = 0;
+        this.textFooter = "Número de registros:" + this.total;
+      }
+    )
   }
 
   /**
@@ -124,10 +160,12 @@ export class CuentasComponent implements OnInit {
     this.sortField = sortField;
     this.sortOrder = sortOrder;
     this.filter = filter;
-    //this.loadUser(pageIndex, pageSize,sortField,sortOrder,filter)
+    this.load(pageIndex, pageSize,sortField,sortOrder,filter)
   }
 
-
+  /**
+   * Ir al formulario cuenta para añadir un registro nuevo
+   */
   public add() {
     this.router.navigate(['/cuenta', 'nuevo']);
   }
@@ -138,8 +176,13 @@ export class CuentasComponent implements OnInit {
 
   public search(){}
 
-
-  public edit(id:string){}
+  /**
+   * Ir al formulario cuenta para modificar el registro
+   * @param _id Identificador
+   */
+  public edit(_id:string){
+    this.router.navigate(['/cuenta', _id]);
+  }
 
   public deleteRow(id:string){}
 
