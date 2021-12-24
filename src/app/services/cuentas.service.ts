@@ -91,8 +91,9 @@ export class CuentasService {
   }
 
   public save(cuenta:Cuenta, _id:string) {
-
+    console.log(cuenta)
     if(cuenta._id) {
+      console.log("estamos")
       let url = environment.URL_SERVICIOS + `/cuentas/${cuenta._id}`;
       return this.http.put(url,cuenta).pipe(
         map( (resp:any)=>{
@@ -103,6 +104,7 @@ export class CuentasService {
       let url = environment.URL_SERVICIOS + `/cuentas`;
       return this.http.post(url,cuenta).pipe(
         map( (resp:any)=>{
+          
           return resp;
         })
       )

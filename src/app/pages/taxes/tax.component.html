@@ -40,9 +40,18 @@
                 </nz-form-item>
           </form>
         </nz-tab>
+
+
+        <!--
+          Pestaña tipos de porcentajes
+        -->
         <nz-tab nzTitle="Tipos">
             <app-percentages [tax]="tax" [tabSelect]="SelectedIndex" *ngIf="!loadPercentage"></app-percentages>
         </nz-tab>
+
+
+
+
     </nz-tabset>
 </div>
 </nz-spin>

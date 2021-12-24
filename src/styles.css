@@ -9,3 +9,13 @@
 nz-footer {
     text-align: center;
 }
+
+.mt2 {
+    margin-top: 2px !important; 
+}
+.ml2 {
+    margin-left: 2px !important; 
+}
+.min100 {
+    min-width: 100%;
+}

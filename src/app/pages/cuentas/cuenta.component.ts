@@ -57,6 +57,8 @@ export class CuentaComponent implements OnInit {
   public errorForm = {
     code: ['','']
   }
+
+
   /**
    * Titulo y placeholder de los input dinámicos.
    */
@@ -92,7 +94,7 @@ export class CuentaComponent implements OnInit {
     this.heightWindow = Math.round(window.innerHeight*40/100).toString() + 'px'; 
     this.create()
     setTimeout(() => {
-      //his.descriptionCategoria(1)
+      this.descriptionCategoria(1)
       this.codeInput.nativeElement.focus();
     }, 800);
   }
@@ -154,8 +156,9 @@ export class CuentaComponent implements OnInit {
   }
   
   /**
-   * Tipo y descripción de la categoría 
+   * Categoria de la cuenta personal
    * @returns String
+   * @param code Código categoría cuenta personal (1 NIF / 2 CIF / 3 PASAPORTE / 4 PERMISO DE RESIDENCIA / 5 INTERNO )
    * @example 'Persona Física' / 'Persona Jurídica' / 'Cuenta Interna'
    */
   private descriptionCategoria(code:number):void {
@@ -272,7 +275,9 @@ export class CuentaComponent implements OnInit {
 
   }
 
-
+  /**
+   * Creamos el formulario Reactive
+   */
   public create(){
 
     this.formCuenta = this.fb.group({
@@ -281,8 +286,8 @@ export class CuentaComponent implements OnInit {
       typeNif:[1],
       nif:['',Validators.required],
       category:[{value:'',disabled:true}],
-      name:['',[Validators.required, Validators.pattern("[a-zA-Z0-9]{3,25}")]],
-      surname:['',[Validators.required, Validators.pattern("[a-zA-Z0-9]{3,25}")]],
+      name:['',[Validators.required, Validators.pattern("[a-zA-Z0-9À-ÿñÑ\s]{3,25}")]],
+      surname:['',[Validators.required, Validators.pattern("[a-zA-Z0-9À-ÿñÑ\s]{3,25}")]],
       surname2:[''],
       sexo:['F',Validators.required],
       dateBirth:['', Validators.required],
@@ -290,6 +295,7 @@ export class CuentaComponent implements OnInit {
     })
 
   }
+
 
   public save() {
     //TODO: Comprobación sexo
@@ -309,6 +315,7 @@ export class CuentaComponent implements OnInit {
       
       this._cuentaService.save(this.cuenta,this.cuenta._id).subscribe(
         (resp:any)=>{
+          this._notification.success('Correcto','Registro modificado correctamente')
           console.log(resp)
         },
         ()=>{
@@ -329,10 +336,8 @@ export class CuentaComponent implements OnInit {
 
     //Obtenemos el último código disponible
     if (!controlCode.value) {
-      console.log("que pasa")
       this._cuentaService.getLastCode().subscribe(
         (resp:number)=>{
-          console.log("estmosfewfekjk")
           controlCode.setValue(resp + 1);
         },
         ()=>{

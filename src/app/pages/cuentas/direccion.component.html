@@ -1,0 +1,41 @@
+
+<form nz-form  [formGroup]="formDireccion" (ngSubmit)="save()">
+   
+
+<div nz-row style="width: 100%;">
+    
+       
+        <div nz-col class="mt2 ml2" [nzXl]="4" [nzLg]="6" [nzMd]="8" [nzSm]="24" [nzXs]="24">
+            <nz-select  nzShowSearch formControlName="_idVia"  class="min100" nzPlaceHolder="Tipo de vía">
+                <nz-option *ngFor="let v of vias" [nzLabel]="v.name" [nzValue]="v._id"></nz-option>
+            </nz-select>
+        </div>
+        <div nz-col class="mt2 ml2" [nzXl]="6" [nzLg]="8" [nzMd]="10" [nzSm]="24" [nzXs]="24">
+            <input nz-input id="nameVia" formControlName="nameVia"  type="text" placeholder="Nombre de la vía"/>
+        </div>
+        <div nz-col class="mt2 ml2" [nzXl]="2" [nzLg]="3" [nzMd]="6" [nzSm]="6" [nzXs]="6">
+            <input nz-input id="number" formControlName="number"  type="text" placeholder="Num"/>
+        </div>
+        <div nz-col class="mt2 ml2" [nzXl]="2" [nzLg]="3" [nzMd]="6" [nzSm]="6" [nzXs]="6">
+            <input nz-input id="flat" formControlName="flat"  type="number" placeholder="Piso"/>
+        </div>
+        <div nz-col class="mt2 ml2" [nzXl]="2" [nzLg]="3" [nzMd]="6" [nzSm]="6" [nzXs]="6">
+            <input nz-input id="door" formControlName="door"  type="text" placeholder="Puerta"/>
+        </div>
+        <div nz-col class="mt2 ml2" [nzXl]="2" [nzLg]="3" [nzMd]="6" [nzSm]="12" [nzXs]="12">
+            <input nz-input id="postal" formControlName="postal"  type="number" max="99999" placeholder="Código Postal"/>
+        </div>
+        <div nz-col class="mt2 ml2" [nzXl]="6" [nzLg]="8" [nzMd]="10" [nzSm]="24" [nzXs]="24">
+            <input nz-input id="provincia" formControlName="provincia"  type="text" placeholder="Provincia"/>
+        </div>
+        <div nz-col class="mt2 ml2" [nzXl]="6" [nzLg]="8" [nzMd]="10" [nzSm]="24" [nzXs]="24">
+            <input nz-input id="localidad" formControlName="localidad"  type="text" placeholder="Localidad"/>
+        </div>
+        
+        
+</div>
+
+ 
+   
+</form>
+

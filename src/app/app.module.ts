@@ -27,6 +27,8 @@ import { PercentagesComponent } from './pages/taxes/percentages.component';
 import { InterceptorService } from './interceptors/interceptor.service';
 import { CuentasComponent } from './pages/cuentas/cuentas.component';
 import { CuentaComponent } from './pages/cuentas/cuenta.component';
+import { EmailsComponent } from './pages/cuentas/emails.component';
+import { DireccionComponent } from './pages/cuentas/direccion.component';
 
 registerLocaleData(es);
 
@@ -47,6 +49,9 @@ registerLocaleData(es);
     PercentagesComponent,
     CuentasComponent,
     CuentaComponent,
+    EmailsComponent,
+    DireccionComponent,
+  
    
   ],
   imports: [

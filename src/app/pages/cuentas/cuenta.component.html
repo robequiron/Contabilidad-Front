@@ -6,10 +6,10 @@
             nzSize="small" 
             nzType="line" 
             nzHideAll="false"  
-            nzSelectedIndex="0"
+            nzSelectedIndex="1"
             nzTabPosition="top"
             >
-        <nz-tab nzTitle="General" nzDisabled>
+        <nz-tab nzTitle="General">
           <form nz-form style="padding: 15px;" [formGroup]="formCuenta" (ngSubmit)="save()">
                 <!-- Identificador del usuario -->
                 <nz-form-item>
@@ -136,6 +136,12 @@
                   </nz-form-control>
                 </nz-form-item>
           </form>
+        </nz-tab>
+        <nz-tab nzTitle="Datos">
+            <nz-divider nzPlain nzText="Dirección" nzOrientation="left"></nz-divider>
+            <app-direccion></app-direccion>
+            <nz-divider nzPlain nzText="Email" nzOrientation="left"></nz-divider>
+            <app-emails></app-emails>
         </nz-tab>
     </nz-tabset>
 </div>
