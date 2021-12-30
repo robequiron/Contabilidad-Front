@@ -1,17 +1,53 @@
 
+<nz-modal [(nzVisible)]="vModal" nzTitle="Datos códigos postales" (nzOnCancel)="closeModal()"
+[nzFooter]="foot" nzMask="false" nzClosable="false"
+>
+    <ng-container *nzModalContent >
+        <nz-table #basicTable [nzData]="postales" >
+            <thead>
+              <tr>
+                <th>Provincia</th>
+                <th>Población</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let p of postales">
+                <td>{{p.provincia}}</td>
+                <td>{{p.poblacion}}</td>
+                <td>
+                  <a (click)="selectPostal(p)">Seleccionar</a>
+                </td>
+              </tr>
+            </tbody>
+          </nz-table>
+    </ng-container>
+    <ng-template #foot>
+        <button nz-button nzType="default" (click)="closeModal()">Cancelar</button>
+    </ng-template>
+    
+</nz-modal>
+
 <form nz-form  [formGroup]="formDireccion" (ngSubmit)="save()">
    
 
 <div nz-row style="width: 100%;">
-    
-       
+   
         <div nz-col class="mt2 ml2" [nzXl]="4" [nzLg]="6" [nzMd]="8" [nzSm]="24" [nzXs]="24">
-            <nz-select  nzShowSearch formControlName="_idVia"  class="min100" nzPlaceHolder="Tipo de vía">
-                <nz-option *ngFor="let v of vias" [nzLabel]="v.name" [nzValue]="v._id"></nz-option>
-            </nz-select>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Tiene que seleccionar un tipo de vía">
+                <nz-select  nzShowSearch formControlName="_idVia"  class="min100" nzPlaceHolder="Tipo de vía" (focusout)="validate()">
+                    <nz-option *ngFor="let v of vias" [nzLabel]="v.name" [nzValue]="v._id"></nz-option>
+                </nz-select>
+                </nz-form-control>
+            </nz-form-item>
         </div>
         <div nz-col class="mt2 ml2" [nzXl]="6" [nzLg]="8" [nzMd]="10" [nzSm]="24" [nzXs]="24">
-            <input nz-input id="nameVia" formControlName="nameVia"  type="text" placeholder="Nombre de la vía"/>
+            <nz-form-item>
+                <nz-form-control   nzErrorTip="El campo es obligatorio">
+                <input nz-input id="nameVia" formControlName="nameVia"  type="text" placeholder="Nombre de la vía" (focusout)="validate()"/>
+                </nz-form-control>
+            </nz-form-item>
         </div>
         <div nz-col class="mt2 ml2" [nzXl]="2" [nzLg]="3" [nzMd]="6" [nzSm]="6" [nzXs]="6">
             <input nz-input id="number" formControlName="number"  type="text" placeholder="Num"/>
@@ -23,13 +59,17 @@
             <input nz-input id="door" formControlName="door"  type="text" placeholder="Puerta"/>
         </div>
         <div nz-col class="mt2 ml2" [nzXl]="2" [nzLg]="3" [nzMd]="6" [nzSm]="12" [nzXs]="12">
-            <input nz-input id="postal" formControlName="postal"  type="number" max="99999" placeholder="Código Postal"/>
+            <nz-form-item>
+              <nz-form-control  nzErrorTip="Código postal incorrecto">
+                  <input nz-input id="postal" formControlName="postal"  type="number" max="52999" min="1000" placeholder="Código Postal" (focusout)="validate()"/>
+              </nz-form-control>
+            </nz-form-item>
         </div>
         <div nz-col class="mt2 ml2" [nzXl]="6" [nzLg]="8" [nzMd]="10" [nzSm]="24" [nzXs]="24">
             <input nz-input id="provincia" formControlName="provincia"  type="text" placeholder="Provincia"/>
         </div>
         <div nz-col class="mt2 ml2" [nzXl]="6" [nzLg]="8" [nzMd]="10" [nzSm]="24" [nzXs]="24">
-            <input nz-input id="localidad" formControlName="localidad"  type="text" placeholder="Localidad"/>
+            <input nz-input id="town" formControlName="town"  type="text" placeholder="Población"/>
         </div>
         
         
@@ -37,5 +77,12 @@
 
  
    
-</form>
+</form><pre>
+    Estado del formulario {{formDireccion.valid}}
+    <br>
+    Input: {{formDireccion.value| json }}
+
+</pre>
+
+
 
