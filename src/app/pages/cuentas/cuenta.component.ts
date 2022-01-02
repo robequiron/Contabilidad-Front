@@ -1,13 +1,17 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NzSelectComponent } from 'ng-zorro-antd/select/select.component';
+import { Subscription } from 'rxjs';
 import { Cuenta } from 'src/app/models/cuenta.model';
+import { Respuesta } from 'src/app/models/response.model';
 import { TypeNif } from 'src/app/models/typenif.model';
+import { Workplace } from 'src/app/models/workplace.model';
 import { AppService } from 'src/app/services/app.service';
 import { CuentasService } from 'src/app/services/cuentas.service';
 import { NifService } from 'src/app/services/nif.service';
+import { WorkplacesService } from 'src/app/services/workplaces.service';
 /**
  * Formulario creación/modificación de cuentas
  */
@@ -16,7 +20,7 @@ import { NifService } from 'src/app/services/nif.service';
   templateUrl: './cuenta.component.html',
   styleUrls: ['./cuenta.component.css']
 })
-export class CuentaComponent implements OnInit {
+export class CuentaComponent implements OnInit, OnDestroy {
 
 
   /**
@@ -30,7 +34,12 @@ export class CuentaComponent implements OnInit {
   public cuenta:Cuenta = new Cuenta();
 
   /**
-   * Alto de la venta
+   * Centro de trabajo principal
+   */
+  public workplace:Workplace;
+
+  /**
+   * Alto de la ventana
    */
   public heightWindow:string='300px';
 
@@ -54,6 +63,8 @@ export class CuentaComponent implements OnInit {
    */
   @ViewChild('nifInput', {static:false}) nifInput: ElementRef;
 
+
+
   public errorForm = {
     code: ['','']
   }
@@ -76,6 +87,7 @@ export class CuentaComponent implements OnInit {
     public fb:FormBuilder,
     public _appServices:AppService,
     private _cuentaService:CuentasService,
+    private _workplace:WorkplacesService,
     public _notification:NzNotificationService,
     private _nifValidate:NifService,
     private router:Router
@@ -83,18 +95,19 @@ export class CuentaComponent implements OnInit {
     this.activeRouter.params.subscribe(
       (resp)=>{
         if(resp.id!='nuevo') {
+          this.cuenta._id = resp.id;
           this.load(resp.id);
         } 
       }
     )
 
    }
-
+ 
   ngOnInit(): void {
     this.heightWindow = Math.round(window.innerHeight*40/100).toString() + 'px'; 
-    this.create()
+    this.create();
     setTimeout(() => {
-      this.descriptionCategoria(1)
+      this.descriptionCategoria(1);
       this.codeInput.nativeElement.focus();
     }, 800);
   }
@@ -133,7 +146,7 @@ export class CuentaComponent implements OnInit {
   public load(id:string) {
     this._cuentaService.getCuenta(id).subscribe(
       (resp:Cuenta)=>{
-        console.log(resp);
+        this.cuenta = resp;
         this.formCuenta.setValue(
           {
             _id: resp._id,
@@ -154,6 +167,8 @@ export class CuentaComponent implements OnInit {
       }
     )
   }
+
+ 
   
   /**
    * Categoria de la cuenta personal
@@ -378,5 +393,17 @@ export class CuentaComponent implements OnInit {
       }
     )
   }
+
+  /**
+   * Eliminamos las suscripciones
+   */
+  ngOnDestroy(): void {
+
+    try {
+    } catch (error) {
+      this._notification.error("Errore", "Existe un error en la eliminación de las suscripciones");
+    }
+  }
+
 
 }

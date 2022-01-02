@@ -19,7 +19,7 @@ import { TaxesService } from 'src/app/services/taxes.service';
 })
 export class PercentagesComponent implements OnInit {
   /**
-   * Decorador de propiedades. Datos recibidos del padres. Objecto tax
+   * Decorador de propiedades. Datos recibidos de padres. Objecto tax
    */
   @Input() tax:Taxes;
 

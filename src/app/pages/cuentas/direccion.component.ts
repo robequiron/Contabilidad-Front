@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { Vias } from 'src/app/models/vias.model';
 import { ViasService } from 'src/app/services/parametros/vias.service';
@@ -8,6 +8,8 @@ import { padStart } from 'ng-zorro-antd/core/util';
 import { PostalService } from 'src/app/services/postal.service';
 import { Postal } from 'src/app/models/postal.model';
 import { Respuesta } from 'src/app/models/response.model';
+import { Workplace } from 'src/app/models/workplace.model';
+import { WorkplacesService } from 'src/app/services/workplaces.service';
 
 @Component({
   selector: 'app-direccion',
@@ -16,6 +18,21 @@ import { Respuesta } from 'src/app/models/response.model';
 })
 export class DireccionComponent implements OnInit {
   
+  /**
+   * Decorador de propiedades. Datos recibido del padre. Identificar cuenta personal
+   */
+  @Input() _idCuenta:string;
+
+  /**
+   * Decorador de propiedades. Datos recibidos del padre. Identificador del centro de trabajo.
+   */
+  @Input() _idworkplace:string;
+
+  /**
+   * Centro de trabajo
+   */
+  public workplace:Workplace;
+
   /**
    * Formulario dirección
    */
@@ -41,12 +58,15 @@ export class DireccionComponent implements OnInit {
   constructor(
     public _vias:ViasService, 
     public _postal:PostalService,
+    public _workplace:WorkplacesService,
     public fb:FormBuilder) { }
 
   ngOnInit(): void {
     this.vias = this._vias.vias;
-    console.log(this.vias);
     this.create();
+    setTimeout(() => {
+      this.loadWorkplace(this._idCuenta);
+    }, 800);
   }
 
   /**
@@ -61,9 +81,26 @@ export class DireccionComponent implements OnInit {
       door:[''],
       postal:['',[Validators.max(99999),Validators.required]],
       provincia:[{value:'',disabled:true}],
-      town:[{value:'',disabled:true}],
+      town:[''],
+      other:[''],
     })
   }
+
+   /**
+   * Leemos los datos del centro de trabajo por defecto
+   */
+    public loadWorkplace(id:string) {
+
+      this._workplace.getWorkplaceHeadquarters(id).subscribe(
+        (resp:Respuesta)=>{
+          if (resp.ok) {
+            this.workplace = resp.data[0] as Workplace;
+            console.log(this.workplace)
+          }
+        }
+      )
+    }
+
 
   public save(){}
 

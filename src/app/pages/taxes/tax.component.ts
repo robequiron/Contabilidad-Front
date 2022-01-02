@@ -15,9 +15,7 @@ import { TaxesService } from 'src/app/services/taxes.service';
 })
 export class TaxComponent implements OnInit {
 
-  /**
-   * Formulario Tax
-   */
+  
   public formTax:FormGroup;
 
   /**
