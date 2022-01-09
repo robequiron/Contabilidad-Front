@@ -32,7 +32,7 @@
    
 
 <div nz-row style="width: 100%;">
-   
+    
         <div nz-col class="mt2 ml2" [nzXl]="4" [nzLg]="6" [nzMd]="8" [nzSm]="24" [nzXs]="24">
             <nz-form-item>
                 <nz-form-control nzErrorTip="Tiene que seleccionar un tipo de vía">
@@ -61,7 +61,7 @@
         <div nz-col class="mt2 ml2" [nzXl]="2" [nzLg]="3" [nzMd]="6" [nzSm]="12" [nzXs]="12">
             <nz-form-item>
               <nz-form-control  nzErrorTip="Código postal incorrecto">
-                  <input nz-input id="postal" formControlName="postal"  type="number" max="52999" min="1000" placeholder="Código Postal" (focusout)="validate()"/>
+                  <input nz-input id="postal" formControlName="postal"  type="number" max="52999" min="1000" placeholder="Código Postal" (focusout)="validate('postal')"/>
               </nz-form-control>
             </nz-form-item>
         </div>
@@ -69,23 +69,28 @@
             <input nz-input id="provincia" formControlName="provincia"  type="text" placeholder="Provincia"/>
         </div>
         <div nz-col class="mt2 ml2" [nzXl]="6" [nzLg]="8" [nzMd]="10" [nzSm]="24" [nzXs]="24">
-            <input nz-input id="town" formControlName="town"  type="text" placeholder="Población"/>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Es obligatorio el nombre de la población">
+                  <input nz-input id="town" formControlName="town"  type="text" placeholder="Población" (focusout)="validate()"/>
+              </nz-form-control>
+            </nz-form-item>
         </div>
         <div nz-col class="mt2 ml2" [nzXl]="6" [nzLg]="8" [nzMd]="10" [nzSm]="24" [nzXs]="24">
-            <input nz-input id="other" formControlName="other"  type="text" placeholder="Resto de la dirección"/>
+            <input nz-input id="other" formControlName="other"  type="text" placeholder="Resto de la dirección" (focusout)="validate()"/>
         </div>
-        
-        
+    
 </div>
 
  
    
-</form><pre>
+</form>
+<!--<pre>
     Estado del formulario {{formDireccion.valid}}
     <br>
     Input: {{formDireccion.value| json }}
-
 </pre>
+-->
+
 
 
 

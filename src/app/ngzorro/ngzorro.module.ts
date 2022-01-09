@@ -29,6 +29,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
 
 // Import what you need. RECOMMENDED. ✔️
 import { AccountBookFill, AlertFill, AlertOutline,
@@ -72,6 +73,7 @@ const icons: IconDefinition[] = [
     NzDatePickerModule,
     NzMessageModule,
     NzInputNumberModule,
+    NzTypographyModule,
     NzIconModule.forRoot(icons),
     
     
@@ -105,7 +107,8 @@ const icons: IconDefinition[] = [
     NzDatePickerModule,
     NzMessageModule,
     NzInputNumberModule,
-    NzSkeletonModule 
+    NzSkeletonModule,
+    NzTypographyModule
   ]
 })
 export class NgzorroModule { }

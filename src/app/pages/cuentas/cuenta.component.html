@@ -6,7 +6,7 @@
             nzSize="small" 
             nzType="line" 
             nzHideAll="false"  
-            nzSelectedIndex="0"
+            [(nzSelectedIndex)]="SelectedIndex"
             nzTabPosition="top"
             >
         <nz-tab nzTitle="General">
@@ -137,9 +137,10 @@
                 </nz-form-item>
           </form>
         </nz-tab>
-        <nz-tab nzTitle="Datos">
+        <nz-tab nzTitle="Datos" [nzDisabled]="!cuenta._id">
+            <h5 nz-typography><code>{{cuenta.code}} - {{cuenta.name | uppercase}}  {{cuenta.surname | uppercase}} {{cuenta.surname2 | uppercase}}</code></h5>
             <nz-divider nzPlain nzText="Dirección sede principal" nzOrientation="left"></nz-divider>
-            <app-direccion  [_idCuenta]="cuenta._id" *ngIf="cuenta._id"></app-direccion>
+            <app-direccion  [_idCuenta]="cuenta._id" *ngIf="loadDatos"></app-direccion>
             <nz-divider nzPlain nzText="Email" nzOrientation="left"></nz-divider>
             <app-emails></app-emails>
         </nz-tab>

@@ -63,6 +63,15 @@ export class CuentaComponent implements OnInit, OnDestroy {
    */
   @ViewChild('nifInput', {static:false}) nifInput: ElementRef;
 
+  /**
+   * Conmutador para mostrar los componentes hijos de la pestaña datos (Dirección y Teléfono);
+   */
+  public loadDatos:boolean = false;
+
+  /**
+   * Pestaña seleccionada
+   */
+  public SelectedIndex:number = 0;
 
 
   public errorForm = {
@@ -97,6 +106,10 @@ export class CuentaComponent implements OnInit, OnDestroy {
         if(resp.id!='nuevo') {
           this.cuenta._id = resp.id;
           this.load(resp.id);
+          setTimeout(() => {
+            //Esperamos un segundo para mostrar los componente hijos dirección y telefono
+            this.loadDatos = true;
+          }, 1000);
         } 
       }
     )
@@ -330,8 +343,16 @@ export class CuentaComponent implements OnInit, OnDestroy {
       
       this._cuentaService.save(this.cuenta,this.cuenta._id).subscribe(
         (resp:any)=>{
-          this._notification.success('Correcto','Registro modificado correctamente')
-          console.log(resp)
+          let cuenta:Cuenta = resp.data as Cuenta;
+          this.cuenta._id = cuenta._id;
+
+          setTimeout(() => {
+            //Esperamos un segundo para mostrar los componente hijos dirección y telefono
+            this.loadDatos = true;
+          }, 1000);
+          
+          this._notification.success('Correcto','Registro modificado correctamente');
+          
         },
         ()=>{
           this._notification.error('Error', 'Existe un error al crear o actualizar los datos');

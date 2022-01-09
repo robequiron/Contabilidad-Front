@@ -53,11 +53,13 @@ export class Adress {
     /**
      * Others
      */
-    public others:string;
+    public other:string;
 
     /**
      * Constructor
      */
-    constructor(){}
+    constructor(){
+        this._idCuenta = '';
+    }
 
 }

@@ -10,6 +10,9 @@ import { Postal } from 'src/app/models/postal.model';
 import { Respuesta } from 'src/app/models/response.model';
 import { Workplace } from 'src/app/models/workplace.model';
 import { WorkplacesService } from 'src/app/services/workplaces.service';
+import { Adress } from 'src/app/models/adress.model';
+import { AdressService } from 'src/app/services/adress.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-direccion',
@@ -39,6 +42,11 @@ export class DireccionComponent implements OnInit {
   public formDireccion:FormGroup;
 
   /**
+   * Dirección
+   */
+  public adress:Adress = new Adress();
+
+  /**
    * Array tipos de vias
    */
   public vias:Vias[];
@@ -59,6 +67,8 @@ export class DireccionComponent implements OnInit {
     public _vias:ViasService, 
     public _postal:PostalService,
     public _workplace:WorkplacesService,
+    private _adress:AdressService,
+    private _message: NzMessageService,
     public fb:FormBuilder) { }
 
   ngOnInit(): void {
@@ -68,6 +78,9 @@ export class DireccionComponent implements OnInit {
       this.loadWorkplace(this._idCuenta);
     }, 800);
   }
+
+
+  
 
   /**
    * Creamos el formulario
@@ -79,40 +92,88 @@ export class DireccionComponent implements OnInit {
       number:[''],
       flat:[''],
       door:[''],
-      postal:['',[Validators.max(99999),Validators.required]],
+      postal:['',[Validators.max(99999),Validators.min(1000),Validators.required]],
       provincia:[{value:'',disabled:true}],
-      town:[''],
+      town:['',[Validators.required]],
       other:[''],
     })
+
   }
 
    /**
    * Leemos los datos del centro de trabajo por defecto
    */
-    public loadWorkplace(id:string) {
+  public loadWorkplace(id:string) {
 
       this._workplace.getWorkplaceHeadquarters(id).subscribe(
         (resp:Respuesta)=>{
           if (resp.ok) {
             this.workplace = resp.data[0] as Workplace;
-            console.log(this.workplace)
+            this._adress.getbyId(this.workplace._id).subscribe(
+              (resp:Respuesta)=>{
+                if (resp.data) {
+                  this.adress = resp.data as Adress;
+                  this.loadPostal(this.adress.postal,true);
+                  this.formDireccion.setValue({
+                    _idVia:this.adress._idVia,
+                    nameVia:this.adress.nameVia,
+                    number:this.adress.number,
+                    flat:this.adress.flat,
+                    door:this.adress.door,
+                    postal:this.adress.postal,
+                    provincia:'',
+                    town:this.adress.town,
+                    other: this.adress.other || ''
+                  })
+                }
+
+              }
+            )
           }
         }
       )
     }
 
+  /**
+   * Grabamos o modificamos la dirección
+   */
+  public save(){
+    
+    if (this.formDireccion.valid) {
 
-  public save(){}
+      this.adress._idCuenta = this.workplace._idCuenta ;
+      this.adress._idWorkplace = this.workplace._id;
+      this.adress._idVia = this.formDireccion.controls['_idVia'].value;
+      this.adress.nameVia = this.formDireccion.controls['nameVia'].value;
+      this.adress.number = this.formDireccion.controls['number'].value;
+      this.adress.flat = this.formDireccion.controls['flat'].value;
+      this.adress.door = this.formDireccion.controls['door'].value;
+      this.adress.postal = this.formDireccion.controls['postal'].value;
+      this.adress.town = this.formDireccion.controls['town'].value;
+      this.adress.other = this.formDireccion.controls['other'].value;
+      this._message.success("Dirección grabada correctamente",{nzDuration:800});
+      
+      this._adress.save(this.adress).subscribe((resp:Respuesta)=>{
+        if(resp.ok) {
+          let adress = resp.data as Adress
+          this.adress._id = adress._id;
+        }
+      })
+
+    }
+  }
 
   /**
    * Obtenemos los datos de provincia y población según el código postal suministrado
    * 
    * @param code Código postal
+   * @param load Lectura de la base de datos, 
    */
-  public loadPostal(code:number) {
+  public loadPostal(code:number,load?:boolean) {
     
-    let provincia =this.formDireccion.get('provincia');
-    let town =this.formDireccion.get('town');
+    let provincia:AbstractControl =this.formDireccion.get('provincia');
+    let town:AbstractControl =this.formDireccion.get('town');
+    let postal:AbstractControl = this.formDireccion.controls['postal']
   
 
     this._postal.getPostal(code).subscribe( (resp:Respuesta)=>{
@@ -122,25 +183,35 @@ export class DireccionComponent implements OnInit {
             provincia.setValue(postal.provincia);
             town.setValue(postal.poblacion)
           }
-          if (resp.data.length>1) {
+          if (resp.data.length>1 && !load) {
             this.postales = resp.data;
             this.vModal = true;
+          }
+          if (load) {
+            let postal:Postal = resp.data[0] as Postal;
+            provincia.setValue(postal.provincia);
+          }
+          if(resp.data.length===0){
+            provincia.setValue('');
+            town.setValue('');
+            postal.setErrors({'incorrect': true});
           }
         }
     });
 
   }
 
-
   /**
    * Validamos los campos del formulario
    */
-  public validate() {
+  public validate(c?:string) {
     let _idVia:AbstractControl= this.formDireccion.controls['_idVia'];
     let nameVia:AbstractControl= this.formDireccion.controls['nameVia'];
     let postal:AbstractControl= this.formDireccion.controls['postal'];
+    let town:AbstractControl = this.formDireccion.controls['town'];
+    let provincia:AbstractControl =this.formDireccion.get('provincia');
     
-   
+
 
     if(_idVia.touched && !_idVia.valid) {
       _idVia.setErrors({'incorrect':true});
@@ -149,19 +220,25 @@ export class DireccionComponent implements OnInit {
     if(nameVia.touched && !nameVia.valid) {
       nameVia.setErrors({'incorrect': true});
     } 
+    if (_idVia.valid && nameVia.valid && town.valid && !c) {
+      this.save();
+      return;
+    }
     if(postal.touched && !postal.valid) {
       postal.setErrors({'incorrect':true});
+      provincia.setValue('');
+      town.setValue('');
     }
-    if(postal.valid) {
+    if(postal.touched && postal.valid) {
       if(postal.value>52999 || postal.value<1000) {
         postal.setErrors({'incorrect':true});
       } else {
         this.loadPostal(postal.value);
       }
-      
     } 
-
-
+  
+   
+    
     
   }
 
@@ -171,7 +248,9 @@ export class DireccionComponent implements OnInit {
   public closeModal() {
     this.vModal = false;
   }
-
+  /**
+   * Selecciona la población del listado
+   */
   public selectPostal(postal:Postal) {
     let provincia =this.formDireccion.get('provincia');
     let town =this.formDireccion.get('town');
