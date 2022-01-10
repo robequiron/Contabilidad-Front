@@ -167,6 +167,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loadConfig" >loadConfig</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Private</span>
                                 <a href="#loadPostal" >loadPostal</a>
                             </li>
@@ -199,12 +203,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(_side: <a href="../injectables/SideService.html" target="_self">SideService</a>, _app: <a href="../injectables/AppService.html" target="_self">AppService</a>, _notification: NzNotificationService, _vias: ViasService, _postal: PostalService, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(_side: <a href="../injectables/SideService.html" target="_self">SideService</a>, _app: <a href="../injectables/AppService.html" target="_self">AppService</a>, _notification: NzNotificationService, _vias: <a href="../injectables/ViasService.html" target="_self">ViasService</a>, _config: <a href="../injectables/ConfigService.html" target="_self">ConfigService</a>, _postal: <a href="../injectables/PostalService.html" target="_self">PostalService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/pages/pages.component.ts:35</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/pages/pages.component.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -276,7 +280,21 @@
                                                         <td>_vias</td>
                                                   
                                                         <td>
-                                                                    <code>ViasService</code>
+                                                                        <code><a href="../injectables/ViasService.html" target="_self" >ViasService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>_config</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ConfigService.html" target="_self" >ConfigService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -290,7 +308,7 @@
                                                         <td>_postal</td>
                                                   
                                                         <td>
-                                                                    <code>PostalService</code>
+                                                                        <code><a href="../injectables/PostalService.html" target="_self" >PostalService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -338,6 +356,47 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="loadConfig"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>loadConfig</b></span>
+                        <a href="#loadConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadConfig()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/pages/pages.component.ts:118</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Leemos la configuración general de la aplicación</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="loadPostal"></a>
                     <span class="name">
                         <span class="modifier">Private</span>
@@ -356,8 +415,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="101"
-                            class="link-to-prism">src/app/pages/pages.component.ts:101</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/app/pages/pages.component.ts:105</a></div>
                 </td>
             </tr>
 
@@ -397,8 +456,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="69"
-                            class="link-to-prism">src/app/pages/pages.component.ts:69</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/app/pages/pages.component.ts:73</a></div>
                 </td>
             </tr>
 
@@ -438,8 +497,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="86"
-                            class="link-to-prism">src/app/pages/pages.component.ts:86</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="90"
+                            class="link-to-prism">src/app/pages/pages.component.ts:90</a></div>
                 </td>
             </tr>
 
@@ -477,8 +536,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="55"
-                            class="link-to-prism">src/app/pages/pages.component.ts:55</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/pages/pages.component.ts:57</a></div>
                 </td>
             </tr>
 
@@ -522,7 +581,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/pages/pages.component.ts:43</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/pages/pages.component.ts:44</a></div>
                         </td>
                     </tr>
 
@@ -553,7 +612,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/pages/pages.component.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/pages/pages.component.ts:28</a></div>
                         </td>
                     </tr>
 
@@ -591,7 +650,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/pages/pages.component.ts:31</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/pages/pages.component.ts:32</a></div>
                         </td>
                     </tr>
 
@@ -629,7 +688,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/pages/pages.component.ts:35</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/pages/pages.component.ts:36</a></div>
                         </td>
                     </tr>
 
@@ -667,7 +726,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/pages/pages.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/pages/pages.component.ts:24</a></div>
                         </td>
                     </tr>
 
@@ -694,6 +753,7 @@ import { Respuesta } from &#x27;../models/response.model&#x27;;
 import { TypeNif } from &#x27;../models/typenif.model&#x27;;
 import { Vias } from &#x27;../models/vias.model&#x27;;
 import { AppService } from &#x27;../services/app.service&#x27;;
+import { ConfigService } from &#x27;../services/config.service&#x27;;
 import { PostalService } from &#x27;../services/parametros/postal.service&#x27;;
 import { ViasService } from &#x27;../services/parametros/vias.service&#x27;;
 import { SideService } from &#x27;../services/side.service&#x27;;
@@ -732,6 +792,7 @@ export class PagesComponent implements OnInit {
       private _app:AppService,
       private _notification:NzNotificationService,
       private _vias:ViasService,
+      private _config:ConfigService,
       private _postal:PostalService,
       private router:Router,
     ){}
@@ -745,6 +806,8 @@ export class PagesComponent implements OnInit {
     this.loadTypeNif();
     this.loadVias();
     this.loadPostal();
+    this.loadConfig();
+
     setTimeout(()&#x3D;&gt;{
       this.isLoad &#x3D; false;
       this.Load &#x3D; true;
@@ -786,15 +849,30 @@ export class PagesComponent implements OnInit {
   /**
   * Cargamos parte de los códigos postales
   */
- private loadPostal() {
-  this._postal.getPostal().subscribe(
-    ()&#x3D;&gt;{},
-    (e)&#x3D;&gt;{
-      this._notification.error(&#x27;Error&#x27;, &#x27;Existe un error en la carga de los códigos postales&#x27;);
-      this.router.navigate([&#x27;/login&#x27;]);
-    }
-  )
- }
+  private loadPostal() {
+    this._postal.getPostal().subscribe(
+      ()&#x3D;&gt;{},
+      (e)&#x3D;&gt;{
+        this._notification.error(&#x27;Error&#x27;, &#x27;Existe un error en la carga de los códigos postales&#x27;);
+        this.router.navigate([&#x27;/login&#x27;]);
+      }
+    )
+  }
+
+  /**
+   * Leemos la configuración general de la aplicación
+   */
+  public loadConfig() {
+
+    this._config.getConfig().subscribe(
+      (resp:any)&#x3D;&gt;{
+        console.log(resp);
+      }
+    )
+
+  }
+
+  
 
 }
 </code></pre>
@@ -874,9 +952,9 @@ export class PagesComponent implements OnInit {
           &lt;router-outlet&gt;&lt;/router-outlet&gt;
           
         &lt;/nz-content&gt;
-
+        &lt;!--
         &lt;app-footer&gt;&lt;/app-footer&gt;
-        
+        --&gt;
       &lt;/nz-layout&gt;
 
       
@@ -952,8 +1030,8 @@ nz-breadcrumb {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nz-spin nzTip="Cargando. Espere por favor..." style="height: 100%;" *ngIf="isLoad">  <nz-result nzStatus="info" nzTitle="">      </nz-result></nz-spin>  <nz-layout style="height: 100%;" *ngIf="Load">          <!-- Sidebar-->      <nz-sider nzCollapsible      [nzWidth]="_side.width" [nzTheme]="_side.theme"       [(nzCollapsed)]="isCollapsed" nzBreakpoint="sm"  [nzCollapsedWidth]="0" [nzTrigger]="null">        <app-sider></app-sider>      </nz-sider>      <!-- End Sidebar-->          <nz-layout >                <nz-header>          <div nz-row nzJustify="space-between">            <div nz-col nzSpan="4"> <i class="trigger" nz-icon [nzType]="isCollapsed ? \'menu-unfold\' : \'menu-fold\'" (click)="isCollapsed = !isCollapsed"></i></div>            <div nz-col nzSpan="4" style="text-align: right; padding-right: 10px;" >                          <a nz-dropdown [nzDropdownMenu]="menu">                <nz-badge [nzCount]="5" style="margin-right: 24px;">                  <nz-avatar nzIcon="user" ></nz-avatar>                </nz-badge>              </a>              <nz-dropdown-menu #menu="nzDropdownMenu">                <ul nz-menu>                  <li nz-menu-item>1st menu item</li>                  <li nz-menu-item>2nd menu item</li>                  <li nz-menu-divider></li>                  <li nz-menu-item nzDisabled>disabled menu item</li>                  <li nz-submenu nzTitle="sub menu">                    <ul>                      <li nz-menu-item>3rd menu item</li>                      <li nz-menu-item>4th menu item</li>                    </ul>                  </li>                  <li nz-submenu nzDisabled nzTitle="disabled sub menu">                    <ul>                      <li nz-menu-item>3rd menu item</li>                      <li nz-menu-item>4th menu item</li>                    </ul>                  </li>                </ul>              </nz-dropdown-menu>                          </div>          </div>          <div>                                </div>        </nz-header>        <nz-content>          <nz-breadcrumb>            <app-breadcrumb></app-breadcrumb>          </nz-breadcrumb>          <router-outlet></router-outlet>                  </nz-content>        <app-footer></app-footer>              </nz-layout>        </nz-layout></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'PercentagesComponent', 'selector': 'app-percentages'},{'name': 'SiderComponent', 'selector': 'app-sider'},{'name': 'TaxComponent', 'selector': 'app-tax'},{'name': 'TaxesComponent', 'selector': 'app-taxes'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+        var COMPONENT_TEMPLATE = '<div><nz-spin nzTip="Cargando. Espere por favor..." style="height: 100%;" *ngIf="isLoad">  <nz-result nzStatus="info" nzTitle="">      </nz-result></nz-spin>  <nz-layout style="height: 100%;" *ngIf="Load">          <!-- Sidebar-->      <nz-sider nzCollapsible      [nzWidth]="_side.width" [nzTheme]="_side.theme"       [(nzCollapsed)]="isCollapsed" nzBreakpoint="sm"  [nzCollapsedWidth]="0" [nzTrigger]="null">        <app-sider></app-sider>      </nz-sider>      <!-- End Sidebar-->          <nz-layout >                <nz-header>          <div nz-row nzJustify="space-between">            <div nz-col nzSpan="4"> <i class="trigger" nz-icon [nzType]="isCollapsed ? \'menu-unfold\' : \'menu-fold\'" (click)="isCollapsed = !isCollapsed"></i></div>            <div nz-col nzSpan="4" style="text-align: right; padding-right: 10px;" >                          <a nz-dropdown [nzDropdownMenu]="menu">                <nz-badge [nzCount]="5" style="margin-right: 24px;">                  <nz-avatar nzIcon="user" ></nz-avatar>                </nz-badge>              </a>              <nz-dropdown-menu #menu="nzDropdownMenu">                <ul nz-menu>                  <li nz-menu-item>1st menu item</li>                  <li nz-menu-item>2nd menu item</li>                  <li nz-menu-divider></li>                  <li nz-menu-item nzDisabled>disabled menu item</li>                  <li nz-submenu nzTitle="sub menu">                    <ul>                      <li nz-menu-item>3rd menu item</li>                      <li nz-menu-item>4th menu item</li>                    </ul>                  </li>                  <li nz-submenu nzDisabled nzTitle="disabled sub menu">                    <ul>                      <li nz-menu-item>3rd menu item</li>                      <li nz-menu-item>4th menu item</li>                    </ul>                  </li>                </ul>              </nz-dropdown-menu>                          </div>          </div>          <div>                                </div>        </nz-header>        <nz-content>          <nz-breadcrumb>            <app-breadcrumb></app-breadcrumb>          </nz-breadcrumb>          <router-outlet></router-outlet>                  </nz-content>        <!--        <app-footer></app-footer>        -->      </nz-layout>        </nz-layout></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CuentaComponent', 'selector': 'app-cuenta'},{'name': 'CuentasComponent', 'selector': 'app-cuentas'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DireccionComponent', 'selector': 'app-direccion'},{'name': 'DireccionComponent', 'selector': 'app-direccion'},{'name': 'EmailsComponent', 'selector': 'app-emails'},{'name': 'EmailsComponent', 'selector': 'app-emails'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'ParametrosComponent', 'selector': 'app-parametros'},{'name': 'PercentagesComponent', 'selector': 'app-percentages'},{'name': 'SiderComponent', 'selector': 'app-sider'},{'name': 'TaxComponent', 'selector': 'app-tax'},{'name': 'TaxesComponent', 'selector': 'app-taxes'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UsersComponent', 'selector': 'app-users'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PagesComponent'};
 </script>

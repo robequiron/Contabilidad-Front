@@ -59,7 +59,6 @@ export class Adress {
      * Constructor
      */
     constructor(){
-        this._idCuenta = '';
     }
 
 }

@@ -29,6 +29,7 @@ import { CuentasComponent } from './pages/cuentas/cuentas.component';
 import { CuentaComponent } from './pages/cuentas/cuenta.component';
 import { EmailsComponent } from './pages/cuentas/emails.component';
 import { DireccionComponent } from './pages/cuentas/direccion.component';
+import { ParametrosComponent } from './pages/config/parametros.component';
 
 registerLocaleData(es);
 
@@ -51,6 +52,7 @@ registerLocaleData(es);
     CuentaComponent,
     EmailsComponent,
     DireccionComponent,
+    ParametrosComponent,
   
    
   ],

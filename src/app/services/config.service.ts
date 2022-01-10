@@ -19,6 +19,10 @@ export class ConfigService {
    * Token user
    */
   private token:string;
+  /**
+   * Objecto configuración
+   */
+  public config:Config = new Config();
 
   /**
    * 

@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { Subscription } from 'rxjs';
 import { Config } from 'src/app/models/config.model';
@@ -28,13 +27,21 @@ export class ConfigComponent implements OnInit, OnDestroy{
    */
   private $config:Subscription;
 
-
   /**
    * Modelo config
    */
-  public config:Config
+  public config:Config;
 
-  constructor(private fb:FormBuilder, private router:Router,
+  /**
+   * Constructor
+   * 
+   * @param fb Clases abstracta para la creación y configuracion del formulario
+   * @param _config Servicios configuración - Consulta configuración general Modificar configuración general
+   * @param _appServices Servicios app de datos no modificables y necesarios para el funcionamiento de la aplicación.
+   * @param _nifValidate Servicio validación del Nif
+   * @param _notification Servicio de notificación de ngZorro
+   */
+  constructor(private fb:FormBuilder, 
     private _config:ConfigService,
     public _appServices: AppService,
     private _nifValidate: NifService,
@@ -42,30 +49,41 @@ export class ConfigComponent implements OnInit, OnDestroy{
     ) { }
   
   
+  /**
+   * Ciclo de vida deel componente. Lifecycle hooks. Limpieza de recursos.
+   */  
   ngOnDestroy(): void {
     if (this.$config) { this.$config.unsubscribe()};
   }
 
+  /**
+   * Ciclo de vida del componente. Lifecycle hooks.
+   */
   ngOnInit(): void {
     this.load();
     this.createFormGeneral()
   }
 
-
+  /**
+   * Leemos los datos de configuración de la base de datos.
+   */
   public load() {
     this.$config = this._config.getConfig().subscribe(
       (config:Config)=>{ 
+        this.config = config;
         this.formGeneral.setValue({
           _id: config._id,
           name : config.name,
           codeNif: config.codeNif,
           nif: config.nif
         })
-
       }
     )
   }
 
+  /**
+   * Creamos el formulario reactive
+   */
   public createFormGeneral():void{
 
       this.formGeneral = this.fb.group({
@@ -81,6 +99,9 @@ export class ConfigComponent implements OnInit, OnDestroy{
       this.formGeneral.getRawValue();
   }
 
+  /**
+   * Grabamos la configuración
+   */
   public save(){
     this.checknif();
     
@@ -88,21 +109,19 @@ export class ConfigComponent implements OnInit, OnDestroy{
 
       this._config.save(this.formGeneral.value, this.formGeneral.controls['_id'].value).subscribe(
         (resp:any)=>{
-          console.log(resp);
+          this._config.config = resp;
           this._notification.success('Modificado','Modificado la configuración correctamente');
         },
         (e)=>{
-          console.log(e)
           this._notification.error('Error', 'Existe un error al modificar la configuración')
         }
       )
-     
-
     }
-
-
   }
 
+  /**
+   * Comprobamos que el nif sea correcto
+   */
   public checknif() {
     let typeNif = this.formGeneral.controls['codeNif'].value;
     let inputNif= this.formGeneral.controls['nif'];
@@ -121,12 +140,7 @@ export class ConfigComponent implements OnInit, OnDestroy{
 
       }
 
-
     )
-    
-
-    
-
   }
 
 }

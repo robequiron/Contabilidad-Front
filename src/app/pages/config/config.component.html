@@ -7,7 +7,7 @@
             nzSelectedIndex="0"
             nzTabPosition="top"
             >
-        <nz-tab nzTitle="General" nzDisabled>
+        <nz-tab nzTitle="General" >
           <form nz-form style="padding: 15px;" [formGroup]="formGeneral" (ngSubmit)="save()">
                 <!-- Identificador del usuario -->
                 <nz-form-item>
@@ -50,6 +50,9 @@
                   </nz-form-control>
                 </nz-form-item>
           </form>
+        </nz-tab>
+        <nz-tab nzTitle="Parametros">
+          <app-parametros [c]="config"></app-parametros>
         </nz-tab>
     </nz-tabset>
 </div>

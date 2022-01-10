@@ -6,6 +6,7 @@ import { Respuesta } from '../models/response.model';
 import { TypeNif } from '../models/typenif.model';
 import { Vias } from '../models/vias.model';
 import { AppService } from '../services/app.service';
+import { ConfigService } from '../services/config.service';
 import { PostalService } from '../services/parametros/postal.service';
 import { ViasService } from '../services/parametros/vias.service';
 import { SideService } from '../services/side.service';
@@ -44,6 +45,7 @@ export class PagesComponent implements OnInit {
       private _app:AppService,
       private _notification:NzNotificationService,
       private _vias:ViasService,
+      private _config:ConfigService,
       private _postal:PostalService,
       private router:Router,
     ){}
@@ -57,6 +59,8 @@ export class PagesComponent implements OnInit {
     this.loadTypeNif();
     this.loadVias();
     this.loadPostal();
+    this.loadConfig();
+
     setTimeout(()=>{
       this.isLoad = false;
       this.Load = true;
@@ -98,14 +102,29 @@ export class PagesComponent implements OnInit {
   /**
   * Cargamos parte de los códigos postales
   */
- private loadPostal() {
-  this._postal.getPostal().subscribe(
-    ()=>{},
-    (e)=>{
-      this._notification.error('Error', 'Existe un error en la carga de los códigos postales');
-      this.router.navigate(['/login']);
-    }
-  )
- }
+  private loadPostal() {
+    this._postal.getPostal().subscribe(
+      ()=>{},
+      (e)=>{
+        this._notification.error('Error', 'Existe un error en la carga de los códigos postales');
+        this.router.navigate(['/login']);
+      }
+    )
+  }
+
+  /**
+   * Leemos la configuración general de la aplicación
+   */
+  public loadConfig() {
+
+    this._config.getConfig().subscribe(
+      (resp:any)=>{
+        console.log(resp);
+      }
+    )
+
+  }
+
+  
 
 }

@@ -1,0 +1,12 @@
+<nz-form-item>
+    <nz-form-label [nzSm]="2" [nzXs]="24"  nzFor="_id" nzNoColon></nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+        <label nz-checkbox [(ngModel)]="config.workplace" (ngModelChange)="save()">La empresa trabaja con distintos centros de trabajo.</label>
+    </nz-form-control>
+</nz-form-item>
+<nz-form-item>
+    <nz-form-label [nzSm]="2" [nzXs]="24"  nzFor="_id" nzNoColon></nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <label nz-checkbox [(ngModel)]="config.workplaceCuenta" (ngModelChange)="save()">Las cuentas personales trabaja con distintos centros de trabajo.</label>
+    </nz-form-control>
+</nz-form-item>

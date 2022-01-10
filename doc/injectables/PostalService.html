@@ -29,17 +29,18 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content component">
+               <div class="content injectable">
                    <div class="content-data">
 
 
 
 
+
+
+
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li
-  >
-  AppComponent</li>
+  <li>Injectables</li>
+  <li >PostalService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -49,74 +50,30 @@
         <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
-        </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/app.component.ts</code>
-</p>
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/services/postal.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Servicios códigos postales
+Consulta de codigo postales, provincias y municipios</p>
+
+            </p>
 
 
 
-
-
-
-<section>
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
-        <tbody>
-
-
-
-
-
-
-
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-root</code></td>
-            </tr>
-
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./app.component.css</code></td>
-            </tr>
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./app.component.html</code></td>
-            </tr>
-
-
-
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
-
-    <section>
+            <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -130,11 +87,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#isCollapsed" >isCollapsed</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#title" >title</a>
+                                <a href="#token" >token</a>
                             </li>
                         </ul>
                     </td>
@@ -150,7 +103,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#v" >v</a>
+                                <a href="#getPostal" >getPostal</a>
                             </li>
                         </ul>
                     </td>
@@ -164,30 +117,63 @@
     </table>
 </section>
 
-    <section>
+            <section>
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/app.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/services/postal.service.ts:21</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Servicio de angular para laas peticiones HTTP</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
 
-
-
-
-
-    <section>
+            <section>
     
     <h3 id="methods">
         Methods
@@ -196,26 +182,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="v"></a>
+                    <a name="getPostal"></a>
                     <span class="name">
                         <span class="modifier">Public</span>
-                        <span ><b>v</b></span>
-                        <a href="#v"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getPostal</b></span>
+                        <a href="#getPostal"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>v(event: NzMenuItemDirective)</code>
+                    <code>getPostal(postal: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/app.component.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/services/postal.service.ts:37</a></div>
                 </td>
             </tr>
 
@@ -231,13 +217,14 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>event</td>
+                                    <td>postal</td>
                                     <td>
-                                            <code>NzMenuItemDirective</code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                     </td>
 
                                     <td>
@@ -245,6 +232,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Código postal</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -252,18 +243,19 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/Respuesta.html" target="_self" >Observable&lt;Respuesta&gt;</a></code>
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Retorna un observable con la Respuesta del servidor</p>
+
                     </div>
                 </td>
             </tr>
         </tbody>
     </table>
 </section>
-    <section>
+            <section>
     
     <h3 id="inputs">
         Properties
@@ -272,37 +264,11 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="isCollapsed"></a>
+                    <a name="token"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
-                        <span ><b>isCollapsed</b></span>
-                        <a href="#isCollapsed"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>false</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/app.component.ts:14</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="title"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>title</b></span>
-                        <a href="#title"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>token</b></span>
+                        <a href="#token"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -312,96 +278,80 @@
 
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;Harena Fuerteventura&#x27;</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/app.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/services/postal.service.ts:21</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Token user</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
 </section>
 
-</div>
+    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { NzMenuItemDirective } from &#x27;ng-zorro-antd/menu/menu-item.directive&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { map } from &#x27;rxjs/operators&#x27;;
+import { environment } from &#x27;src/environments/environment.prod&#x27;;
+import { Respuesta } from &#x27;../models/response.model&#x27;;
 
-@Component({
-  selector: &#x27;app-root&#x27;,
-  templateUrl: &#x27;./app.component.html&#x27;,
-  styleUrls: [&#x27;./app.component.css&#x27;]
+/**
+ * Servicios códigos postales
+ * Consulta de codigo postales, provincias y municipios
+ */
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
 })
+export class PostalService {
 
-export class AppComponent {
-  
-  public title &#x3D; &#x27;Harena Fuerteventura&#x27;;
+  /**
+   * Token user
+   */
+  public token:string;
 
-  public isCollapsed &#x3D; false;
+  /**
+   * Constructor
+   * 
+   * @param http Servicio de angular para laas peticiones HTTP
+   * 
+   */
+  constructor(private http:HttpClient) { }
 
-  constructor(){}
 
-  public v(event:NzMenuItemDirective) {}
+  /**
+   * 
+   * @param postal Código postal
+   * @returns Retorna un observable con la Respuesta del servidor
+   */
+  public getPostal(postal:number):Observable&lt;Respuesta&gt; {
 
+    let url:string &#x3D; environment.URL_SERVICIOS + &#x60;/postal/code/${postal}&#x60;;
+
+    return this.http.get(url).pipe(
+      map&lt;any, Respuesta&gt;( (resp:Respuesta)&#x3D;&gt;{
+        return resp;
+      })
+    )
+
+  }
 
 }
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">
-&lt;router-outlet&gt;&lt;/router-outlet&gt;</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./app.component.css</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
-        </div>
-    </div>
-
-    
 </div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><router-outlet></router-outlet></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CuentaComponent', 'selector': 'app-cuenta'},{'name': 'CuentasComponent', 'selector': 'app-cuentas'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DireccionComponent', 'selector': 'app-direccion'},{'name': 'DireccionComponent', 'selector': 'app-direccion'},{'name': 'EmailsComponent', 'selector': 'app-emails'},{'name': 'EmailsComponent', 'selector': 'app-emails'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'ParametrosComponent', 'selector': 'app-parametros'},{'name': 'PercentagesComponent', 'selector': 'app-percentages'},{'name': 'SiderComponent', 'selector': 'app-sider'},{'name': 'TaxComponent', 'selector': 'app-tax'},{'name': 'TaxesComponent', 'selector': 'app-taxes'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UsersComponent', 'selector': 'app-users'}];
-    var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'AppComponent'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
 
 
 
@@ -430,8 +380,8 @@ export class AppComponent {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppComponent.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'PostalService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
