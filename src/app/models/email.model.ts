@@ -3,6 +3,13 @@
  */
 export default class Email {
 
+
+
+    /**
+     * Identificador de la cuenta de correo
+     */
+     public _id:string;
+
     /**
      * Dirección de correo electrónico
      */
@@ -13,10 +20,6 @@ export default class Email {
      */
     public description:string;
 
-    /**
-     * Correo por defecto
-     */
-    public default:boolean;
 
     /**
      * Constructor de la clase email

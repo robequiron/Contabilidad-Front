@@ -426,8 +426,6 @@ export class PercentagesComponent implements OnInit {
         n:false
       };
     }); 
-
-
   }
 
   /**

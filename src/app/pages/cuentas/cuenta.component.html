@@ -142,7 +142,7 @@
             <nz-divider nzPlain nzText="Dirección sede principal" nzOrientation="left"></nz-divider>
             <app-direccion  [_idCuenta]="cuenta._id" *ngIf="loadDatos"></app-direccion>
             <nz-divider nzPlain nzText="Email" nzOrientation="left"></nz-divider>
-            <app-emails></app-emails>
+            <app-emails [cuenta]="cuenta" *ngIf="loadDatos"></app-emails>
         </nz-tab>
     </nz-tabset>
 </div>

@@ -1,1 +1,91 @@
-<p>emails works!</p>
+<div nz-col [nzSpan]="12" style="padding-bottom: 10px;">
+    <button nz-button nzType="primary" (click)="add()" [disabled]="!cuenta">
+        <i nz-icon nzType="plus" nzTheme="outline"></i>
+        <u>I</u>nsertar
+    </button>
+</div>
+
+
+<nz-table #editRowTable nzBordered [nzData]="listOfData" nzTableLayout="fixed">
+    <thead>
+      <tr>
+        <th nzWidth="40%" nzCustomFilter>Email
+
+          <!-- DropMenu Search name-->
+          <nz-dropdown-menu #SearchEmail="nzDropdownMenu">
+            <div class="ant-table-filter-dropdown " style="padding:10px">
+                <div class="search-box" >
+                <input type="text" nz-input placeholder="Nombre del email" [(ngModel)]="emailSearch" #iNameSearch (keydown.enter)="search()"/>
+                <button nz-button nzSize="small" nzType="primary" class="search-button" style="margin-top: 10px; margin-right: 2px;">Buscar</button>
+                <button nz-button nzSize="small" style="margin-top: 10px;">Limpiar</button>
+                </div>
+            </div>
+          </nz-dropdown-menu>
+          <!-- ----------------------- -->
+
+          <nz-filter-trigger [(nzVisible)]="vSearchEmail" [nzActive]="emailSearch.length > 0" [nzDropdownMenu]="SearchEmail" title="Alt+b">
+            <i nz-icon nzType="search" ></i>
+          </nz-filter-trigger>          
+        </th>
+        <th nzWidth="45%">Descripción</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of editRowTable.data">
+       
+        <!--Row  mostrar datos   -->
+        <ng-container *ngIf="!editCache[data.email].edit ; else editTemplate">
+          <td>{{ data.email }} </td>
+          <td>{{ data.description }}</td>
+          <td>
+            <a (click)="startEdit(data.email)" title="ALT+SHIFT+E">Edit</a>
+            <nz-divider nzType="vertical"></nz-divider>
+            <a nz-popconfirm nzPopconfirmTitle="Seguros de cancelar" (nzOnConfirm)="delete(data.email)" title="ALT+SHIFT+D">Eliminar</a>
+          </td>
+        </ng-container>
+
+        
+        <!--Row edición datos --> 
+        <ng-template #editTemplate>
+          <td>
+            <!-- Input name -->
+            <nz-form-control [nzErrorTip]="error.email[1]" 
+            title="ESCAPE 'Cancelar edición línea'" [nzValidateStatus]="error.email[0]"
+            >
+              <input type="text" nz-input 
+              [(ngModel)]="editCache[data.email].data.email" 
+              #inputEmail="ngModel" name="email" 
+              #iEmail
+              (keydown.enter)="validate(inputEmail,data.email, data._id)"
+              (keydown.escape)="cancelEdit(data.email)"
+              (focusout)="validate(inputEmail,data.email,data._id)"
+               />
+            </nz-form-control>
+          </td>
+          <td>
+            <nz-form-control 
+            title="ESCAPE 'Cancelar edición línea'">
+              <input type="text" nz-input [(ngModel)]="editCache[data.email].data.description" 
+              name="description" max="100"
+              #iDescription
+              #inputDescription="ngModel"
+              />
+            </nz-form-control>
+        </td>
+          
+          
+          <td>
+            <a (click)="saveEdit(data.email)" 
+            [attr.disabled]="editCache[data.email].validate"
+            class="save">Save</a>
+            <nz-divider nzType="vertical"></nz-divider>
+            <a nz-popconfirm nzPopconfirmTitle="¿Seguro de cancelar la edición?" (nzOnConfirm)="cancelEdit(data.email)">Cancel</a>
+          </td>
+        </ng-template>
+
+      </tr>
+    </tbody>
+
+    
+  </nz-table>

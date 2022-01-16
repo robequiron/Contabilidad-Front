@@ -65,10 +65,18 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/cuentas/emails.component.ts</code>
+    <code>src/app/pages/cuentas/emails.component.ts</code>
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente con datagrid de los emails de una cuenta personal
+Formulario en la tabla que permiter Añadir, Modificar y Eliminar</p>
+
+    </p>
 
 
     <p class="comment">
@@ -126,6 +134,40 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#editCache" >editCache</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#emailSearch" >emailSearch</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#error" >error</a>
+                            </li>
+                            <li>
+                                <a href="#iMail" >iMail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#listOfData" >listOfData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#vSearchEmail" >vSearchEmail</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -136,12 +178,62 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#add" >add</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#cancelEdit" >cancelEdit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#delete" >delete</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#load" >load</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#saveEdit" >saveEdit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#search" >search</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#startEdit" >startEdit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updateEditCache" >updateEditCache</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#validate" >validate</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cuenta" >cuenta</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -156,20 +248,103 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(_notification: NzNotificationService, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, _cuenta: <a href="../injectables/CuentasService.html" target="_self">CuentasService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/cuentas/emails.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/pages/cuentas/emails.component.ts:57</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_notification</td>
+                                                  
+                                                        <td>
+                                                                    <code>NzNotificationService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_cuenta</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CuentasService.html" target="_self" >CuentasService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
 
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cuenta"></a>
+                        <b>cuenta</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Cuenta.html" target="_self" >Cuenta</a></code>
 
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/pages/cuentas/emails.component.ts:22</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Decorador de propiedades. Datos recibido del padre. Identificar cuenta personal</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -178,6 +353,208 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="add"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>add</b></span>
+                        <a href="#add"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>add()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="121"
+                            class="link-to-prism">src/app/pages/cuentas/emails.component.ts:121</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Añadimos un correo nuevo</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelEdit"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>cancelEdit</b></span>
+                        <a href="#cancelEdit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cancelEdit(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="200"
+                            class="link-to-prism">src/app/pages/cuentas/emails.component.ts:200</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Cancelar edición de la fila</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Idenfiticador de la fila, email</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <b>Example :</b>
+                        <div>
+                            <pre class="line-numbers"><code class="language-html">cancelEdit(&lt;a href=&quot;mailto:&amp;#x72;&amp;#111;&amp;#98;&amp;#x65;&amp;#113;&amp;#117;&amp;#x69;&amp;#114;&amp;#111;&amp;#110;&amp;#x40;&amp;#x67;&amp;#x6d;&amp;#x61;&amp;#x69;&amp;#x6c;&amp;#46;&amp;#99;&amp;#111;&amp;#109;&quot;&gt;&amp;#x72;&amp;#111;&amp;#98;&amp;#x65;&amp;#113;&amp;#117;&amp;#x69;&amp;#114;&amp;#111;&amp;#110;&amp;#x40;&amp;#x67;&amp;#x6d;&amp;#x61;&amp;#x69;&amp;#x6c;&amp;#46;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;)</code></pre>
+                        </div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delete"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>delete</b></span>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>delete()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="169"
+                            class="link-to-prism">src/app/pages/cuentas/emails.component.ts:169</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="load"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>load</b></span>
+                        <a href="#load"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>load()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="148"
+                            class="link-to-prism">src/app/pages/cuentas/emails.component.ts:148</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Leemos los emails</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -198,8 +575,119 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/cuentas/emails.component.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/pages/cuentas/emails.component.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Directiva ciclo de vida del component - Primera ejecución (Lifecycle hooks)</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveEdit"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>saveEdit</b></span>
+                        <a href="#saveEdit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>saveEdit(id: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="171"
+                            class="link-to-prism">src/app/pages/cuentas/emails.component.ts:171</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="search"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>search</b></span>
+                        <a href="#search"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>search()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="153"
+                            class="link-to-prism">src/app/pages/cuentas/emails.component.ts:153</a></div>
                 </td>
             </tr>
 
@@ -215,14 +703,457 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startEdit"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>startEdit</b></span>
+                        <a href="#startEdit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>startEdit(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="161"
+                            class="link-to-prism">src/app/pages/cuentas/emails.component.ts:161</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Iniciar edicion de la fila</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Identificador de la fila</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateEditCache"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>updateEditCache</b></span>
+                        <a href="#updateEditCache"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateEditCache()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="219"
+                            class="link-to-prism">src/app/pages/cuentas/emails.component.ts:219</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Generados un array con los registros para editar posteriormente</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validate"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>validate</b></span>
+                        <a href="#validate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validate(n: <a href="https://angular.io/api/forms/NgModel" target="_blank">NgModel</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/app/pages/cuentas/emails.component.ts:75</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>n</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/forms/NgModel" target="_blank" >NgModel</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editCache"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>editCache</b></span>
+                        <a href="#editCache"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/pages/cuentas/emails.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Propiedad editCache</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="emailSearch"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>emailSearch</b></span>
+                        <a href="#emailSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/pages/cuentas/emails.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Busqueda por email</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="error"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>error</b></span>
+                        <a href="#error"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    email:[&#x27;&#x27;,&#x27;&#x27;],
+    description:[&#x27;&#x27;,&#x27;&#x27;]
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/pages/cuentas/emails.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="iMail"></a>
+                    <span class="name">
+                        <span ><b>iMail</b></span>
+                        <a href="#iMail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;iMail&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/pages/cuentas/emails.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Decorador obtención de las propiedades de la directiva inputEmail</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listOfData"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>listOfData</b></span>
+                        <a href="#listOfData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Email.html" target="_self" >Email[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/pages/cuentas/emails.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista de datos</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="vSearchEmail"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>vSearchEmail</b></span>
+                        <a href="#vSearchEmail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/pages/cuentas/emails.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Visualizar dropmenu del search name</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
 </section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ElementRef, Input, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { NgModel } from &#x27;@angular/forms&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { NzNotificationService } from &#x27;ng-zorro-antd/notification&#x27;;
+import { Cuenta } from &#x27;src/app/models/cuenta.model&#x27;;
+import Email from &#x27;src/app/models/email.model&#x27;;
+import { CuentasService } from &#x27;src/app/services/cuentas.service&#x27;;
+/**
+ * Componente con datagrid de los emails de una cuenta personal
+ * Formulario en la tabla que permiter Añadir, Modificar y Eliminar
+ */
 @Component({
   selector: &#x27;app-emails&#x27;,
   templateUrl: &#x27;./emails.component.html&#x27;,
@@ -230,18 +1161,317 @@
 })
 export class EmailsComponent implements OnInit {
 
-  constructor() { }
+  /**
+   * Decorador de propiedades. Datos recibido del padre. Identificar cuenta personal
+   */
+  @Input() cuenta:Cuenta;
 
-  ngOnInit(): void {
+  /**
+   * Decorador obtención de las propiedades de la directiva inputEmail
+   */
+  @ViewChild(&#x27;iMail&#x27;, {static:false}) iMail:ElementRef; 
+
+  /**
+   * Lista de datos
+   */
+  public listOfData: Email[] &#x3D; [];
+
+  /**
+   * Busqueda por email
+   */
+  public emailSearch:string&#x3D;&quot;&quot;;
+
+  /** 
+  * Visualizar dropmenu del search name 
+  */
+  public vSearchEmail:boolean&#x3D;false;
+
+  /**
+  * Propiedad editCache
+  */
+  public editCache: { [key: number]: { edit: boolean; data: Email; validate:boolean; n:boolean } } &#x3D; [];
+
+
+
+  /**
+   * 
+   */
+  public error &#x3D; {
+    email:[&#x27;&#x27;,&#x27;&#x27;],
+    description:[&#x27;&#x27;,&#x27;&#x27;]
   }
+  
+
+
+  constructor(
+    private _notification:NzNotificationService,
+    private router:Router,
+    private _cuenta:CuentasService
+  ) { }
+
+  /**
+  * Directiva ciclo de vida del component - Primera ejecución (Lifecycle hooks)
+  */
+  ngOnInit(): void {
+    this.load();
+    this.updateEditCache();
+  }
+
+  public validate(n:NgModel, id:string) {
+    console.log(id);
+    try {
+      //Establecemos null la validación inicial de la fila
+      this.editCache[id].validate &#x3D; null;
+
+      //Creamos un patro para el campo email
+      let patron &#x3D; new RegExp(&quot;[a-zA-Z0-9.!#$%&amp;\&#x27;*+/&#x3D;?^_&#x60;{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$&quot;);
+
+      //Comprobamos los campos
+      switch(n.name) {
+          case &#x27;email&#x27;: {
+            this.error.email[0]&#x3D;&quot;&quot;;
+            this.error.email[0]&#x3D;&quot;&quot;;
+            //Comprobamos que sea correcto el email
+            if (!patron.test(n.value)) {
+              this.error.email[0]&#x3D;&#x27;error&#x27;;
+              this.editCache[id].validate &#x3D; false;
+            } else {
+              /*Comprobamos que no existe ya este email
+              this.cuenta.email.forEach( (item:Email)&#x3D;&gt;{
+                if (item.email&#x3D;&#x3D;&#x3D;n.value) {
+                  this.error.email[0]&#x3D;&quot;error&quot;;
+                  this.error.email[1]&#x3D;&quot;Ya existe este email&quot;;
+                  this.editCache[id].validate &#x3D; false;
+                }
+              })*/
+            }
+
+            break;
+          }
+      }
+
+
+    } catch (error) {
+       this._notification.error(&#x27;Error&#x27;,&#x27;Existe un error en la validación de detos&#x27;, {nzDuration:800});
+       setTimeout(() &#x3D;&gt; {
+         this.router.navigate([&#x27;cuentas&#x27;]);
+       }, 1200);
+    }
+  }
+
+
+  /**
+   * Añadimos un correo nuevo
+   */
+  public add():void {
+    
+    if (!this.editCache[&#x27;email&#x27;]) {
+      let email &#x3D; new Email();
+      email._id &#x3D; &quot;&quot;;
+      email.email &#x3D; &quot;email&quot;;
+      email.description &#x3D;&quot;&quot;;
+
+      this.listOfData &#x3D; [
+        {
+          ...email
+        },
+        ...this.listOfData
+      ]
+      this.updateEditCache();
+      this.editCache[&#x27;email&#x27;].edit&#x3D;true;
+      this.editCache[&#x27;email&#x27;].n &#x3D; true
+
+    }
+    
+    
+    
+  }
+
+  /**
+   * Leemos los emails
+   */
+  public load(){
+    this.listOfData &#x3D; this.cuenta.email;
+    console.log(this.listOfData);
+  }
+
+  public search() {}
+
+
+  /**
+   * Iniciar edicion de la fila
+   * 
+   * @param id Identificador de la fila
+   */
+   public startEdit(id: string): void {
+    this.editCache[id].edit &#x3D; true;
+    setTimeout(() &#x3D;&gt; {
+      
+    }, 300);
+    
+  }
+
+public delete() {}
+
+public saveEdit(id:any){
+
+    //Obtención de indice del array
+    const index &#x3D; this.listOfData.findIndex( item &#x3D;&gt; item.email &#x3D;&#x3D;&#x3D; id);
+
+    Object.assign(this.listOfData[index], this.editCache[id].data);
+
+    //Quitamos el filtro de busqueda antes de grabar
+    this.cuenta.email &#x3D; this.listOfData;
+
+    //Grabamos los datos
+    this._cuenta.save(this.cuenta, this.cuenta._id).subscribe(
+      (resp:any)&#x3D;&gt;{
+        this._notification.info(&quot;Email&quot;,&quot;Email actualizado correctamente&quot;);
+      },   
+      ()&#x3D;&gt;{
+        this._notification.error(&quot;Error&quot;, &quot;Existe un error al actualizar el email&quot;);
+      }
+    )
+
+
+}
+
+    /**
+     * Cancelar edición de la fila
+     * 
+     * @param id Idenfiticador de la fila, email
+     * @example cancelEdit(robequiron@gmail.com)
+     */
+    public cancelEdit(id:string){
+      //Busco en la lista de datos el identificador para poder obtener el indice
+      const index &#x3D; this.listOfData.findIndex(item &#x3D;&gt; item.email&#x3D;&#x3D;&#x3D;id);
+
+      this.load();
+      this.updateEditCache();
+
+      this.editCache[id] &#x3D; {
+        edit: false,
+        data: { ...this.listOfData[index] },
+        validate:true,
+        n:false
+      };
+    }
+
+
+    /**
+     * Generados un array con los registros para editar posteriormente
+     */
+     public updateEditCache(): void {
+
+      this.editCache &#x3D; [];
+  
+      this.listOfData.forEach(item &#x3D;&gt; {
+        this.editCache[item.email] &#x3D; {
+          edit: false,
+          data: { ...item },
+          validate: true,
+          n:false
+        };
+      });
+      
+      console.log(this.editCache)
+    }
 
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;emails works!&lt;/p&gt;
-</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;div nz-col [nzSpan]&#x3D;&quot;12&quot; style&#x3D;&quot;padding-bottom: 10px;&quot;&gt;
+    &lt;button nz-button nzType&#x3D;&quot;primary&quot; (click)&#x3D;&quot;add()&quot; [disabled]&#x3D;&quot;!cuenta&quot;&gt;
+        &lt;i nz-icon nzType&#x3D;&quot;plus&quot; nzTheme&#x3D;&quot;outline&quot;&gt;&lt;/i&gt;
+        &lt;u&gt;I&lt;/u&gt;nsertar
+    &lt;/button&gt;
+&lt;/div&gt;
+
+
+&lt;nz-table #editRowTable nzBordered [nzData]&#x3D;&quot;listOfData&quot; nzTableLayout&#x3D;&quot;fixed&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th nzWidth&#x3D;&quot;40%&quot; nzCustomFilter&gt;Email
+
+          &lt;!-- DropMenu Search name--&gt;
+          &lt;nz-dropdown-menu #SearchEmail&#x3D;&quot;nzDropdownMenu&quot;&gt;
+            &lt;div class&#x3D;&quot;ant-table-filter-dropdown &quot; style&#x3D;&quot;padding:10px&quot;&gt;
+                &lt;div class&#x3D;&quot;search-box&quot; &gt;
+                &lt;input type&#x3D;&quot;text&quot; nz-input placeholder&#x3D;&quot;Nombre del email&quot; [(ngModel)]&#x3D;&quot;emailSearch&quot; #iNameSearch (keydown.enter)&#x3D;&quot;search()&quot;/&gt;
+                &lt;button nz-button nzSize&#x3D;&quot;small&quot; nzType&#x3D;&quot;primary&quot; class&#x3D;&quot;search-button&quot; style&#x3D;&quot;margin-top: 10px; margin-right: 2px;&quot;&gt;Buscar&lt;/button&gt;
+                &lt;button nz-button nzSize&#x3D;&quot;small&quot; style&#x3D;&quot;margin-top: 10px;&quot;&gt;Limpiar&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/nz-dropdown-menu&gt;
+          &lt;!-- ----------------------- --&gt;
+
+          &lt;nz-filter-trigger [(nzVisible)]&#x3D;&quot;vSearchEmail&quot; [nzActive]&#x3D;&quot;emailSearch.length &gt; 0&quot; [nzDropdownMenu]&#x3D;&quot;SearchEmail&quot; title&#x3D;&quot;Alt+b&quot;&gt;
+            &lt;i nz-icon nzType&#x3D;&quot;search&quot; &gt;&lt;/i&gt;
+          &lt;/nz-filter-trigger&gt;          
+        &lt;/th&gt;
+        &lt;th nzWidth&#x3D;&quot;15%&quot;&gt;Descripción&lt;/th&gt;
+        &lt;th&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr *ngFor&#x3D;&quot;let data of editRowTable.data&quot;&gt;
+       
+        &lt;!--Row  mostrar datos   --&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;!editCache[data.email].edit ; else editTemplate&quot;&gt;
+          &lt;td&gt;{{ data.email }} &lt;/td&gt;
+          &lt;td&gt;{{ data.description }}&lt;/td&gt;
+          &lt;td&gt;
+            &lt;a (click)&#x3D;&quot;startEdit(data.email)&quot; title&#x3D;&quot;ALT+SHIFT+E&quot;&gt;Edit&lt;/a&gt;
+            &lt;nz-divider nzType&#x3D;&quot;vertical&quot;&gt;&lt;/nz-divider&gt;
+            &lt;a nz-popconfirm nzPopconfirmTitle&#x3D;&quot;Seguros de cancelar&quot; (nzOnConfirm)&#x3D;&quot;delete()&quot; title&#x3D;&quot;ALT+SHIFT+D&quot;&gt;Eliminar&lt;/a&gt;
+          &lt;/td&gt;
+        &lt;/ng-container&gt;
+
+        
+        &lt;!--Row edición datos --&gt; 
+        &lt;ng-template #editTemplate&gt;
+          &lt;td&gt;
+            &lt;!-- Input name --&gt;
+            &lt;nz-form-control nzErrorTip&#x3D;&quot;El correo electrónico no es correcto&quot; 
+            title&#x3D;&quot;ESCAPE &#x27;Cancelar edición línea&#x27;&quot; [nzValidateStatus]&#x3D;&quot;error.email[0]&quot;
+            &gt;
+              &lt;input type&#x3D;&quot;text&quot; nz-input 
+              [(ngModel)]&#x3D;&quot;editCache[data.email].data.email&quot; 
+              #inputEmail&#x3D;&quot;ngModel&quot; name&#x3D;&quot;email&quot; 
+              #iEmail
+              (keydown.enter)&#x3D;&quot;validate(inputEmail,data.email)&quot;
+              (focusout)&#x3D;&quot;validate(inputEmail,data.email)&quot;
+               /&gt;
+            &lt;/nz-form-control&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;nz-form-control 
+            title&#x3D;&quot;ESCAPE &#x27;Cancelar edición línea&#x27;&quot;&gt;
+              &lt;input type&#x3D;&quot;text&quot; nz-input [(ngModel)]&#x3D;&quot;editCache[data.email].data.description&quot; 
+              name&#x3D;&quot;description&quot; max&#x3D;&quot;100&quot;
+              #iDescription
+              #inputDescription&#x3D;&quot;ngModel&quot;
+              /&gt;
+            &lt;/nz-form-control&gt;
+        &lt;/td&gt;
+          
+          
+          &lt;td&gt;
+            &lt;a (click)&#x3D;&quot;saveEdit(data.email)&quot; 
+            [attr.disabled]&#x3D;&quot;editCache[data.email].validate&quot;
+            class&#x3D;&quot;save&quot;&gt;Save&lt;/a&gt;
+            &lt;nz-divider nzType&#x3D;&quot;vertical&quot;&gt;&lt;/nz-divider&gt;
+            &lt;a nz-popconfirm nzPopconfirmTitle&#x3D;&quot;¿Seguro de cancelar la edición?&quot; (nzOnConfirm)&#x3D;&quot;cancelEdit(data.email)&quot;&gt;Cancel&lt;/a&gt;
+          &lt;/td&gt;
+        &lt;/ng-template&gt;
+
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+
+    
+  &lt;/nz-table&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -276,7 +1506,7 @@ export class EmailsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>emails works!</p></div>'
+        var COMPONENT_TEMPLATE = '<div><div nz-col [nzSpan]="12" style="padding-bottom: 10px;">    <button nz-button nzType="primary" (click)="add()" [disabled]="!cuenta">        <i nz-icon nzType="plus" nzTheme="outline"></i>        <u>I</u>nsertar    </button></div><nz-table #editRowTable nzBordered [nzData]="listOfData" nzTableLayout="fixed">    <thead>      <tr>        <th nzWidth="40%" nzCustomFilter>Email          <!-- DropMenu Search name-->          <nz-dropdown-menu #SearchEmail="nzDropdownMenu">            <div class="ant-table-filter-dropdown " style="padding:10px">                <div class="search-box" >                <input type="text" nz-input placeholder="Nombre del email" [(ngModel)]="emailSearch" #iNameSearch (keydown.enter)="search()"/>                <button nz-button nzSize="small" nzType="primary" class="search-button" style="margin-top: 10px; margin-right: 2px;">Buscar</button>                <button nz-button nzSize="small" style="margin-top: 10px;">Limpiar</button>                </div>            </div>          </nz-dropdown-menu>          <!-- ----------------------- -->          <nz-filter-trigger [(nzVisible)]="vSearchEmail" [nzActive]="emailSearch.length > 0" [nzDropdownMenu]="SearchEmail" title="Alt+b">            <i nz-icon nzType="search" ></i>          </nz-filter-trigger>                  </th>        <th nzWidth="15%">Descripción</th>        <th></th>      </tr>    </thead>    <tbody>      <tr *ngFor="let data of editRowTable.data">               <!--Row  mostrar datos   -->        <ng-container *ngIf="!editCache[data.email].edit ; else editTemplate">          <td>{{ data.email }} </td>          <td>{{ data.description }}</td>          <td>            <a (click)="startEdit(data.email)" title="ALT+SHIFT+E">Edit</a>            <nz-divider nzType="vertical"></nz-divider>            <a nz-popconfirm nzPopconfirmTitle="Seguros de cancelar" (nzOnConfirm)="delete()" title="ALT+SHIFT+D">Eliminar</a>          </td>        </ng-container>                <!--Row edición datos -->         <ng-template #editTemplate>          <td>            <!-- Input name -->            <nz-form-control nzErrorTip="El correo electrónico no es correcto"             title="ESCAPE \'Cancelar edición línea\'" [nzValidateStatus]="error.email[0]"            >              <input type="text" nz-input               [(ngModel)]="editCache[data.email].data.email"               #inputEmail="ngModel" name="email"               #iEmail              (keydown.enter)="validate(inputEmail,data.email)"              (focusout)="validate(inputEmail,data.email)"               />            </nz-form-control>          </td>          <td>            <nz-form-control             title="ESCAPE \'Cancelar edición línea\'">              <input type="text" nz-input [(ngModel)]="editCache[data.email].data.description"               name="description" max="100"              #iDescription              #inputDescription="ngModel"              />            </nz-form-control>        </td>                              <td>            <a (click)="saveEdit(data.email)"             [attr.disabled]="editCache[data.email].validate"            class="save">Save</a>            <nz-divider nzType="vertical"></nz-divider>            <a nz-popconfirm nzPopconfirmTitle="¿Seguro de cancelar la edición?" (nzOnConfirm)="cancelEdit(data.email)">Cancel</a>          </td>        </ng-template>      </tr>    </tbody>      </nz-table></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CuentaComponent', 'selector': 'app-cuenta'},{'name': 'CuentasComponent', 'selector': 'app-cuentas'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DireccionComponent', 'selector': 'app-direccion'},{'name': 'DireccionComponent', 'selector': 'app-direccion'},{'name': 'EmailsComponent', 'selector': 'app-emails'},{'name': 'EmailsComponent', 'selector': 'app-emails'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'ParametrosComponent', 'selector': 'app-parametros'},{'name': 'PercentagesComponent', 'selector': 'app-percentages'},{'name': 'SiderComponent', 'selector': 'app-sider'},{'name': 'TaxComponent', 'selector': 'app-tax'},{'name': 'TaxesComponent', 'selector': 'app-taxes'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UsersComponent', 'selector': 'app-users'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'EmailsComponent'};

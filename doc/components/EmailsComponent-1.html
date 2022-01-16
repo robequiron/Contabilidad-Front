@@ -240,8 +240,96 @@ export class EmailsComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;emails works!&lt;/p&gt;
-</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;div nz-col [nzSpan]&#x3D;&quot;12&quot; style&#x3D;&quot;padding-bottom: 10px;&quot;&gt;
+    &lt;button nz-button nzType&#x3D;&quot;primary&quot; (click)&#x3D;&quot;add()&quot; [disabled]&#x3D;&quot;!cuenta&quot;&gt;
+        &lt;i nz-icon nzType&#x3D;&quot;plus&quot; nzTheme&#x3D;&quot;outline&quot;&gt;&lt;/i&gt;
+        &lt;u&gt;I&lt;/u&gt;nsertar
+    &lt;/button&gt;
+&lt;/div&gt;
+
+
+&lt;nz-table #editRowTable nzBordered [nzData]&#x3D;&quot;listOfData&quot; nzTableLayout&#x3D;&quot;fixed&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th nzWidth&#x3D;&quot;40%&quot; nzCustomFilter&gt;Email
+
+          &lt;!-- DropMenu Search name--&gt;
+          &lt;nz-dropdown-menu #SearchEmail&#x3D;&quot;nzDropdownMenu&quot;&gt;
+            &lt;div class&#x3D;&quot;ant-table-filter-dropdown &quot; style&#x3D;&quot;padding:10px&quot;&gt;
+                &lt;div class&#x3D;&quot;search-box&quot; &gt;
+                &lt;input type&#x3D;&quot;text&quot; nz-input placeholder&#x3D;&quot;Nombre del email&quot; [(ngModel)]&#x3D;&quot;emailSearch&quot; #iNameSearch (keydown.enter)&#x3D;&quot;search()&quot;/&gt;
+                &lt;button nz-button nzSize&#x3D;&quot;small&quot; nzType&#x3D;&quot;primary&quot; class&#x3D;&quot;search-button&quot; style&#x3D;&quot;margin-top: 10px; margin-right: 2px;&quot;&gt;Buscar&lt;/button&gt;
+                &lt;button nz-button nzSize&#x3D;&quot;small&quot; style&#x3D;&quot;margin-top: 10px;&quot;&gt;Limpiar&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/nz-dropdown-menu&gt;
+          &lt;!-- ----------------------- --&gt;
+
+          &lt;nz-filter-trigger [(nzVisible)]&#x3D;&quot;vSearchEmail&quot; [nzActive]&#x3D;&quot;emailSearch.length &gt; 0&quot; [nzDropdownMenu]&#x3D;&quot;SearchEmail&quot; title&#x3D;&quot;Alt+b&quot;&gt;
+            &lt;i nz-icon nzType&#x3D;&quot;search&quot; &gt;&lt;/i&gt;
+          &lt;/nz-filter-trigger&gt;          
+        &lt;/th&gt;
+        &lt;th nzWidth&#x3D;&quot;15%&quot;&gt;Descripción&lt;/th&gt;
+        &lt;th&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr *ngFor&#x3D;&quot;let data of editRowTable.data&quot;&gt;
+       
+        &lt;!--Row  mostrar datos   --&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;!editCache[data.email].edit ; else editTemplate&quot;&gt;
+          &lt;td&gt;{{ data.email }} &lt;/td&gt;
+          &lt;td&gt;{{ data.description }}&lt;/td&gt;
+          &lt;td&gt;
+            &lt;a (click)&#x3D;&quot;startEdit(data.email)&quot; title&#x3D;&quot;ALT+SHIFT+E&quot;&gt;Edit&lt;/a&gt;
+            &lt;nz-divider nzType&#x3D;&quot;vertical&quot;&gt;&lt;/nz-divider&gt;
+            &lt;a nz-popconfirm nzPopconfirmTitle&#x3D;&quot;Seguros de cancelar&quot; (nzOnConfirm)&#x3D;&quot;delete()&quot; title&#x3D;&quot;ALT+SHIFT+D&quot;&gt;Eliminar&lt;/a&gt;
+          &lt;/td&gt;
+        &lt;/ng-container&gt;
+
+        
+        &lt;!--Row edición datos --&gt; 
+        &lt;ng-template #editTemplate&gt;
+          &lt;td&gt;
+            &lt;!-- Input name --&gt;
+            &lt;nz-form-control nzErrorTip&#x3D;&quot;El correo electrónico no es correcto&quot; 
+            title&#x3D;&quot;ESCAPE &#x27;Cancelar edición línea&#x27;&quot; [nzValidateStatus]&#x3D;&quot;error.email[0]&quot;
+            &gt;
+              &lt;input type&#x3D;&quot;text&quot; nz-input 
+              [(ngModel)]&#x3D;&quot;editCache[data.email].data.email&quot; 
+              #inputEmail&#x3D;&quot;ngModel&quot; name&#x3D;&quot;email&quot; 
+              #iEmail
+              (keydown.enter)&#x3D;&quot;validate(inputEmail,data.email)&quot;
+              (focusout)&#x3D;&quot;validate(inputEmail,data.email)&quot;
+               /&gt;
+            &lt;/nz-form-control&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;nz-form-control 
+            title&#x3D;&quot;ESCAPE &#x27;Cancelar edición línea&#x27;&quot;&gt;
+              &lt;input type&#x3D;&quot;text&quot; nz-input [(ngModel)]&#x3D;&quot;editCache[data.email].data.description&quot; 
+              name&#x3D;&quot;description&quot; max&#x3D;&quot;100&quot;
+              #iDescription
+              #inputDescription&#x3D;&quot;ngModel&quot;
+              /&gt;
+            &lt;/nz-form-control&gt;
+        &lt;/td&gt;
+          
+          
+          &lt;td&gt;
+            &lt;a (click)&#x3D;&quot;saveEdit(data.email)&quot; 
+            [attr.disabled]&#x3D;&quot;editCache[data.email].validate&quot;
+            class&#x3D;&quot;save&quot;&gt;Save&lt;/a&gt;
+            &lt;nz-divider nzType&#x3D;&quot;vertical&quot;&gt;&lt;/nz-divider&gt;
+            &lt;a nz-popconfirm nzPopconfirmTitle&#x3D;&quot;¿Seguro de cancelar la edición?&quot; (nzOnConfirm)&#x3D;&quot;cancelEdit(data.email)&quot;&gt;Cancel&lt;/a&gt;
+          &lt;/td&gt;
+        &lt;/ng-template&gt;
+
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+
+    
+  &lt;/nz-table&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -276,7 +364,7 @@ export class EmailsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>emails works!</p></div>'
+        var COMPONENT_TEMPLATE = '<div><div nz-col [nzSpan]="12" style="padding-bottom: 10px;">    <button nz-button nzType="primary" (click)="add()" [disabled]="!cuenta">        <i nz-icon nzType="plus" nzTheme="outline"></i>        <u>I</u>nsertar    </button></div><nz-table #editRowTable nzBordered [nzData]="listOfData" nzTableLayout="fixed">    <thead>      <tr>        <th nzWidth="40%" nzCustomFilter>Email          <!-- DropMenu Search name-->          <nz-dropdown-menu #SearchEmail="nzDropdownMenu">            <div class="ant-table-filter-dropdown " style="padding:10px">                <div class="search-box" >                <input type="text" nz-input placeholder="Nombre del email" [(ngModel)]="emailSearch" #iNameSearch (keydown.enter)="search()"/>                <button nz-button nzSize="small" nzType="primary" class="search-button" style="margin-top: 10px; margin-right: 2px;">Buscar</button>                <button nz-button nzSize="small" style="margin-top: 10px;">Limpiar</button>                </div>            </div>          </nz-dropdown-menu>          <!-- ----------------------- -->          <nz-filter-trigger [(nzVisible)]="vSearchEmail" [nzActive]="emailSearch.length > 0" [nzDropdownMenu]="SearchEmail" title="Alt+b">            <i nz-icon nzType="search" ></i>          </nz-filter-trigger>                  </th>        <th nzWidth="15%">Descripción</th>        <th></th>      </tr>    </thead>    <tbody>      <tr *ngFor="let data of editRowTable.data">               <!--Row  mostrar datos   -->        <ng-container *ngIf="!editCache[data.email].edit ; else editTemplate">          <td>{{ data.email }} </td>          <td>{{ data.description }}</td>          <td>            <a (click)="startEdit(data.email)" title="ALT+SHIFT+E">Edit</a>            <nz-divider nzType="vertical"></nz-divider>            <a nz-popconfirm nzPopconfirmTitle="Seguros de cancelar" (nzOnConfirm)="delete()" title="ALT+SHIFT+D">Eliminar</a>          </td>        </ng-container>                <!--Row edición datos -->         <ng-template #editTemplate>          <td>            <!-- Input name -->            <nz-form-control nzErrorTip="El correo electrónico no es correcto"             title="ESCAPE \'Cancelar edición línea\'" [nzValidateStatus]="error.email[0]"            >              <input type="text" nz-input               [(ngModel)]="editCache[data.email].data.email"               #inputEmail="ngModel" name="email"               #iEmail              (keydown.enter)="validate(inputEmail,data.email)"              (focusout)="validate(inputEmail,data.email)"               />            </nz-form-control>          </td>          <td>            <nz-form-control             title="ESCAPE \'Cancelar edición línea\'">              <input type="text" nz-input [(ngModel)]="editCache[data.email].data.description"               name="description" max="100"              #iDescription              #inputDescription="ngModel"              />            </nz-form-control>        </td>                              <td>            <a (click)="saveEdit(data.email)"             [attr.disabled]="editCache[data.email].validate"            class="save">Save</a>            <nz-divider nzType="vertical"></nz-divider>            <a nz-popconfirm nzPopconfirmTitle="¿Seguro de cancelar la edición?" (nzOnConfirm)="cancelEdit(data.email)">Cancel</a>          </td>        </ng-template>      </tr>    </tbody>      </nz-table></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CuentaComponent', 'selector': 'app-cuenta'},{'name': 'CuentasComponent', 'selector': 'app-cuentas'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DireccionComponent', 'selector': 'app-direccion'},{'name': 'DireccionComponent', 'selector': 'app-direccion'},{'name': 'EmailsComponent', 'selector': 'app-emails'},{'name': 'EmailsComponent', 'selector': 'app-emails'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'ParametrosComponent', 'selector': 'app-parametros'},{'name': 'PercentagesComponent', 'selector': 'app-percentages'},{'name': 'SiderComponent', 'selector': 'app-sider'},{'name': 'TaxComponent', 'selector': 'app-tax'},{'name': 'TaxesComponent', 'selector': 'app-taxes'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UsersComponent', 'selector': 'app-users'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'EmailsComponent-1'};

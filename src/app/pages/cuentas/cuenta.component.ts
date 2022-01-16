@@ -131,7 +131,7 @@ export class CuentaComponent implements OnInit, OnDestroy {
    * @param e Keyboard event
    */
      @HostListener('window:keydown', ['$event']) onKeyDown(e:KeyboardEvent) {
-      if (e.code==="Escape") {
+      if (e.code==="Escape" && this.SelectedIndex===0) {
         this.exit();
       }
     }
