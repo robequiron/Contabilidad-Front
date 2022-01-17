@@ -6,7 +6,7 @@
 </div>
 
 
-<nz-table #editRowTable nzBordered [nzData]="listOfData" nzTableLayout="fixed">
+<nz-table #editRowTable nzBordered [nzData]="listOfData" nzTableLayout="fixed" nzPageSize="5">
     <thead>
       <tr>
         <th nzWidth="40%" nzCustomFilter>Email
@@ -55,8 +55,7 @@
             >
               <input type="text" nz-input 
               [(ngModel)]="editCache[data.email].data.email" 
-              #inputEmail="ngModel" name="email" 
-              #iEmail
+              #inputEmail="ngModel" name="email" #iEmail
               (keydown.enter)="validate(inputEmail,data.email, data._id)"
               (keydown.escape)="cancelEdit(data.email)"
               (focusout)="validate(inputEmail,data.email,data._id)"
@@ -67,7 +66,9 @@
             <nz-form-control 
             title="ESCAPE 'Cancelar edición línea'">
               <input type="text" nz-input [(ngModel)]="editCache[data.email].data.description" 
-              name="description" max="100"
+              name="description" maxlength="40"
+              (keydown.escape)="cancelEdit(data.email)"
+              (keydown.enter)="validate(inputEmail,data.email, data._id)"
               #iDescription
               #inputDescription="ngModel"
               />

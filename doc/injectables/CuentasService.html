@@ -598,9 +598,7 @@ export class CuentasService {
   }
 
   public save(cuenta:Cuenta, _id:string) {
-    console.log(cuenta)
     if(cuenta._id) {
-      console.log(&quot;estamos&quot;)
       let url &#x3D; environment.URL_SERVICIOS + &#x60;/cuentas/${cuenta._id}&#x60;;
       return this.http.put(url,cuenta).pipe(
         map( (resp:any)&#x3D;&gt;{

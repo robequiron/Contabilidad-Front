@@ -81,6 +81,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                 <a href="components/DashboardComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DashboardComponent</a>
                                             </li>
                                             <li class="link">
+                                                <a href="components/DireccionComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DireccionComponent</a>
+                                            </li>
+                                            <li class="link">
                                                 <a href="components/EmailsComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >EmailsComponent</a>
                                             </li>
                                             <li class="link">
@@ -121,22 +124,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                 </ul>
                 </li>
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#components-links"' :
-                            'data-target="#xs-components-links"' }>
-                            <span class="icon ion-md-cog"></span>
-                            <span>Components</span>
-                            <span class="icon ion-ios-arrow-down"></span>
-                        </div>
-                        <ul class="links collapse " ${ isNormalMode ? 'id="components-links"' : 'id="xs-components-links"' }>
-                            <li class="link">
-                                <a href="components/DireccionComponent.html" data-type="entity-link" >DireccionComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/DireccionComponent-1.html" data-type="entity-link" >DireccionComponent</a>
-                            </li>
-                        </ul>
-                    </li>
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#classes-links"' :
                             'data-target="#xs-classes-links"' }>

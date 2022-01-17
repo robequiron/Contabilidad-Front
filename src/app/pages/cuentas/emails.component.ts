@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
@@ -6,7 +6,7 @@ import { Cuenta } from 'src/app/models/cuenta.model';
 import Email from 'src/app/models/email.model';
 import { CuentasService } from 'src/app/services/cuentas.service';
 /**
- * Componente con datagrid de los emails de una cuenta personal
+ * Componente con datagrid de los emails de una cuenta personal. <br>
  * Formulario en la tabla que permiter Añadir, Modificar y Eliminar
  */
 @Component({
@@ -22,9 +22,14 @@ export class EmailsComponent implements OnInit {
   @Input() cuenta:Cuenta;
 
   /**
+   * Decorador de propiedades. Datos recibido del padre. Tab seleccionado
+   */
+  @Input() SelectedIndex:number;
+
+  /**
    * Decorador obtención de las propiedades de la directiva inputEmail
    */
-  @ViewChild('iMail', {static:false}) iMail:ElementRef; 
+  @ViewChild('iEmail', {static:false}) iEmail:ElementRef; 
 
   /**
    * Lista de datos
@@ -46,113 +51,142 @@ export class EmailsComponent implements OnInit {
   */
   public editCache: { [key: number]: { edit: boolean; data: Email; validate:boolean; n:boolean } } = [];
 
-
-
   /**
-   * 
+   * Array errores inputs
    */
   public error = {
     email:['',''],
     description:['','']
   }
   
-
-
+  /**
+   * Constructor
+   * 
+   * @param _notification Servicio de notificación de ngZorro
+   * @param router Servicio de Angular Router, que permite la navegación de una vista a la siguiente
+   * @param _cuenta Servicios de cuentas personales
+   */
   constructor(
     private _notification:NzNotificationService,
     private router:Router,
     private _cuenta:CuentasService
   ) { }
 
-  /**
-  * Directiva ciclo de vida del component - Primera ejecución (Lifecycle hooks)
-  */
-  ngOnInit(): void {
-    this.load();
-    this.updateEditCache();
-  }
-  /**
-   * 
-   * @param n Input
-   * @param id Identificador del email
-   */
-  public validate(n:NgModel, id:string, i?:string) {
-    
-    try {
-      //Establecemos null la validación inicial de la fila
-      this.editCache[id].validate = null;
-
-      //Creamos un patro para el campo email
-      let patron = new RegExp("[a-zA-Z0-9.!#$%&\'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$");
-
-      //Comprobamos los campos
-      switch(n.name) {
-          case 'email': {
-            this.error.email[0]="";
-            this.error.email[1]="";
-            //Comprobamos que sea correcto el email
-            if (!patron.test(n.value)) {
-              this.error.email[0]='error';
-              this.error.email[1]='El email no es correcto';
-              this.editCache[id].validate = false;
-            } else {
-              this.listOfData.forEach( (item:Email)=>{
-                if(item.email===n.value && item._id!=i) {
-                  this.error.email[0]='error';
-                  this.error.email[1]="El email ya existe";
-                  this.editCache[id].validate = false;
-                }
-              })
-            }
-
-            break;
-          }
-      }
-
-
-    } catch (error) {
-       this._notification.error('Error','Existe un error en la validación de detos', {nzDuration:800});
-       setTimeout(() => {
-         this.router.navigate(['cuentas']);
-       }, 1200);
-    }
-  }
-
-
-  /**
-   * Añadimos un correo nuevo
-   */
-  public add():void {
-    if (!this.editCache['email']) {
-      let email = new Email();
-      email._id = "";
-      email.email = "email";
-      email.description ="";
-
-      this.listOfData = [
-        {
-          ...email
-        },
-        ...this.listOfData
-      ]
+    /**
+    * Directiva ciclo de vida del component - Primera ejecución (Lifecycle hooks)
+    */
+    ngOnInit(): void {
+      this.load();
       this.updateEditCache();
-      this.editCache['email'].edit=true;
-      this.editCache['email'].n = true
-
     }
-    
-    
-    
-  }
+    /**
+     * Decorador de métodos. Escucha eventos emitidos por el host
+     * 
+     * @param e KeyboardEvent
+    */
+    @HostListener ('window:keydown', ['$event']) onKeyDown(e:KeyboardEvent) {
+      //Si pulsamo la tecka alt + i  insertamos un nuevo registros
+      if(e.altKey && e.code==="KeyI" && this.SelectedIndex===1) {
+        this.add(); 
+        setTimeout(() => {
+          this.iEmail.nativeElement.focus();
+        }, 300);
+      }
+    }
 
-  /**
-   * Leemos los emails
-   */
-  public load(){
-    this.listOfData = this.cuenta.email;
-  }
+    /**
+     * Metodo para la validación de los campos
+     * 
+     * @param n Input
+     * @param id Identificador del email
+     */
+    public validate(n:NgModel, id:string, i?:string):void {
+      
+      try {
+        //Establecemos null la validación inicial de la fila
+        this.editCache[id].validate = null;
 
-  public search() {}
+        //Creamos un patro para el campo email
+        let patron = new RegExp("[a-zA-Z0-9.!#$%&\'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$");
+
+        //Comprobamos los campos
+        switch(n.name) {
+            case 'email': {
+              this.error.email[0]="";
+              this.error.email[1]="";
+              //Comprobamos que sea correcto el email
+              if (!patron.test(n.value)) {
+                this.error.email[0]='error';
+                this.error.email[1]='El email no es correcto';
+                this.editCache[id].validate = false;
+              } else {
+                this.listOfData.forEach( (item:Email)=>{
+                  let j:String = n.value;
+                  if(item.email.toLocaleUpperCase()===j.toLocaleUpperCase() && item._id!=i) {
+                    this.error.email[0]='error';
+                    this.error.email[1]="El email ya existe";
+                    this.editCache[id].validate = false;
+                  }
+                })
+              }
+
+              break;
+            }
+        }
+
+
+      } catch (error) {
+        this._notification.error('Error','Existe un error en la validación de detos', {nzDuration:800});
+        setTimeout(() => {
+          this.router.navigate(['cuentas']);
+        }, 1200);
+      }
+    }
+
+
+    /**
+     * Añadimos un correo nuevo
+     */
+    public add():void {
+      if (!this.editCache['email']) {
+        let email = new Email();
+        email._id = "";
+        email.email = "email";
+        email.description ="";
+
+        this.listOfData = [
+          {
+            ...email
+          },
+          ...this.listOfData
+        ]
+        this.updateEditCache();
+        this.editCache['email'].edit=true;
+        this.editCache['email'].n = true
+
+      }
+      
+      
+      
+    }
+
+    /**
+     * Leemos los emails
+     */
+    public load():void{
+      this.listOfData = this.cuenta.email;
+    }
+
+    /**
+     * Método de busqueda
+     */
+    public search():void {
+      this.load()
+      this.listOfData = this.listOfData.filter( (item:Email)=>{
+        return item.email.toLocaleUpperCase().includes(this.emailSearch.toLocaleUpperCase());
+      })
+      this.updateEditCache();
+    }
 
 
   /**
@@ -160,21 +194,17 @@ export class EmailsComponent implements OnInit {
    * 
    * @param id Identificador de la fila
    */
-   public startEdit(id: string): void {
-    this.editCache[id].edit = true;
-    this.error.email[0]="";
-    setTimeout(() => {
-      
-    }, 300);
-    
-  }
+    public startEdit(id: string): void {
+      this.editCache[id].edit = true;
+      this.error.email[0]="";
+    }
 
     /**
      * Eliminar el registro
      * 
      * @param email Email a eliminar
      */
-    public delete(email:string) {
+    public delete(email:string):void {
   
         //Copia lista en caso de error
         let listCopy = this.listOfData;
@@ -208,7 +238,7 @@ export class EmailsComponent implements OnInit {
      * 
      * @param id Email a modificar
      */
-    public saveEdit(id:any){
+    public saveEdit(id:any):void{
 
       //Obtención de indice del array
       const index = this.listOfData.findIndex( item => item.email === id);
@@ -237,7 +267,7 @@ export class EmailsComponent implements OnInit {
      * @param id Idenfiticador de la fila, email
      * @example cancelEdit(robequiron@gmail.com)
      */
-    public cancelEdit(id:string){
+    public cancelEdit(id:string):void{
       
       //Busco en la lista de datos el identificador para poder obtener el indice
       const index = this.listOfData.findIndex(item => item.email===id);
