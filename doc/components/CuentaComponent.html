@@ -526,8 +526,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="398"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:398</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="400"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:400</a></div>
                 </td>
             </tr>
 
@@ -567,8 +567,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="249"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:249</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="251"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:251</a></div>
                 </td>
             </tr>
 
@@ -608,8 +608,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="309"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:309</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="311"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:311</a></div>
                 </td>
             </tr>
 
@@ -649,8 +649,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="192"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:192</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="194"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:194</a></div>
                 </td>
             </tr>
 
@@ -809,8 +809,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="391"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:391</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="393"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:393</a></div>
                 </td>
             </tr>
 
@@ -850,8 +850,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="369"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:369</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="371"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:371</a></div>
                 </td>
             </tr>
 
@@ -891,8 +891,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="272"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:272</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="274"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:274</a></div>
                 </td>
             </tr>
 
@@ -1036,8 +1036,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="421"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:421</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="423"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:423</a></div>
                 </td>
             </tr>
 
@@ -1112,8 +1112,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="269"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:269</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="271"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:271</a></div>
                 </td>
             </tr>
 
@@ -1264,8 +1264,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="328"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:328</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="330"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:330</a></div>
                 </td>
             </tr>
 
@@ -1303,8 +1303,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="260"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:260</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="262"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:262</a></div>
                 </td>
             </tr>
 
@@ -2037,6 +2037,7 @@ export class CuentaComponent implements OnInit, OnDestroy {
     this._cuentaService.getCuenta(id).subscribe(
       (resp:Cuenta)&#x3D;&gt;{
         this.cuenta &#x3D; resp;
+        console.log(resp);
         this.formCuenta.setValue(
           {
             _id: resp._id,
@@ -2054,6 +2055,7 @@ export class CuentaComponent implements OnInit, OnDestroy {
         )
         this.descriptionCategoria(resp.code);
         this.formCuenta.controls[&#x27;code&#x27;].disable();
+        this.formCuenta.controls[&#x27;sexo&#x27;].setValue(resp.sex);
       }
     )
   }

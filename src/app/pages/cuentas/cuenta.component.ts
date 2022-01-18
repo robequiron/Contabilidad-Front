@@ -160,6 +160,7 @@ export class CuentaComponent implements OnInit, OnDestroy {
     this._cuentaService.getCuenta(id).subscribe(
       (resp:Cuenta)=>{
         this.cuenta = resp;
+        console.log(resp);
         this.formCuenta.setValue(
           {
             _id: resp._id,
@@ -177,6 +178,7 @@ export class CuentaComponent implements OnInit, OnDestroy {
         )
         this.descriptionCategoria(resp.code);
         this.formCuenta.controls['code'].disable();
+        this.formCuenta.controls['sexo'].setValue(resp.sex);
       }
     )
   }
