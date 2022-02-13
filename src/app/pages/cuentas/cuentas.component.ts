@@ -121,13 +121,16 @@ export class CuentasComponent implements OnInit {
     private _notificacion: NzNotificationService,
     private _tablesgrid: TablesgridService,
     private router:Router) { }
-
+  
+    
+  /**
+   * Ciclo de vida deel componente. Lifecycle hooks. Limpieza de recursos.
+   */  
   ngOnInit(): void {
   }
 
   /**
    * Obtenemos los usuarios
-   * 
    * 
    * @param pageIndex Número de página
    * @param pageSize Número de registros por página

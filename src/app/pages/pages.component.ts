@@ -2,12 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NzMenuItemDirective } from 'ng-zorro-antd/menu/menu-item.directive';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { GrupoModel } from '../models/grupo.model';
 import { Respuesta } from '../models/response.model';
+import { subgrupoModel } from '../models/subgrupo.model';
 import { TypeNif } from '../models/typenif.model';
 import { Vias } from '../models/vias.model';
 import { AppService } from '../services/app.service';
 import { ConfigService } from '../services/config.service';
+import { GruposService } from '../services/parametros/grupos.service';
 import { PostalService } from '../services/parametros/postal.service';
+import { SubgruposService } from '../services/parametros/subgrupos.service';
 import { ViasService } from '../services/parametros/vias.service';
 import { SideService } from '../services/side.service';
 
@@ -47,7 +51,10 @@ export class PagesComponent implements OnInit {
       private _vias:ViasService,
       private _config:ConfigService,
       private _postal:PostalService,
+      private _grupos:GruposService,
+      private _subgrupos:SubgruposService,
       private router:Router,
+
     ){}
 
 
@@ -60,6 +67,7 @@ export class PagesComponent implements OnInit {
     this.loadVias();
     this.loadPostal();
     this.loadConfig();
+    this.loadGrupos();
 
     setTimeout(()=>{
       this.isLoad = false;
@@ -119,10 +127,41 @@ export class PagesComponent implements OnInit {
 
     this._config.getConfig().subscribe(
       (resp:any)=>{
-        console.log(resp);
+        
       }
     )
+  }
 
+  /**
+   * Cargamos los grupos contables
+   */
+  public loadGrupos() {
+   
+    //Si no existe la varible grupos en el localStorage, realizamos la petición al servidor.
+    if (!localStorage.getItem('grupos')) {
+      this._grupos.getGrupos().subscribe(
+        (resp:GrupoModel[])=>{
+          //Si existe grupos en el servidor creamos a variable en el localStorage para no volver a cargarlo posteriormente
+          if(resp.length>0) {
+            localStorage.setItem('grupos', "true");
+            this.loadSubgrupos();
+          } 
+          
+        }
+      )
+    }
+  }
+
+
+  /**
+   * Cargamos los subgrupos contables
+  */
+  private loadSubgrupos() {
+    this._subgrupos.getSubgrupos().subscribe(
+      (resp:subgrupoModel[])=>{
+        
+      }
+    )    
   }
 
   

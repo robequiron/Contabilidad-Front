@@ -21,11 +21,20 @@ export class InterceptorService implements HttpInterceptor {
    * @returns Observable httpevent
    */
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    let headers;
 
     //Creamos la cabecera
-    const headers = new HttpHeaders({
-      'token': localStorage.getItem('token')
-    })
+    if (localStorage.getItem('token') ) {
+      headers = new HttpHeaders({
+        'token': localStorage.getItem('token') 
+      })
+
+    } else {
+      headers = new HttpHeaders({
+        
+      })
+    }
+   
     //Realizarmos clonación de la cabecera ya que está es inmutable
     const reqClone = req.clone({headers});
 

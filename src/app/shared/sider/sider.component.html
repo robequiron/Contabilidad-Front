@@ -1,4 +1,5 @@
 <div class="logo">Harena Fuerteventura</div>
+<ng-container *ngIf="load">
 
 <ul nz-menu [nzTheme]="_sidebar.theme" [nzInlineIndent]="_sidebar.inlineIndent" nzMode="inline" >
   <ng-container *ngFor="let side of _sidebar.menuSidebar">
@@ -38,4 +39,4 @@
   
   
 </ul>
-
+</ng-container>

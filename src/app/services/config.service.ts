@@ -25,6 +25,7 @@ export class ConfigService {
   public config:Config = new Config();
 
   /**
+   * Constructor
    * 
    * @param http Servicio de angular para las peticiones de HTTP
    */
@@ -33,7 +34,7 @@ export class ConfigService {
   }
 
   /**
-   * Retorna la configuración general
+   * Retorna la configuración general. Si ésta no existe la crea
    * 
    * @returns Observable con los datos de configuración
    */
@@ -52,10 +53,11 @@ export class ConfigService {
   }
 
   /**
+   * Modificamos la configuración
    * 
    * @param config Config
-   * @param _id 
-   * @returns 
+   * @param _id Identificador de la configuración
+   * @returns Observable
    */
   public save(config:Config, _id:string):Observable<any> {
 

@@ -54,13 +54,17 @@ export class LoginService {
         localStorage.removeItem('email');
       }
 
+      
+
       //Consultamos con la base de datos
       return this.http.post(environment.URL_SERVICIOS + '/login ', usuario).pipe(
         map(
           (resp:any)=>{
+            
             localStorage.setItem('id', resp.id);
             localStorage.setItem('token', resp.token);
             this.token = resp.token;
+            this.usuario = resp.usuario;
             localStorage.setItem('usuario', JSON.stringify(resp.usuario));
           }
         )

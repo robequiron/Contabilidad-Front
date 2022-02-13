@@ -160,7 +160,6 @@ export class CuentaComponent implements OnInit, OnDestroy {
     this._cuentaService.getCuenta(id).subscribe(
       (resp:Cuenta)=>{
         this.cuenta = resp;
-        console.log(resp);
         this.formCuenta.setValue(
           {
             _id: resp._id,
@@ -407,7 +406,6 @@ export class CuentaComponent implements OnInit, OnDestroy {
       (item:TypeNif)=>{
         if (typeNif===item.code && item.valida) {
           if (typeNif===1 || typeNif===4) {
-            console.log(inputNif.value)
             if (!this._nifValidate.validateDNI(inputNif.value)) inputNif.setErrors({'incorrect': true});
           } else {
             if (!this._nifValidate.isValidCif(inputNif.value)) inputNif.setErrors({'incorrect': true});

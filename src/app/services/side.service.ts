@@ -46,6 +46,14 @@ export class SideService {
         {title:'Ofertas',path:'config' , disabled:false, rol:"ADMIN_ROLE",},
       ]
     },
+    {title:"Contabilidad",icon:"user",open:false, disabled:false, rol:"USER_ROLE",
+      items:[
+        {title:'Cuentas Contables',path:'cuentas' , disabled:false, rol:"ADMIN_ROLE",},
+        {title:'Saldo cuentas',path:'config' , disabled:false, rol:"ADMIN_ROLE",},
+        {title:'Asientos',path:'config' , disabled:false, rol:"ADMIN_ROLE",},
+      ]
+    },
+  
     
   ]
   constructor() { }

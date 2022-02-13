@@ -526,8 +526,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="400"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:400</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="399"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:399</a></div>
                 </td>
             </tr>
 
@@ -567,8 +567,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="251"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:251</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="250"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:250</a></div>
                 </td>
             </tr>
 
@@ -608,8 +608,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="311"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:311</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="310"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:310</a></div>
                 </td>
             </tr>
 
@@ -649,8 +649,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="194"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:194</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="193"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:193</a></div>
                 </td>
             </tr>
 
@@ -809,8 +809,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="393"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:393</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="392"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:392</a></div>
                 </td>
             </tr>
 
@@ -850,8 +850,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="371"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:371</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="370"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:370</a></div>
                 </td>
             </tr>
 
@@ -891,8 +891,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="274"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:274</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="273"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:273</a></div>
                 </td>
             </tr>
 
@@ -1036,8 +1036,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="423"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:423</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="421"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:421</a></div>
                 </td>
             </tr>
 
@@ -1112,8 +1112,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="271"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:271</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="270"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:270</a></div>
                 </td>
             </tr>
 
@@ -1264,8 +1264,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="330"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:330</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="329"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:329</a></div>
                 </td>
             </tr>
 
@@ -1303,8 +1303,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="262"
-                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:262</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="261"
+                            class="link-to-prism">src/app/pages/cuentas/cuenta.component.ts:261</a></div>
                 </td>
             </tr>
 
@@ -2037,7 +2037,6 @@ export class CuentaComponent implements OnInit, OnDestroy {
     this._cuentaService.getCuenta(id).subscribe(
       (resp:Cuenta)&#x3D;&gt;{
         this.cuenta &#x3D; resp;
-        console.log(resp);
         this.formCuenta.setValue(
           {
             _id: resp._id,
@@ -2284,7 +2283,6 @@ export class CuentaComponent implements OnInit, OnDestroy {
       (item:TypeNif)&#x3D;&gt;{
         if (typeNif&#x3D;&#x3D;&#x3D;item.code &amp;&amp; item.valida) {
           if (typeNif&#x3D;&#x3D;&#x3D;1 || typeNif&#x3D;&#x3D;&#x3D;4) {
-            console.log(inputNif.value)
             if (!this._nifValidate.validateDNI(inputNif.value)) inputNif.setErrors({&#x27;incorrect&#x27;: true});
           } else {
             if (!this._nifValidate.isValidCif(inputNif.value)) inputNif.setErrors({&#x27;incorrect&#x27;: true});
